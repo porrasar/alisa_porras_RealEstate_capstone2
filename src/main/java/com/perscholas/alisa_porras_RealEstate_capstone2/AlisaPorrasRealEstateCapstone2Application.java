@@ -1,0 +1,57 @@
+package com.perscholas.alisa_porras_RealEstate_capstone2;
+
+import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
+import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.List;
+
+@SpringBootApplication
+public class AlisaPorrasRealEstateCapstone2Application
+{
+
+	public static void main(String[] args)
+	{
+		ConfigurableApplicationContext applicationContext
+		    = SpringApplication.run(AlisaPorrasRealEstateCapstone2Application.class, args);
+
+		CustomerRepository customerRepository
+				= applicationContext.getBean(CustomerRepository.class);
+
+		System.out.println("completed Alisa");
+
+//		//adding records to customer table
+//		Customer tina = new Customer("Tina", 42358);
+//		customerRepository.save(tina);
+//		Customer joe = new Customer("Joe", 54668);
+//		customerRepository.save(joe);
+//		Customer alisa = new Customer("alisa", 25245);
+//		customerRepository.save(alisa);
+
+//		//get all records in customer table
+//		List<Customer> customers = customerRepository.findAll();
+//		System.out.println("LIST OF CUSTOMERS: " + customers);
+
+
+//		//get specific records from customer table
+//		Customer customers = customerRepository.findFirstByName("tina");
+//		System.out.println("SPECIFIC CUSTOMER: " + customers);
+
+//		Customer customers = customerRepository.findFirstByName("sang");
+//		System.out.println("CUSTOMERS: " + customers);
+
+
+//		List<Customer> customers = customerRepository.findByName("sang");
+//		System.out.println("CUSTOMERS: " + customers);
+
+//		List<Customer> customers = customerRepository.findByNameAndAge("sang", 30);
+//		System.out.println("CUSTOMERS NAME AND AGE: " + customers);
+
+
+
+
+	}
+
+}
