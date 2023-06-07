@@ -2,11 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <!--
     <meta charset="ISO-8859-1">
-    <title>Employee Management System</title>
+    -->
+
+    <meta charset="UTF-8">
+    <title>Customer page - BTB (Blessed To Bless) Properties, Inc.</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
 
 </head>
 <body>
@@ -18,17 +28,41 @@
         <thead>
         <tr>
             <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
             <th>Zip</th>
+
         </tr>
         </thead>
         <tbody>
         <tr th:each="customer : ${customers}">
             <td th:text="${customer.name}"></td>
+            <td th:text="${customer.address}"></td>
+            <td th:text="${customer.city}"></td>
+            <td th:text="${customer.state}"></td>
             <td th:text="${customer.zip}"></td>
         </tr>
         </tbody>
     </table>
 </div>
+
+<!--
+
+<p id="demo">A general function</p>
+
+<button type="button" onclick="myGeneralWriteFunction()">General function</button>
+
+<script type="text/javascript" src="btb_external_javascript.js"></script>
+
+
+<br></br>
+<a href="home_page.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
+
+
+-->
+
+
 
 </body>
 </html>

@@ -23,11 +23,11 @@ public class AlisaPorrasRealEstateCapstone2Application
 		System.out.println("completed Alisa");
 
 //		//adding records to customer table
-//		Customer tina = new Customer("Tina", 42358);
+//		Customer tina = new Customer("Tina", "222 hello you ave.","nowhere", "oh",42358);
 //		customerRepository.save(tina);
-//		Customer joe = new Customer("Joe", 54668);
+//		Customer joe = new Customer("Joe", "541 goodbye you ave.","somewhere", "oh",43588);
 //		customerRepository.save(joe);
-//		Customer alisa = new Customer("alisa", 25245);
+//		Customer alisa = new Customer("Alisa", "847 outtie ave.","homebound", "oh",43236);
 //		customerRepository.save(alisa);
 
 //		//get all records in customer table
