@@ -1,0 +1,39 @@
+ /* This is my external css   */
+ 
+ 
+body 
+{
+  background-color: linen;
+}
+
+h1
+{
+  color: maroon;
+  margin-left: 2px;
+}
+
+h2
+{
+	color:purple;
+	text-align:center;
+	font-family: "Lucida Handwriting", "Lucida Console" ;
+}
+
+h3
+{
+	color:purple;
+	text-align:center;
+}
+
+p
+{
+  color: blue;
+  text-align: left;
+}
+
+.center 
+{
+  text-align: center;
+  color: red;
+
+
