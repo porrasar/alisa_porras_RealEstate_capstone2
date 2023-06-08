@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Delete - Are You Sure? - BTB (Blessed To Bless) Properties, Inc.</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <h1>Confirm Deletion Request</h1>
+    <hr>
+
+    <p>Are you sure you want to delete this customer? </p>
+
+    <a th:href="@{/deleteCustomerForm}"> Yes, I want to delete this customer.</a>
+
+    <hr>
+    <a th:href="@{/}"> Back to Customer List</a>
+</div>
+</body>
+
+</html>

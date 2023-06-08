@@ -1,9 +1,12 @@
 package com.perscholas.alisa_porras_RealEstate_capstone2.entities;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Customer
@@ -12,7 +15,8 @@ public class Customer
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    @NotNull
+    @Size(min=2, max=30)
     private String name;
     private String address;
     private String city;
