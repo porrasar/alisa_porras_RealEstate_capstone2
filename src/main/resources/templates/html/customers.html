@@ -44,13 +44,21 @@
             <td th:text="${customer.city}"></td>
             <td th:text="${customer.state}"></td>
             <td th:text="${customer.zip}"></td>
+            <td>
+                <a th:href="@{/updateCustomerPage/{id}(id=${customer.id})}" class="btn btn-primary">Update</a>
+
+                <a th:href="@{/deleteCustomerPage/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
+
+                <!--
+                <a href="confirmDeletePage">Delete, confirm </a>
+                -->
+             </td>
         </tr>
         </tbody>
     </table>
 
 
-    <a th:href="@{/updateCustomerForm}" class="btn btn-primary btn-sm mb-3"> Update Customer </a>
-    <a th:href="@{/confirmDelete}" class="btn btn-primary btn-sm mb-3"> Delete Customer </a>
+
 </div>
 
 <!--

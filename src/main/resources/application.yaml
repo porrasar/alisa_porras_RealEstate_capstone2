@@ -1,0 +1,8 @@
+myanimal: cat
+contact:
+  tel: 555-111-2222
+  email: contact@jpassion.com
+  web: http://jpassion.com
+  server:
+    address: 127.0.0.1
+    port: 8000

@@ -21,7 +21,7 @@ public class Customer
     private String address;
     private String city;
     private String state;
-    private int zip;
+    private Integer zip;
 
     //--------------------------CONSTRUCTOR--------------
 
@@ -30,27 +30,23 @@ public class Customer
     {
     }
 
-//    public Customer(String name, int age)
-//    {
+//    public Customer(String name, String address, String city, String state, int zip) {
 //        this.name = name;
-//        this.age = age;
+//        this.address = address;
+//        this.city = city;
+//        this.state = state;
+//        this.zip = zip;
 //    }
 
-
-    public Customer(String name, int zip) {
-        this.name = name;
-        this.zip = zip;
-    }
-
-    public Customer(String name, String address, String city, String state, int zip) {
+    public Customer(int id, String name, String address, String city, String state, Integer zip) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
     }
-
-    //- ------------------------GETTER/SETTER---------------------
+//- ------------------------GETTER/SETTER---------------------
 
     public int getId() {
         return id;
@@ -92,30 +88,34 @@ public class Customer
         this.state = state;
     }
 
-    public int getZip() {
+//    public int getZip() {
+//        return zip;
+//    }
+//
+//    public void setZip(int zip) {
+//        this.zip = zip;
+//    }
+
+    public Integer getZip() {
         return zip;
     }
 
-    public void setZip(int zip) {
+    public void setZip(Integer zip) {
         this.zip = zip;
     }
 
-//    public int getAge() {
-//        return age;
-//    }
-//
-//    public void setAge(int age) {
-//        this.age = age;
-//    }
-//
 //    @Override
 //    public String toString() {
 //        return "Customer{" +
 //                "id=" + id +
 //                ", name='" + name + '\'' +
-//                ", age=" + age +
+//                ", address='" + address + '\'' +
+//                ", city='" + city + '\'' +
+//                ", state='" + state + '\'' +
+//                ", zip=" + zip +
 //                '}';
 //    }
+
 
     @Override
     public String toString() {
@@ -128,14 +128,4 @@ public class Customer
                 ", zip=" + zip +
                 '}';
     }
-
-//
-//    @Override
-//    public String toString() {
-//        return "Customer{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", zip=" + zip +
-//                '}';
-//    }
 }

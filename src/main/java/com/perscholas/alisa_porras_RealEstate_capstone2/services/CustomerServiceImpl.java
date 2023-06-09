@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Primary
+//@Primary
 public class CustomerServiceImpl implements CustomerService
 {
 
@@ -58,16 +58,16 @@ public class CustomerServiceImpl implements CustomerService
         throw new CustomerNotFoundException();
     }
 
-    @Override
-    public Customer getCustomerByName(String name)
-    {
-        Customer employee = customerRepository.findFirstByName(name);
-        if (employee == null) {
-            throw new CustomerNotFoundException();
-        }
-        return employee;
-    }
-
+//    @Override
+//    public Customer getCustomerByName(String name)
+//    {
+//        Customer employee = customerRepository.findFirstByName(name);
+//        if (employee == null) {
+//            throw new CustomerNotFoundException();
+//        }
+//        return employee;
+//    }
+//
     @Override
     public void deleteCustomerById(int id)
     {
