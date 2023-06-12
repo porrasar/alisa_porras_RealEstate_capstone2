@@ -13,14 +13,14 @@
     <h1>Delete A Customer</h1>
     <hr>
 
-    <form action="#" th:action="@{/deleteCustomerPage}" th:object="${customer}" method="POST">
+    <form action="#" th:action="@{/deleteCustomerPage}" th:object="${department}" method="POST">
         <input type="text" th:field="*{id}" placeholder="Id Number" class="form-control mb-4 col-4" >
 
         <button type="submit" class="btn btn-info col-2"> Delete Customer</button>
     </form>
 
     <hr>
-    <a th:href="@{/}"> Back to Customer List</a>
+    <a th:href="@{/}"> Back to Department List</a>
 </div>
 </body>
 

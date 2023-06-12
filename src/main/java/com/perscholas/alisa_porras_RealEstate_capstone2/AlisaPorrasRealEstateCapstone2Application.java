@@ -2,6 +2,8 @@ package com.perscholas.alisa_porras_RealEstate_capstone2;
 
 import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
 import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
+//import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Department;
+//import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.DepartmentRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,10 +19,13 @@ public class AlisaPorrasRealEstateCapstone2Application
 		ConfigurableApplicationContext applicationContext
 		    = SpringApplication.run(AlisaPorrasRealEstateCapstone2Application.class, args);
 
-		CustomerRepository customerRepository
-				= applicationContext.getBean(CustomerRepository.class);
+//		CustomerRepository customerRepository
+//				= applicationContext.getBean(CustomerRepository.class);
 
-		System.out.println("completed Alisa");
+//		DepartmentRepository departmentRepository
+//				= applicationContext.getBean(DepartmentRepository.class);
+
+		System.out.println("COMPLETED Alisa");
 
 		//adding records to customer table
 //		Customer tina = new Customer("Tina", "222 hello you ave.","nowhere", "oh",42358);
@@ -31,6 +36,10 @@ public class AlisaPorrasRealEstateCapstone2Application
 //		customerRepository.save(alisa);
 
 //		//get all records in customer table
+//		List<Department> departments = departmentRepository.findAll();
+//		System.out.println("LIST OF Departments: " + departments);
+
+		//		//get all records in customer table
 //		List<Customer> customers = customerRepository.findAll();
 //		System.out.println("LIST OF CUSTOMERS: " + customers);
 

@@ -3,8 +3,9 @@ package com.perscholas.alisa_porras_RealEstate_capstone2.services;
 
 import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
 import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
+import com.perscholas.alisa_porras_RealEstate_capstone2.services.CustomerNotFoundException;
+import com.perscholas.alisa_porras_RealEstate_capstone2.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,16 +15,19 @@ import java.util.Optional;
 //@Primary
 public class CustomerServiceImpl implements CustomerService
 {
-
+    //-----------------------------VARIABLES-------------------------------------
     private CustomerRepository customerRepository;
     private Customer customer;
 
+    //-----------------------------CONSTRUCTOR-------------------------------------
     @Autowired
     public CustomerServiceImpl(CustomerRepository customerRepository)
     {
         this.customerRepository = customerRepository;
     }
 
+
+    //-----------------------------METHODS------------------------------------
     @Override
     public List<Customer> getAllCustomers()
     {

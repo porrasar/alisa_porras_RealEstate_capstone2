@@ -30,14 +30,6 @@ public class Customer
     {
     }
 
-//    public Customer(String name, String address, String city, String state, int zip) {
-//        this.name = name;
-//        this.address = address;
-//        this.city = city;
-//        this.state = state;
-//        this.zip = zip;
-//    }
-
     public Customer(int id, String name, String address, String city, String state, Integer zip) {
         this.id = id;
         this.name = name;
