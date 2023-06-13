@@ -46,7 +46,7 @@ public class DepartmentController
         // the 2nd 'departments' is the object variable for the list type
         model.addAttribute("departments", departments);
         return "html/departmentPage";
-//        return "html/updateDepartmentPage";
+
     }
 
 
@@ -65,28 +65,31 @@ public class DepartmentController
     @GetMapping("/deleteDepartmentPage/{id}")
     public String deleteDepartmentPage(@PathVariable(value = "id") int id)
     {
-//        // call delete department method
-//        this.departmentService.deleteDepartmentById(id);
+        // call delete department method
+        this.departmentService.deleteDepartmentById(id);
         return "redirect:/";
     }
 
 
 
-    @GetMapping("/updateDepartmentPage/{id}")
+    @GetMapping("/updateDepartmentPageMethod/{id}")
     public String updateDepartmentPage(@PathVariable(value = "id") int id, Model model)
     {
         // get department from the service
         Department department = departmentService.getDepartmentById(id);
-//
-//        // set department as a model attribute to pre-populate the form
-//        model.addAttribute("department", department);
+
+        // set department as a model attribute to pre-populate the form
+        model.addAttribute("department", department);
         return "html/updateDepartmentPage";
     }
 
+//    <!-- Add hidden form field to handle update -- >
+
     //Save user data to database
     @PostMapping("/saveDepartment")
-    public String saveDepartment(@ModelAttribute("department") @Valid Department department,
-                               BindingResult bindingResult)
+    public String saveDepartment(@ModelAttribute("department")
+                                 @Valid Department department,
+                                 BindingResult bindingResult)
     {
         if (bindingResult.hasErrors())
         {
@@ -95,6 +98,8 @@ public class DepartmentController
         // save customer to database
         departmentService.saveDepartment(department);
         return "redirect:/";
+//        return "html/addDepartmentPage";
+
     }
 
 }//departmentcontroller end
