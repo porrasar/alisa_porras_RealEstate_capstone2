@@ -23,6 +23,7 @@ import java.util.List;
 @Controller
 public class DepartmentController
 {
+
     //-----------------VARIABLES ---------------------------------
     private DepartmentService departmentService;
     @Autowired
