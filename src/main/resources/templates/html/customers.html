@@ -38,7 +38,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="customer : ${customers}">   <!-- 'customer' is my object variable from customer class. 'customers' is my html page   -->
+        <tr th:each="customer : ${customers}">   <!-- 'customer' is my object variable from customer class.
+                                                       'customers' is a made up name, for the key, of the key, valued pair of the Model class   -->
             <td th:text="${customer.name}"></td>
             <td th:text="${customer.address}"></td>
             <td th:text="${customer.city}"></td>

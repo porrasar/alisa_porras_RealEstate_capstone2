@@ -1,9 +1,9 @@
 package com.perscholas.alisa_porras_RealEstate_capstone2;
 
-import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
-import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Department;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.DepartmentRepository;
+//import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
+//import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
+import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Department;
+import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.DepartmentRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
