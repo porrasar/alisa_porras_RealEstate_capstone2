@@ -17,7 +17,7 @@ public class AlisaPorrasRealEstateCapstone2Application
 	{
 		ConfigurableApplicationContext applicationContext
 		    = SpringApplication.run(AlisaPorrasRealEstateCapstone2Application.class, args);
-		applicationContext.getBean(AlisaPorrasRealEstateCapstone2Application.class)
+
 
 		System.out.println("COMPLETED Alisa");
 
