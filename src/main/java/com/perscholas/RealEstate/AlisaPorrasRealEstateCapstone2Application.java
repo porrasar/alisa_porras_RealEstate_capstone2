@@ -23,6 +23,8 @@ public class AlisaPorrasRealEstateCapstone2Application
 
 	}//main () end
 
+
+
 	@Bean
 	public CommandLineRunner commandLineRunner1()
 	{
