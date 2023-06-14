@@ -1,7 +1,8 @@
-package com.perscholas.alisa_porras_RealEstate_capstone2;
+package com.perscholas.RealEstate;
 
-//import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
+
+import com.perscholas.RealEstate.entities.Customer;
+import com.perscholas.RealEstate.repositories.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,7 @@ public class AlisaPorrasRealEstateCapstone2Application
 	{
 		ConfigurableApplicationContext applicationContext
 		    = SpringApplication.run(AlisaPorrasRealEstateCapstone2Application.class, args);
+		applicationContext.getBean(AlisaPorrasRealEstateCapstone2Application.class)
 
 		System.out.println("COMPLETED Alisa");
 

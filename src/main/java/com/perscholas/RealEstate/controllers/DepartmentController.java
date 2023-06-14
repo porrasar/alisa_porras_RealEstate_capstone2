@@ -1,13 +1,10 @@
-package com.perscholas.alisa_porras_RealEstate_capstone2.controllers;
+package com.perscholas.RealEstate.controllers;
 
 
-import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Department;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.services.CustomerService;
-import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.DepartmentRepository;
+import com.perscholas.RealEstate.entities.Department;
+import com.perscholas.RealEstate.repositories.DepartmentRepository;
 
-import com.perscholas.alisa_porras_RealEstate_capstone2.services.DepartmentService;
+import com.perscholas.RealEstate.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +36,7 @@ public class DepartmentController
     //-------------------METHODS -----------------------------------
 
     //display initial view/html page, list of all customers
-    @GetMapping("/")
+    @GetMapping("/departmentsList")
     public String getAllDepartment(Model model)
     {
         List<Department> departments = repository.findAll();
@@ -68,7 +65,8 @@ public class DepartmentController
     {
         // call delete department method
         this.departmentService.deleteDepartmentById(id);
-        return "redirect:/";
+//        return "redirect:/";
+        return "redirect:/departmentsList";
     }
 
 
@@ -98,8 +96,8 @@ public class DepartmentController
         }
         // save customer to database
         departmentService.saveDepartment(department);
-        return "redirect:/";
-//        return "html/addDepartmentPage";
+        return "redirect:/departmentsList";
+
 
     }
 

@@ -1,8 +1,6 @@
-package com.perscholas.alisa_porras_RealEstate_capstone2.entities;
+package com.perscholas.RealEstate.entities;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.List;
 
 @Entity
 //@Table

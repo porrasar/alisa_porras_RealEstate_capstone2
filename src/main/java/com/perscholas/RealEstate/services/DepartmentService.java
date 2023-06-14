@@ -1,7 +1,6 @@
-package com.perscholas.alisa_porras_RealEstate_capstone2.services;
+package com.perscholas.RealEstate.services;
 
-//import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
-import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Department;
+import com.perscholas.RealEstate.entities.Department;
 
 import java.util.List;
 

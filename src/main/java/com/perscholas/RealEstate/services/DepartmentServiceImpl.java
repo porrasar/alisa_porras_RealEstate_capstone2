@@ -1,10 +1,8 @@
-package com.perscholas.alisa_porras_RealEstate_capstone2.services;
+package com.perscholas.RealEstate.services;
 
 
-import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Department;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.entities.Customer;
-//import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.CustomerRepository;
-import com.perscholas.alisa_porras_RealEstate_capstone2.repositories.DepartmentRepository;
+import com.perscholas.RealEstate.entities.Department;
+import com.perscholas.RealEstate.repositories.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DepartmentServiceImpl implements DepartmentService
+public class DepartmentServiceImpl implements com.perscholas.RealEstate.services.DepartmentService
 {
     //-----------------------------VARIABLES-------------------------------------
     private DepartmentRepository departmentRepository;
@@ -59,7 +57,7 @@ public class DepartmentServiceImpl implements DepartmentService
             Department department = optionalDepartment.get();
             return department;
         }
-        throw new DepartmentNotFoundException();
+        throw new com.perscholas.RealEstate.services.DepartmentNotFoundException();
     }
 
     //    @Override

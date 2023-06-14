@@ -1,4 +1,4 @@
-package com.perscholas.alisa_porras_RealEstate_capstone2;
+package com.perscholas.RealEstate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
