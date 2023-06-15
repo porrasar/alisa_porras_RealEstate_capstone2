@@ -11,10 +11,10 @@ import java.util.List;
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Integer>
 {
-   // public List<Department> findByDepartmentId(int departmentId);
-    public List<Department> findByDepartmentName(String departmentName);
-
-    public Department findFirstByDepartmentName(String departmentName);
+//   // public List<Department> findByDepartmentId(int departmentId);
+//    public List<Department> findByDepartmentName(String departmentName);
+//
+//    public Department findFirstByDepartmentName(String departmentName);
 }
 
 

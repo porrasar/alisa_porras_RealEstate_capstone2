@@ -1,14 +1,20 @@
 package com.perscholas.RealEstate.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 //@Table
 //public class Department implements Serializable
-public class Department
+public class Department implements Serializable
 {
 
+    //-----------------VARIABLES ---------------------------------
     //    private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //@Column(name = "Department Id")
@@ -20,28 +26,40 @@ public class Department
 //    @OneToMany(targetEntity = Department.class, cascade = {CascadeType.ALL})
 //    private List departmentList;
 
-
+    @JoinTable
+    @OneToMany(targetEntity = Customer.class, cascade = {CascadeType.ALL})
+    private List customerList;
     //----------------------------------CONSTRUCTORS-------------------------
 
+
+
+//    public Department(int departmentId, String departmentName, List departmentList)
+//    public Department(int departmentId, String departmentName)
+//    {
+//        this.departmentId = departmentId;
+//        this.departmentName = departmentName;
+////        this.departmentList = departmentList;
+//    }
+
+        public Department(int departmentId, String departmentName)
+        {
+        super();
+        this.departmentId = departmentId;
+        this.departmentName = departmentName;
+    }
     public Department()
     {
     }
 
-//    public Department(int departmentId, String departmentName, List departmentList)
-    public Department(int departmentId, String departmentName)
-    {
-        this.departmentId = departmentId;
-        this.departmentName = departmentName;
-//        this.departmentList = departmentList;
-    }
 
-    //    public Department(int departmentId, String departmentName) {
-////        super();
-////        this.departmentId = departmentId;
-////        this.departmentName = departmentName;
-////    }
+//    public Department(int departmentId, String departmentName, List customerList) {
+//        this.departmentId = departmentId;
+//        this.departmentName = departmentName;
+//        this.customerList = customerList;
+//    }
 
-    //-------------------getter and setter -------------------------
+
+    //- ------------------------GETTER/SETTER---------------------
 
     public int getDepartmentId() {
         return departmentId;
@@ -59,7 +77,24 @@ public class Department
         this.departmentName = departmentName;
     }
 
-//    public List getCustomerList() {
+    public List getCustomerList() {
+        return customerList;
+    }
+
+    public void setCustomerList(List customerList) {
+        this.customerList = customerList;
+    }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "departmentId=" + departmentId +
+                ", departmentName='" + departmentName + '\'' +
+                ", customerList=" + customerList +
+                '}';
+    }
+
+    //    public List getCustomerList() {
 //        return departmentList;
 //    }
 //
@@ -76,13 +111,13 @@ public class Department
 //                ", customerList=" + departmentList +
 //                '}';
 //    }
-
-    @Override
-    public String toString()
-    {
-        return "Department{" +
-                "departmentId=" + departmentId +
-                ", departmentName='" + departmentName + '\'' + '}';
-    }
+//
+//    @Override
+//    public String toString()
+//    {
+//        return "Department{" +
+//                "departmentId=" + departmentId +
+//                ", departmentName='" + departmentName + '\'' + '}';
+//    }
 
 }

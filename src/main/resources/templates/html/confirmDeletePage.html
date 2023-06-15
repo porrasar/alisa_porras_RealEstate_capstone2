@@ -29,17 +29,14 @@
 
     <p>Are you sure you want to delete this customer? </p>
     <br></br>
-    <a th:href="@{/}"> No, changed my mind. Back to Customer List</a>
+    <a th:href="@{/departmentsList}"> No, changed my mind. Back to Customer List</a>
     <br></br>
     <!--
     <a th:href="@{/addNewCustomerForm}" class="btn btn-primary btn-sm mb-3"> Yes, delete customer </a>
     -->
-    <a th:href="@{/deleteCustomerPage/{id}(id=${customer.id})}" class="btn btn-danger">Yes, delete customer</a>
 
-
-
-
-
+    <input type="hidden" th:field="*{departmentId}" />
+    <a th:href="@{/deleteDepartmentPage/{id}(id=${department.id})}" class="btn btn-danger">Yes, delete department</a>
 
 </div>
 </body>

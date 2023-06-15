@@ -2,16 +2,18 @@ package com.perscholas.RealEstate.entities;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @Entity
-public class Customer
+@Table
+public class Customer implements Serializable
 {
 
+    //-----------------VARIABLES ---------------------------------
+
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -25,12 +27,8 @@ public class Customer
 
     //--------------------------CONSTRUCTOR--------------
 
-
-    public Customer()
+    public Customer(int id, String name, String address, String city, String state, Integer zip)
     {
-    }
-
-    public Customer(int id, String name, String address, String city, String state, Integer zip) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -38,7 +36,11 @@ public class Customer
         this.state = state;
         this.zip = zip;
     }
-//- ------------------------GETTER/SETTER---------------------
+
+    public Customer()
+    {
+    }
+    //- ------------------------GETTER/SETTER---------------------
 
     public int getId() {
         return id;

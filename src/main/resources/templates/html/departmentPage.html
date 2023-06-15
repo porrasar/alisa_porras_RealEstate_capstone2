@@ -44,8 +44,8 @@
             <td th:text="${department.departmentName}"></td>
 
             <td>
-                <a th:href="@{/updateDepartmentPageMethod/{id}(id=${department.departmentId})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteDepartmentPage/{id}(id=${department.departmentId})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/updateDepartmentPageHandler/{id}(id=${department.departmentId})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteDepartmentPageHandler/{id}(id=${department.departmentId})}" class="btn btn-danger">Delete</a>
              </td>
         </tr>
 

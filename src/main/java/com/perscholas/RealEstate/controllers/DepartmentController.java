@@ -1,6 +1,7 @@
 package com.perscholas.RealEstate.controllers;
 
 
+import com.perscholas.RealEstate.entities.Customer;
 import com.perscholas.RealEstate.entities.Department;
 import com.perscholas.RealEstate.repositories.DepartmentRepository;
 
@@ -58,20 +59,15 @@ public class DepartmentController
         return "html/addDepartmentPage";
     }
 
-
-
-    @GetMapping("/deleteDepartmentPage/{id}")
+    @GetMapping("/deleteDepartmentPageHandler/{id}")
     public String deleteDepartmentPage(@PathVariable(value = "id") int id)
     {
         // call delete department method
         this.departmentService.deleteDepartmentById(id);
-//        return "redirect:/";
         return "redirect:/departmentsList";
     }
 
-
-
-    @GetMapping("/updateDepartmentPageMethod/{id}")
+    @GetMapping("/updateDepartmentPageHandler/{id}")
     public String updateDepartmentPage(@PathVariable(value = "id") int id, Model model)
     {
         // get department from the service
@@ -100,6 +96,17 @@ public class DepartmentController
 
 
     }
+
+
+    //---------------------------------
+//  ask about this type of logic
+//    @PostMapping("/customers/{customerId}/departments/{departmentId}")
+//    public void addCustomerToDepartment(@PathVariable Long customerId, @PathVariable Long departmentId) {
+//        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found with id " + customerId));
+//        Department department = departmentRepository.findById(departmentId).orElseThrow(() -> new ResourceNotFoundException("Department not found with id " + departmentId));
+//        customer.setDepartment(department);
+//        customerRepository.save(customer);
+//    }
 
 }//departmentcontroller end
 
