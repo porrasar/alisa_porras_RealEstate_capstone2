@@ -34,7 +34,7 @@ public class CustomerController
     //-------------------METHODS -----------------------------------
 
     //display initial view/html page, list of all customers
-    @GetMapping("/customersList")
+    @GetMapping("/customersListHandler")
     public String getAllCustomers(Model model)
     {
         List<Customer> customers = repository.findAll();
@@ -58,7 +58,7 @@ public class CustomerController
     {
         // call delete customer method
         this.customerService.deleteCustomerById(id);
-        return "redirect:/customersList";
+        return "redirect:/customersListHandler";
 
     }
 
@@ -85,7 +85,7 @@ public class CustomerController
         }
         // save customer to database
         customerService.saveCustomer(customer);
-        return "redirect:/customersList";
+        return "redirect:/customersListHandler";
     }
 
 }

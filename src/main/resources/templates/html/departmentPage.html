@@ -44,13 +44,17 @@
             <td th:text="${department.departmentName}"></td>
 
             <td>
-                <a th:href="@{/updateDepartmentPageHandler/{id}(id=${department.departmentId})}" class="btn btn-primary">Update</a>
-                <a th:href="@{/deleteDepartmentPageHandler/{id}(id=${department.departmentId})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/updateDepartmentPageHandler/{id}(id=${department.departmentId})}" class="btn btn-primary">Department Details</a>
+                <a th:href="@{/deleteDepartmentPageHandler/{id}(id=${department.departmentId})}" class="btn btn-danger">Delete Department</a>
+
+
              </td>
         </tr>
 
         </tbody>
     </table>
+
+
 
     <br></br>
 

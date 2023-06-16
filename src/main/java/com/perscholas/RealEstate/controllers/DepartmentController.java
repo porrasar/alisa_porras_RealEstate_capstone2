@@ -36,8 +36,10 @@ public class DepartmentController
 
     //-------------------METHODS -----------------------------------
 
+
+    //---------------------LIST ALL CUSTOMERS -----------
     //display initial view/html page, list of all customers
-    @GetMapping("/departmentsList")
+    @GetMapping("/departmentsListHandler")
     public String getAllDepartment(Model model)
     {
         List<Department> departments = repository.findAll();
@@ -48,7 +50,7 @@ public class DepartmentController
 
     }
 
-
+    //---------------------ADD NEW DEPARTMENT -----------
     //Add a new department
     @GetMapping("/addNewDepartmentPage")
     public String addNewDepartmentForm(Model model)
@@ -59,14 +61,16 @@ public class DepartmentController
         return "html/addDepartmentPage";
     }
 
+    //---------------------DELETE A DEPARTMENT -----------
     @GetMapping("/deleteDepartmentPageHandler/{id}")
     public String deleteDepartmentPage(@PathVariable(value = "id") int id)
     {
         // call delete department method
         this.departmentService.deleteDepartmentById(id);
-        return "redirect:/departmentsList";
+        return "redirect:/departmentsListHandler";
     }
 
+    //---------------------UPDATE A DEPARTMENT -----------
     @GetMapping("/updateDepartmentPageHandler/{id}")
     public String updateDepartmentPage(@PathVariable(value = "id") int id, Model model)
     {
@@ -78,7 +82,9 @@ public class DepartmentController
         return "html/updateDepartmentPage";
     }
 
-//    <!-- Add hidden form field to handle update -- >
+    //---------------------SAVE DATA TO DATABASE -----------
+
+    //    <!-- Add hidden form field to handle update -- >
 
     //Save user data to database
     @PostMapping("/saveDepartment")
@@ -92,21 +98,45 @@ public class DepartmentController
         }
         // save customer to database
         departmentService.saveDepartment(department);
-        return "redirect:/departmentsList";
+        return "redirect:/departmentsListHandler";
 
 
     }
 
+//    //-----------------ADD A CUSTOMER TO A DEPARTMENT PROCESS------------------
+//
+    @GetMapping("/addCustomerToDepartPageHandler/{dId}")
+    public String addCustomerToDepartment(@PathVariable int dId, Model model)
+    {
+        // create model attribute to bind form data
+        Customer customer = new Customer();
+        model.addAttribute("customer", customer);
+        model.addAttribute("departmentId", dId);
+        return "html/addCustomerToDepartmentPage";
+    }
 
-    //---------------------------------
-//  ask about this type of logic
-//    @PostMapping("/customers/{customerId}/departments/{departmentId}")
-//    public void addCustomerToDepartment(@PathVariable Long customerId, @PathVariable Long departmentId) {
-//        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found with id " + customerId));
-//        Department department = departmentRepository.findById(departmentId).orElseThrow(() -> new ResourceNotFoundException("Department not found with id " + departmentId));
-//        customer.setDepartment(department);
-//        customerRepository.save(customer);
-//    }
+    @PostMapping("/departmentPageHandler/{dId}/customerPageHandler")
+    public String saveCustomerToDepartment(@PathVariable int dId,
+                                           Model model,
+                                           @ModelAttribute ("customer")
+                                           @Valid Customer customer,
+                                           BindingResult bindingResult)
+
+    {
+
+        //go get dept  with the did
+        Department department = departmentService.getDepartmentById(dId);
+
+        if (bindingResult.hasErrors())
+        {
+            return "html/updateDepartmentPage";
+        }
+//         customerService.saveCustomer(customer);
+
+        return "redirect:/departmentsListHandler" + dId;
+
+    }
+
 
 }//departmentcontroller end
 
