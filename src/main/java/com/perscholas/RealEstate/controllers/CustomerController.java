@@ -39,6 +39,7 @@ public class CustomerController
     {
         List<Customer> customers = repository.findAll();
         model.addAttribute("customers", customers);
+        System.out.println("//////////////////////IN CUSTOMER LIST //////////////////////////////////");
         return "html/customers";
     }
 

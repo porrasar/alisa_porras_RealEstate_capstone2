@@ -1,12 +1,14 @@
 package com.perscholas.RealEstate.security;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -15,31 +17,16 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 {
 
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception
-//    {
-//        http.authorizeRequests(requests -> requests
-//                        .mvcMatchers("/login").permitAll()
-//                        .mvcMatchers("/deleteEmployee/**").hasAnyRole("SUPERADMIN")
-//                        .mvcMatchers("/showFormForUpdate/**").hasAnyRole("ADMIN", "SUPERADMIN")
-//                        .mvcMatchers("/showEmployeeForm/**").hasAnyRole("ADMIN", "SUPERADMIN")
-//                        .mvcMatchers("/saveEmployee/**").hasAnyRole("ADMIN", "SUPERADMIN")
-//                        .mvcMatchers("/**").hasAnyRole("USER", "ADMIN", "SUPERADMIN")
-//                        .anyRequest().authenticated())
-//                .formLogin(login -> login
-//                        .loginPage("/login")        //this starts the login process
-//                        .defaultSuccessUrl("/")     // this statement controls what is the next page after the login
-//                        .permitAll())
-//                .logout(logout -> logout
-//                        .logoutSuccessUrl("/login"));
-//
-//    }
+    @Autowired
+    private UserDetailsService userDetailsService;
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
         http.authorizeRequests(requests -> requests
                         .mvcMatchers("/login").permitAll()
+                        .mvcMatchers("/signup").permitAll()
                         .mvcMatchers("/addNewDepartmentPage").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/deleteDepartmentPageHandler/**").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/updateDepartmentPageHandler/**").hasAnyRole("ADMIN", "SUPERADMIN")
@@ -57,6 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 
                         .mvcMatchers("/**").hasAnyRole("USER", "ADMIN", "SUPERADMIN")
                         .anyRequest().authenticated())
+
                 .formLogin(login -> login
                         .loginPage("/login")        //this starts the login process
                         .defaultSuccessUrl("/")     // this statement controls what is the next page after the login
@@ -91,6 +79,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                 .and()
                 .withUser("karolyn").password(passwordEncoder.encode("karolyn")).roles("USER");
 
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+
+
     }
 
     @Override
@@ -98,6 +89,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
         web
                 .ignoring()
                 .antMatchers("/static/**")
-                .antMatchers("/**/*.css");
+                .antMatchers("/**/*.css")
+                .antMatchers("/h2-console/**");
     }
 }

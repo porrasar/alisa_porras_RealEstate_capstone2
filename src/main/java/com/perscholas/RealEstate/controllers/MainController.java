@@ -13,24 +13,9 @@ import java.util.List;
 @Controller
 public class MainController
 {
-
-    @GetMapping("/login")
-    public String login()
-    {
-        return "html/login";
-    }
-
    @GetMapping("/")
    public String rootHomePage()
     {
         return "html/home_page";
-    }
-
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest request)
-    {
-        HttpSession httpSession = request.getSession();
-        httpSession.invalidate();
-        return "redirect:/";
     }
 }

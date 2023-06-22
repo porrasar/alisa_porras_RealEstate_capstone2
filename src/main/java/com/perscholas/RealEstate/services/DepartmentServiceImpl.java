@@ -57,7 +57,7 @@ public class DepartmentServiceImpl implements com.perscholas.RealEstate.services
             Department department = optionalDepartment.get();
             return department;
         }
-        throw new com.perscholas.RealEstate.services.DepartmentNotFoundException();
+        throw new DepartmentNotFoundException();
     }
 
     //    @Override
