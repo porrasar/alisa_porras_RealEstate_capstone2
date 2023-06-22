@@ -5,7 +5,10 @@ import com.perscholas.RealEstate.entities.Customer;
 import com.perscholas.RealEstate.entities.Department;
 import com.perscholas.RealEstate.repositories.DepartmentRepository;
 
+import com.perscholas.RealEstate.services.CustomerService;
 import com.perscholas.RealEstate.services.DepartmentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,19 +25,26 @@ import java.util.List;
 public class DepartmentController
 {
 
-    //-----------------VARIABLES ---------------------------------
+
+
+    //-----------------VARIABLES ----------------------------------------------------------
     private DepartmentService departmentService;
+
     @Autowired
     private DepartmentRepository repository;
 
-    //-----------------CONSTRUCTOR---------------------------------
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
+    //-----------------CONSTRUCTOR----------------------------------------------------------
     @Autowired
     public DepartmentController(DepartmentService departmentService)
     {
         this.departmentService = departmentService;
     }
 
-    //-------------------METHODS -----------------------------------
+
+
+    //-------------------METHODS -----------------------------------------------------------
 
 
     //---------------------LIST ALL CUSTOMERS -----------
@@ -45,6 +55,7 @@ public class DepartmentController
         List<Department> departments = repository.findAll();
         // the 1st 'departments' is a made up name, for the key, of the key, valued pair of the Model class
         // the 2nd 'departments' is the object variable for the list type
+        logger.info("/////// LIST OF DEPARTMENTS ////////" + repository.findAll());
         model.addAttribute("departments", departments);
         return "html/departmentPage";
 
@@ -65,8 +76,10 @@ public class DepartmentController
     @GetMapping("/deleteDepartmentPageHandler/{id}")
     public String deleteDepartmentPage(@PathVariable(value = "id") int id)
     {
+
         // call delete department method
         this.departmentService.deleteDepartmentById(id);
+        logger.info("/////// DELETE DEPARTMENT //////// :" + id + " HAS BEEN DELETED");
         return "redirect:/departmentsListHandler";
     }
 
@@ -115,28 +128,27 @@ public class DepartmentController
         return "html/addCustomerToDepartmentPage";
     }
 
-    @PostMapping("/departmentPageHandler/{dId}/customerPageHandler")
-    public String saveCustomerToDepartment(@PathVariable int dId,
+    @PostMapping("/departmentPageHandler/{departmentId}/customerPageHandler")
+    public String saveCustomerToDepartment(@PathVariable int departmentId,
                                            Model model,
                                            @ModelAttribute ("customer")
                                            @Valid Customer customer,
                                            BindingResult bindingResult)
-
     {
-
-        //go get dept  with the did
-        Department department = departmentService.getDepartmentById(dId);
+        //go get dept  with the departmentId
+        Department department = departmentService.getDepartmentById(departmentId);
 
         if (bindingResult.hasErrors())
         {
             return "html/updateDepartmentPage";
         }
-//         customerService.saveCustomer(customer);
+        List<Customer> customerList = department.getCustomerList();
+        customerList.add(customer);
+        departmentService.saveDepartment(department);
 
-        return "redirect:/departmentsListHandler" + dId;
-
+        return "redirect:/departmentsListHandler";
+//        return "redirect:/departmentsListHandler" + departmentId;
     }
-
 
 }//departmentcontroller end
 

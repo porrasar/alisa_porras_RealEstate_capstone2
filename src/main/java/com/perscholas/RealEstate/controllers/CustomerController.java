@@ -3,6 +3,8 @@ package com.perscholas.RealEstate.controllers;
 import com.perscholas.RealEstate.entities.Customer;
 import com.perscholas.RealEstate.repositories.CustomerRepository;
 import com.perscholas.RealEstate.services.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +25,8 @@ public class CustomerController
     private CustomerService customerService;
     @Autowired
     private CustomerRepository repository;
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     //-----------------CONSTRUCTOR---------------------------------
     @Autowired

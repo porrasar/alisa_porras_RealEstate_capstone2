@@ -27,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
         http.authorizeRequests(requests -> requests
                         .mvcMatchers("/login").permitAll()
                         .mvcMatchers("/signup").permitAll()
+
                         .mvcMatchers("/addNewDepartmentPage").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/deleteDepartmentPageHandler/**").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/updateDepartmentPageHandler/**").hasAnyRole("ADMIN", "SUPERADMIN")
@@ -77,7 +78,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                 .roles("USER", "ADMIN", "SUPERADMIN")
 
                 .and()
-                .withUser("karolyn").password(passwordEncoder.encode("karolyn")).roles("USER");
+                .withUser("karolyn").password(passwordEncoder.encode("karolyn")).roles("USER")
+
+                ;
+//                .and()
+//                .withUser("junebug").password(passwordEncoder.encode("junebug")).roles("USER");
 
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
 
