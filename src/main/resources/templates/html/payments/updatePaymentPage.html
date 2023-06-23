@@ -3,36 +3,32 @@
 
 <head>
     <meta charset="ISO-8859-1">
-    <title>Update a customer - BTB (Blessed To Bless) Properties, Inc.</title>
+    <title>Update a payment - BTB (Blessed To Bless) Properties, Inc.</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 
 <body>
 <div class="container">
-    <h2>Update Customer</h2>
+    <h2>Update Payment</h2>
 
-    <form action="#" th:action="@{/saveCustomer}" th:object="${customer}" method="POST">
+    <form action="#" th:action="@{/savePayment}" th:object="${payment}" method="POST">
 
         <!-- Add hidden form field to handle update -->
         <input type="hidden" th:field="*{id}" />
 
-        <input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{paymentType}" placeholder="Name" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{paymentDate}" placeholder="Address" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{city}"  placeholder="City" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{paymentAmount}"  placeholder="City" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{state}"  placeholder="State" class="form-control mb-4 col-4">
-
-        <input type="text" th:field="*{zip}"  placeholder="Zip" class="form-control mb-4 col-4">
-
-        <button type="submit" class="btn btn-info col-2"> Update Customer</button>
+        <button type="submit" class="btn btn-info col-2"> Update Payment</button>
     </form>
 
     <hr>
 
-    <a th:href="@{/}"> Back to Customer List</a>
+    <a th:href="@{/}"> Back to Payment List</a>
 </div>
 </body>
 </html>

@@ -5,6 +5,7 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table
@@ -16,7 +17,7 @@ public class Customer implements Serializable
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int customerId;
     @NotNull
     @Size(min=2, max=30)
     private String name;
@@ -25,11 +26,15 @@ public class Customer implements Serializable
     private String state;
     private Integer zip;
 
+
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Payment> paymentList;
+
     //--------------------------CONSTRUCTOR--------------
 
-    public Customer(int id, String name, String address, String city, String state, Integer zip)
+    public Customer(int customerId, String name, String address, String city, String state, Integer zip)
     {
-        this.id = id;
+        this.customerId = customerId;
         this.name = name;
         this.address = address;
         this.city = city;
@@ -43,11 +48,11 @@ public class Customer implements Serializable
     //- ------------------------GETTER/SETTER---------------------
 
     public int getId() {
-        return id;
+        return customerId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.customerId = customerId;
     }
 
     public String getName() {
@@ -90,15 +95,24 @@ public class Customer implements Serializable
         this.zip = zip;
     }
 
+    public List<Payment> getPaymentList() {
+        return paymentList;
+    }
+
+    public void setPaymentList(List<Payment> paymentList) {
+        this.paymentList = paymentList;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
-                "id=" + id +
+                "id=" + customerId +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip=" + zip +
+                ", paymentList=" + paymentList +
                 '}';
     }
 }

@@ -1,6 +1,8 @@
 package com.perscholas.RealEstate.controllers;
 
 import com.perscholas.RealEstate.entities.Customer;
+import com.perscholas.RealEstate.entities.Department;
+import com.perscholas.RealEstate.entities.Payment;
 import com.perscholas.RealEstate.repositories.CustomerRepository;
 import com.perscholas.RealEstate.services.CustomerService;
 import org.slf4j.Logger;
@@ -92,5 +94,40 @@ public class CustomerController
         customerService.saveCustomer(customer);
         return "redirect:/customersListHandler";
     }
+
+
+    //-----------------ADD A PAYMENT TO A CUSTOMER PROCESS------------------
+    @GetMapping("/addPaymentToCustomerPageHandler/{cId}")
+    public String addPaymentToCustomer(@PathVariable int cId, Model model)
+    {
+        // create model attribute to bind form data
+        Payment payment = new Payment();
+        model.addAttribute("payment", payment);
+        model.addAttribute("customerId", cId);
+        return "html/addPaymentToCustomerPage";
+    }
+
+    @PostMapping("/customerPageHandler/{customerId}/paymentPageHandler")
+    public String savePaymentToCustomer(@PathVariable int customerId,
+                                        Model model,
+                                        @ModelAttribute ("payment")
+                                        @Valid Payment payment,
+                                        BindingResult bindingResult)
+    {
+        //go get customer with the customerId that was passed in addPaymentToCustomer()
+        Customer customer = customerService.getCustomerById(customerId);
+
+        if (bindingResult.hasErrors())
+        {
+            return "html/updateCustomerPage";
+        }
+        List<Payment> paymentList = customer.getPaymentList();
+        paymentList.add(payment);
+        customerService.saveCustomer(customer);
+
+        return "redirect:/customersListHandler";
+
+    }
+
 
 }

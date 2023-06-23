@@ -1,72 +1,79 @@
-//package com.perscholas.RealEstate.entities;
-//
-//import javax.persistence.*;
-//import java.io.Serializable;
-//import java.util.List;
-//
-//
-//@Entity
-//public class Payment implements Serializable
-//{
-//
-//
-//    //-----------------VARIABLES ---------------------------------
-//    private static final long serialVersionUID = 1L;
-//    @Id
-//    private int paymentId;                   //this needs to match the customer id
-//    private String paymentType;
-//
-//    private String paymentDateTime;
-//    private double paymentAmount;
-//
-//
-//    @OneToMany(cascade = {CascadeType.ALL})
-//    private List<Customer> customerList;
-//
-//    //----------------------------------CONSTRUCTORS-------------------------
-//
-//    public Department(int departmentId, String departmentName)
-//    {
-//        super();
-//        this.departmentId = departmentId;
-//        this.departmentName = departmentName;
-//    }
-//    public Department()
-//    {
-//    }
-//
-//    //- ------------------------GETTER/SETTER---------------------
-//
-//    public int getDepartmentId() {
-//        return departmentId;
-//    }
-//
-//    public void setDepartmentId(int departmentId) {
-//        this.departmentId = departmentId;
-//    }
-//
-//    public String getDepartmentName() {
-//        return departmentName;
-//    }
-//
-//    public void setDepartmentName(String departmentName) {
-//        this.departmentName = departmentName;
-//    }
-//
-//    public List<Customer> getCustomerList() {
-//        return customerList;
-//    }
-//
-//    public void setCustomerList(List<Customer> customerList) {
-//        this.customerList = customerList;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "Department{" +
-//                "departmentId=" + departmentId +
-//                ", departmentName='" + departmentName + '\'' +
-//                ", customerList=" + customerList +
-//                '}';
-//    }
-//}
+package com.perscholas.RealEstate.entities;
+
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+public class Payment implements Serializable
+{
+    //-----------------VARIABLES ---------------------------------
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private int paymentId;
+     private String paymentType;
+    private Date paymentDateTime;
+    private double paymentAmount;
+
+
+    //----------------------------------CONSTRUCTORS-------------------------
+    public Payment(String paymentType, Date paymentDateTime, double paymentAmount)
+    {
+        super();
+        this.paymentType = paymentType;
+        this.paymentDateTime = paymentDateTime;
+        this.paymentAmount = paymentAmount;
+    }
+
+    public Payment()
+    {
+    }
+    //- ------------------------GETTER/SETTER---------------------
+
+
+    public int getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(int paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public Date getPaymentDateTime() {
+        return paymentDateTime;
+    }
+
+    public void setPaymentDateTime(Date paymentDateTime) {
+        this.paymentDateTime = paymentDateTime;
+    }
+
+    public double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(double paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "paymentId=" + paymentId +
+                ", paymentType='" + paymentType + '\'' +
+                ", paymentDateTime=" + paymentDateTime +
+                ", paymentAmount=" + paymentAmount +
+                '}';
+    }
+}

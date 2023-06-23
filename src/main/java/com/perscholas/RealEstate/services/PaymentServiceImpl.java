@@ -2,7 +2,9 @@ package com.perscholas.RealEstate.services;
 
 
 import com.perscholas.RealEstate.entities.Customer;
+import com.perscholas.RealEstate.entities.Payment;
 import com.perscholas.RealEstate.repositories.CustomerRepository;
+import com.perscholas.RealEstate.repositories.PaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,33 +12,32 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-//@Primary
-public class CustomerServiceImpl implements CustomerService
+public class PaymentServiceImpl implements PaymentService
 {
     //-----------------------------VARIABLES-------------------------------------
-    private CustomerRepository customerRepository;
-    private Customer customer;
+    private PaymentRepository paymentRepository;
+    private Payment payment;
 
     //-----------------------------CONSTRUCTOR-------------------------------------
     @Autowired
-    public CustomerServiceImpl(CustomerRepository customerRepository)
+    public PaymentServiceImpl(PaymentRepository paymentRepository)
     {
-        this.customerRepository = customerRepository;
+        this.paymentRepository = paymentRepository;
     }
 
 
     //-----------------------------METHODS------------------------------------
     @Override
-    public List<Customer> getAllCustomers()
+    public List<Payment> getAllPayments()
     {
-        return customerRepository.findAll();
+        return paymentRepository.findAll();
     }
 
 
     @Override
-    public void saveCustomer(Customer customer)
+    public void savePayment(Payment payment)
     {
-        customerRepository.save(customer);
+        paymentRepository.save(payment);
     }
 
 
@@ -49,18 +50,18 @@ public class CustomerServiceImpl implements CustomerService
      * @return      Employee object
      */
     @Override
-    public Customer getCustomerById(int id)
+    public Payment getPaymentById(int id)
     {
 
-        Optional<Customer> optionalCustomer = customerRepository.findById(id);
-        if (optionalCustomer.isPresent()) {
-            Customer customer = optionalCustomer.get();
-            return customer;
+        Optional<Payment> optionalPayment = paymentRepository.findById(id);
+        if (optionalPayment.isPresent()) {
+            Payment payment = optionalPayment.get();
+            return payment;
         }
         throw new CustomerNotFoundException();
     }
 
-//    @Override
+    //    @Override
 //    public Customer getCustomerByName(String name)
 //    {
 //        Customer employee = customerRepository.findFirstByName(name);
@@ -71,8 +72,8 @@ public class CustomerServiceImpl implements CustomerService
 //    }
 //
     @Override
-    public void deleteCustomerById(int id)
+    public void deletePaymentById(int id)
     {
-        customerRepository.deleteById(id);
+        paymentRepository.deleteById(id);
     }
 }
