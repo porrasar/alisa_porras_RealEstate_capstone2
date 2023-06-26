@@ -16,7 +16,7 @@ public class MainController
    @GetMapping("/")
    public String rootHomePage()
     {
-        return "html/home_page_general"
+        return "html/home_page_general"   //ERROR
     }
 
 //NEED TO ADD IF STATEMENTS
