@@ -19,6 +19,7 @@ public class Payment implements Serializable
     private int paymentId;
      private String paymentType;
     private LocalDateTime paymentDateTime;
+//    private java.sql.Timestamp timestamp;
     private double paymentAmount;
 
 
