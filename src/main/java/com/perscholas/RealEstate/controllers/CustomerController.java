@@ -117,6 +117,7 @@ public class CustomerController
         return "html/payment/addPaymentToCustomerPage";
     }
 
+//    @PostMapping("/customerPageHandler/{customerId}/paymentPageHandler")
     @PostMapping("/customerPageHandler/{cId}/paymentPageHandler")
     public String savePaymentToCustomer(@PathVariable int cId,
                                         Model model,
