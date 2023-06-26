@@ -99,6 +99,7 @@ public class CustomerController
             return "html/addCustomerPage";
         }
         // save customer to database
+        logger.info("/////// SAVE CUSTOMER - @PostMapping  //////// :" );
         customerService.saveCustomer(customer);
         return "redirect:/customersListHandler";
     }
@@ -111,7 +112,6 @@ public class CustomerController
         // create model attribute to bind form data
         Payment payment = new Payment();
         model.addAttribute("payment", payment);
-//        model.addAttribute("customerId", cId);
         model.addAttribute("cId", cId);
         logger.info("/////// ADD PAYMENT TO CUSTOMER - @GETMAPPING  //////// :" + cId );
         return "html/payment/addPaymentToCustomerPage";
@@ -126,20 +126,20 @@ public class CustomerController
                                         BindingResult bindingResult)
     {
 
-        logger.info("/////// BEGINNING - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+
         //go get customer with the customerId that was passed in addPaymentToCustomer()
         Customer customer = customerService.getCustomerById(cId);
         logger.info("/////// MIDDLE - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
         if (bindingResult.hasErrors())
         {
-            logger.info("/////// IF STATEMENT - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
             return "html/updateCustomerPage";
         }
-        logger.info("/////// BEFORE LIST - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+        logger.info("/////// CUST ENTITY - BEFORE LIST - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
         List<Payment> paymentList = customer.getPaymentList();
         paymentList.add(payment);
+        logger.info("/////// CUST ENTITY - PAY TO PAY LIST - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
         customerService.saveCustomer(customer);
-        logger.info("/////// END - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+        logger.info("/////// CUST ENTITY - END - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
         return "redirect:/customersListHandler";
 
     }

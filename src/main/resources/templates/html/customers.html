@@ -16,6 +16,7 @@
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+    <link href="../static/pages.css" th:href="@{pages.css}" type="text/css" rel="stylesheet"/>
 
 
 </head>
@@ -46,12 +47,10 @@
             <td th:text="${customer.state}"></td>
             <td th:text="${customer.zip}"></td>
             <td>
-                <a th:href="@{/updateCustomerPage/{id}(id=${customer.id})}" class="btn btn-primary">Customer Details</a>
+                <a th:href="@{/updateCustomerPage/{id}(id=${customer.cId})}" class="btn btn-primary">Customer Details</a>
 
-               <a th:href="@{/deleteCustomerPage/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
-               <!--
-               <a href="confirmDeletePage">Delete, confirm </a>
-               -->
+               <a th:href="@{/deleteCustomerPage/{id}(id=${customer.cId})}" class="btn btn-danger">Delete</a>
+
              </td>
         </tr>
         </tbody>

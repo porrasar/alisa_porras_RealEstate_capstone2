@@ -17,8 +17,7 @@ public class Customer implements Serializable
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerId;
-//    private int cId;
+    private int cId;
     @NotNull
     @Size(min=2, max=30)
     private String name;
@@ -29,18 +28,13 @@ public class Customer implements Serializable
 
 
     @OneToMany(cascade = {CascadeType.ALL})
-    private List<Payment> paymentList;
+    private List <Payment> paymentList;
 
     //--------------------------CONSTRUCTOR--------------
 
 
-//    public Customer(String name, String address, String city, String state, Integer zip)
-    public Customer(int customerId, String name, String address, String city, String state, Integer zip)
-//    public Customer(int id, String name, String address, String city, String state, Integer zip)
-//    //    public Customer(int cId, String name, String address, String city, String state, Integer zip)
-    {
-        //        this.cId = cId;
-        this.customerId = customerId;
+    public Customer(int cId, String name, String address, String city, String state, Integer zip) {
+        this.cId = cId;
         this.name = name;
         this.address = address;
         this.city = city;
@@ -53,24 +47,13 @@ public class Customer implements Serializable
     }
     //- ------------------------GETTER/SETTER---------------------
 
-    public int getId() {
-        return customerId;
+    public int getcId() {
+        return cId;
     }
 
-    public void setId(int id) {
-        this.customerId = customerId;
+    public void setcId(int cId) {
+        this.cId = cId;
     }
-
-//    public int getCustomerId() {
-//        return customerId;
-//    }
-//
-//    public void setCustomerId(int customerId) {
-//        this.customerId = customerId;
-//    }
-
-
-
 
     public String getName() {
         return name;
@@ -120,17 +103,16 @@ public class Customer implements Serializable
         this.paymentList = paymentList;
     }
 
-//    @Override
-//    public String toString() {
-//        return "Customer{" +
-//                "id=" + customerId +
-//                ", name='" + name + '\'' +
-//                ", address='" + address + '\'' +
-//                ", city='" + city + '\'' +
-//                ", state='" + state + '\'' +
-//                ", zip=" + zip +
-//                ", paymentList=" + paymentList +
-//                '}';
-//    }
-
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "cId=" + cId +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", zip=" + zip +
+                ", paymentList=" + paymentList +
+                '}';
+    }
 }

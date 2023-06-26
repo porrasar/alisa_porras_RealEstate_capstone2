@@ -147,13 +147,13 @@ public class DepartmentController
         }
 
         List<Customer> customerList = department.getCustomerList();
-        logger.info("/////// OUT OF IF STATEMENT - ADD CUST TO DEPARTMENT - AFTER LISTING @POSTMAPPING//////// :" + departmentId);
+        logger.info("/////// DEPARTMENT ENTITY - ADD CUST TO DEPARTMENT - AFTER LISTING @POSTMAPPING//////// :" + departmentId);
 
         customerList.add(customer);
-        logger.info("/////// OUT OF IF STATEMENT - ADD CUST TO DEPARTMENT - AFTER LISTING ADDING @POSTMAPPING//////// :" + departmentId);
+        logger.info("/////// DEPARTMENT ENTITY - ADD CUST TO DEPARTMENT - AFTER LISTING ADDING @POSTMAPPING//////// :" + departmentId);
 
         departmentService.saveDepartment(department);
-        logger.info("/////// OUT OF IF STATEMENT - ADD CUST TO DEPARTMENT - AFTER ADDING TO DEPARTMENT @POSTMAPPING//////// :" + departmentId);
+        logger.info("///////DEPARTMENT ENTITY - ADD CUST TO DEPARTMENT - AFTER ADDING TO DEPARTMENT @POSTMAPPING//////// :" + departmentId);
 
         return "redirect:/departmentsListHandler";
     }

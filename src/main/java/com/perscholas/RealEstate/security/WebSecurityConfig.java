@@ -27,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
         http.authorizeRequests(requests -> requests
                         .mvcMatchers("/login").permitAll()
                         .mvcMatchers("/signup").permitAll()
+//                        .mvcMatchers("/home_page_general").permitAll()
 
                         .mvcMatchers("/addNewDepartmentPage").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/deleteDepartmentPageHandler/**").hasAnyRole("SUPERADMIN")
@@ -95,6 +96,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                 .ignoring()
                 .antMatchers("/static/**")
                 .antMatchers("/**/*.css")
+//                .antMatchers("/**/*.gif")
+//                .antMatchers("/**/*.jpg")
+//                .antMatchers("/**/*.mp4")
                 .antMatchers("/h2-console/**");
     }
 }
