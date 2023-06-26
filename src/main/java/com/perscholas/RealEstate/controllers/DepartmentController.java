@@ -47,8 +47,8 @@ public class DepartmentController
     //-------------------METHODS -----------------------------------------------------------
 
 
-    //---------------------LIST ALL CUSTOMERS -----------
-    //display initial view/html page, list of all customers
+    //---------------------LIST ALL DEPARTMENTS -----------
+    //display initial view/html page, list of all departments
     @GetMapping("/departmentsListHandler")
     public String getAllDepartment(Model model)
     {
@@ -107,10 +107,13 @@ public class DepartmentController
     {
         if (bindingResult.hasErrors())
         {
+
+            logger.info("/////// IN IF STATEMENT - SAVE UPDATE DEPARTMENT //////// :");
             return "html/addDepartmentPage";
         }
         // save customer to database
         departmentService.saveDepartment(department);
+        logger.info("///////  SAVE UPDATE DEPARTMENT //////// :");
         return "redirect:/departmentsListHandler";
 
 
@@ -142,12 +145,17 @@ public class DepartmentController
         {
             return "html/updateDepartmentPage";
         }
+
         List<Customer> customerList = department.getCustomerList();
+        logger.info("/////// OUT OF IF STATEMENT - ADD CUST TO DEPARTMENT - AFTER LISTING @POSTMAPPING//////// :" + departmentId);
+
         customerList.add(customer);
+        logger.info("/////// OUT OF IF STATEMENT - ADD CUST TO DEPARTMENT - AFTER LISTING ADDING @POSTMAPPING//////// :" + departmentId);
+
         departmentService.saveDepartment(department);
+        logger.info("/////// OUT OF IF STATEMENT - ADD CUST TO DEPARTMENT - AFTER ADDING TO DEPARTMENT @POSTMAPPING//////// :" + departmentId);
 
         return "redirect:/departmentsListHandler";
-//        return "redirect:/departmentsListHandler" + departmentId;
     }
 
 }//departmentcontroller end

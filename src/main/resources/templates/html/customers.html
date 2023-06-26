@@ -46,16 +46,13 @@
             <td th:text="${customer.state}"></td>
             <td th:text="${customer.zip}"></td>
             <td>
-                <a th:href="@{/updateCustomerPage/{id}(id=${customer.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/updateCustomerPage/{id}(id=${customer.id})}" class="btn btn-primary">Customer Details</a>
 
-                <a th:href="@{/deleteCustomerPage/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
-
-                <!--
-                <a href="confirmDeletePage">Delete, confirm </a>
-                -->
+               <a th:href="@{/deleteCustomerPage/{id}(id=${customer.id})}" class="btn btn-danger">Delete</a>
+               <!--
+               <a href="confirmDeletePage">Delete, confirm </a>
+               -->
              </td>
-
-
         </tr>
         </tbody>
     </table>
@@ -76,7 +73,7 @@
 
 
 <br></br>
-<a href="home_page.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
+<a href="home_page_general.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
 
 
 -->

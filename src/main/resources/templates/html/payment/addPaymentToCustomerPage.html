@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="ISO-8859-1">
+  <title>Add a payment to customer - BTB (Blessed To Bless) Properties, Inc.</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+  <h1>Add A Payment To A Customer</h1>
+  <hr>
+<!--
+  <form action="#" th:action="@{/customerPageHandler/{customerId}/paymentPageHandler(customerId=${customerId})}" th:object="${payment}" method="POST">
+  -->
+    <form action="#" th:action="@{/customerPageHandler/{cId}/paymentPageHandler(cId=${cId})}" th:object="${payment}" method="POST">
+    <input type="text" th:field="*{paymentType}" placeholder="Payment Type" class="form-control mb-4 col-4" >
+    <div th:if="${#fields.hasErrors('paymentType')}" th:errors="*{paymentType}"> Payment Type Error</div>
+
+    <input type="text" th:field="*{paymentDateTime}" placeholder="Payment Date and Time" class="form-control mb-4 col-4">
+
+    <input type="text" th:field="*{paymentAmount}" placeholder="Payment Amount" class="form-control mb-4 col-4">
+
+
+    <button type="submit" class="btn btn-info col-2"> Save Payment to a customer</button>
+  </form>
+  <hr>
+  <a th:href="@{/}"> Back to Customer List</a>
+</div>
+</body>
+
+</html>
+

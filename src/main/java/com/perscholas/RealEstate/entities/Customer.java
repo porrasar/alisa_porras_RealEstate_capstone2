@@ -18,6 +18,7 @@ public class Customer implements Serializable
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerId;
+//    private int cId;
     @NotNull
     @Size(min=2, max=30)
     private String name;
@@ -32,8 +33,13 @@ public class Customer implements Serializable
 
     //--------------------------CONSTRUCTOR--------------
 
+
+//    public Customer(String name, String address, String city, String state, Integer zip)
     public Customer(int customerId, String name, String address, String city, String state, Integer zip)
+//    public Customer(int id, String name, String address, String city, String state, Integer zip)
+//    //    public Customer(int cId, String name, String address, String city, String state, Integer zip)
     {
+        //        this.cId = cId;
         this.customerId = customerId;
         this.name = name;
         this.address = address;
@@ -54,6 +60,17 @@ public class Customer implements Serializable
     public void setId(int id) {
         this.customerId = customerId;
     }
+
+//    public int getCustomerId() {
+//        return customerId;
+//    }
+//
+//    public void setCustomerId(int customerId) {
+//        this.customerId = customerId;
+//    }
+
+
+
 
     public String getName() {
         return name;
@@ -103,16 +120,17 @@ public class Customer implements Serializable
         this.paymentList = paymentList;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + customerId +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zip=" + zip +
-                ", paymentList=" + paymentList +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Customer{" +
+//                "id=" + customerId +
+//                ", name='" + name + '\'' +
+//                ", address='" + address + '\'' +
+//                ", city='" + city + '\'' +
+//                ", state='" + state + '\'' +
+//                ", zip=" + zip +
+//                ", paymentList=" + paymentList +
+//                '}';
+//    }
+
 }

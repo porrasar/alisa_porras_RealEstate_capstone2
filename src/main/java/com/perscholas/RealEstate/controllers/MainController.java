@@ -16,6 +16,19 @@ public class MainController
    @GetMapping("/")
    public String rootHomePage()
     {
-        return "html/home_page";
+        return "html/home_page_general"
+    }
+
+//NEED TO ADD IF STATEMENTS
+    @GetMapping("/tempCustButtonHandler")
+    public String rootCustomerHomePage()
+    {
+        return "html/home_page_customer";
+    }
+
+    @GetMapping("/tempAdminButtonHandler")
+    public String rootAdminHomePage()
+    {
+        return "html/home_page_admin";
     }
 }

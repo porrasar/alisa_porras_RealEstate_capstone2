@@ -15,11 +15,9 @@
   <a th:href="@{/addCustomerToDepartPageHandler/{dId}(dId=${department.departmentId})}" class="btn btn-primary btn-sm mb-3"> Add Customer To Department</a>
 
   <form action="#" th:action="@{/saveDepartment}" th:object="${department}" method="POST">
-
     <!--
     <input type="hidden" th:field="*{departmentId}" />
 -->
-
     <input type="text" th:field="*{departmentId}" placeholder="Department Id" class="form-control mb-4 col-4"/>
     <input type="text" th:field="*{departmentName}" placeholder="Department Name" class="form-control mb-4 col-4">
 

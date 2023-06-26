@@ -25,7 +25,7 @@ public class Department implements Serializable
 
         public Department(int departmentId, String departmentName)
         {
-        super();
+        //super();
         this.departmentId = departmentId;
         this.departmentName = departmentName;
     }

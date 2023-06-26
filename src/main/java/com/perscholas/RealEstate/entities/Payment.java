@@ -3,6 +3,8 @@ package com.perscholas.RealEstate.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -16,12 +18,12 @@ public class Payment implements Serializable
 
     private int paymentId;
      private String paymentType;
-    private Date paymentDateTime;
+    private LocalDateTime paymentDateTime;
     private double paymentAmount;
 
 
     //----------------------------------CONSTRUCTORS-------------------------
-    public Payment(String paymentType, Date paymentDateTime, double paymentAmount)
+      public Payment(String paymentType, LocalDateTime paymentDateTime, double paymentAmount)
     {
         super();
         this.paymentType = paymentType;
@@ -51,11 +53,11 @@ public class Payment implements Serializable
         this.paymentType = paymentType;
     }
 
-    public Date getPaymentDateTime() {
+    public LocalDateTime getPaymentDateTime() {
         return paymentDateTime;
     }
 
-    public void setPaymentDateTime(Date paymentDateTime) {
+    public void setPaymentDateTime(LocalDateTime paymentDateTime) {
         this.paymentDateTime = paymentDateTime;
     }
 

@@ -12,16 +12,18 @@
 <div class="container">
     <h2>Update Payment</h2>
 
+
+
     <form action="#" th:action="@{/savePayment}" th:object="${payment}" method="POST">
 
         <!-- Add hidden form field to handle update -->
-        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{paymentId}" />
 
-        <input type="text" th:field="*{paymentType}" placeholder="Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{paymentType}" placeholder="Payment Type" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{paymentDate}" placeholder="Address" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{paymentDateTime}" placeholder="Payment Date & Time" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{paymentAmount}"  placeholder="City" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{paymentAmount}"  placeholder="Payment Amount" class="form-control mb-4 col-4">
 
         <button type="submit" class="btn btn-info col-2"> Update Payment</button>
     </form>

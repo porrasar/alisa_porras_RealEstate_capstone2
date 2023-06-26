@@ -35,7 +35,7 @@ public class PaymentController
 
     //-----------------CONSTRUCTOR----------------------------------------------------------
     @Autowired
-    public PaymentController(PaymentService paymentService1)
+    public PaymentController(PaymentService paymentService)
     {
         this.paymentService = paymentService;
     }
@@ -55,7 +55,7 @@ public class PaymentController
         // the 2nd 'departments' is the object variable for the list type
         logger.info("/////// LIST OF DEPARTMENTS ////////" + repository.findAll());
         model.addAttribute("payments", payments);
-        return "html/PaymentPage";
+        return "html/Payment/PaymentPage";
 
     }
 
@@ -67,7 +67,7 @@ public class PaymentController
         // create model attribute to bind form data
         Payment payment = new Payment();
         model.addAttribute("payment", payment);
-        return "html/addPaymentPage";
+        return "html/Payment/addPaymentPage";
     }
 
     //---------------------DELETE A PAYMENT -----------
@@ -90,7 +90,7 @@ public class PaymentController
 
         // set payment as a model attribute to pre-populate the form
         model.addAttribute("payment", payment);
-        return "html/updatePaymentPage";
+        return "html/Payment/updatePaymentPage";
     }
 
     //---------------------SAVE DATA TO DATABASE -----------

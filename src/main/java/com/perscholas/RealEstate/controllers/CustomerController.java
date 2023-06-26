@@ -3,6 +3,7 @@ package com.perscholas.RealEstate.controllers;
 import com.perscholas.RealEstate.entities.Customer;
 import com.perscholas.RealEstate.entities.Department;
 import com.perscholas.RealEstate.entities.Payment;
+import com.perscholas.RealEstate.entities.Payment;
 import com.perscholas.RealEstate.repositories.CustomerRepository;
 import com.perscholas.RealEstate.services.CustomerService;
 import org.slf4j.Logger;
@@ -39,18 +40,20 @@ public class CustomerController
 
     //-------------------METHODS -----------------------------------
 
+
+    //---------------------LIST ALL CUSTOMERS -----------
     //display initial view/html page, list of all customers
     @GetMapping("/customersListHandler")
     public String getAllCustomers(Model model)
     {
         List<Customer> customers = repository.findAll();
         model.addAttribute("customers", customers);
-        System.out.println("//////////////////////IN CUSTOMER LIST //////////////////////////////////");
+        logger.info("/////// LIST CUSTOMERS //////// " );
         return "html/customers";
     }
 
 
-    //Add a new customer
+    //---------------------ADD NEW CUSTOMER -----------
     @GetMapping("/addNewCustomerForm")
     public String addNewCustomerForm(Model model)
     {
@@ -60,6 +63,7 @@ public class CustomerController
         return "html/addCustomerPage";
     }
 
+    //---------------------DELETE A CUSTOMER -----------
     @GetMapping("/deleteCustomerPage/{id}")
     public String deleteCustomerPage(@PathVariable(value = "id") int id)
     {
@@ -70,6 +74,7 @@ public class CustomerController
     }
 
 
+    //---------------------UPDATE A CUSTOMER -----------
     @GetMapping("/updateCustomerPage/{id}")
     public String updateCustomerPage(@PathVariable(value = "id") int id, Model model)
     {
@@ -78,9 +83,12 @@ public class CustomerController
 
         // set employee as a model attribute to pre-populate the form
         model.addAttribute("customer", customer);
+        logger.info("/////// UPDATE CUSTOMER - @GETMAPPING  //////// :" + id );
         return "html/updateCustomerPage";
     }
 
+
+    //---------------------SAVE DATA TO DATABASE -----------
     //Save user data to database
     @PostMapping("/saveCustomer")
     public String saveCustomer(@ModelAttribute("customer") @Valid Customer customer,
@@ -103,28 +111,35 @@ public class CustomerController
         // create model attribute to bind form data
         Payment payment = new Payment();
         model.addAttribute("payment", payment);
-        model.addAttribute("customerId", cId);
-        return "html/addPaymentToCustomerPage";
+//        model.addAttribute("customerId", cId);
+        model.addAttribute("cId", cId);
+        logger.info("/////// ADD PAYMENT TO CUSTOMER - @GETMAPPING  //////// :" + cId );
+        return "html/payment/addPaymentToCustomerPage";
     }
 
-    @PostMapping("/customerPageHandler/{customerId}/paymentPageHandler")
-    public String savePaymentToCustomer(@PathVariable int customerId,
+//    @PostMapping("/customerPageHandler/{customerId}/paymentPageHandler")
+    @PostMapping("/customerPageHandler/{cId}/paymentPageHandler")
+    public String savePaymentToCustomer(@PathVariable int cId,
                                         Model model,
                                         @ModelAttribute ("payment")
                                         @Valid Payment payment,
                                         BindingResult bindingResult)
     {
-        //go get customer with the customerId that was passed in addPaymentToCustomer()
-        Customer customer = customerService.getCustomerById(customerId);
 
+        logger.info("/////// BEGINNING - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+        //go get customer with the customerId that was passed in addPaymentToCustomer()
+        Customer customer = customerService.getCustomerById(cId);
+        logger.info("/////// MIDDLE - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
         if (bindingResult.hasErrors())
         {
+            logger.info("/////// IF STATEMENT - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
             return "html/updateCustomerPage";
         }
+        logger.info("/////// BEFORE LIST - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
         List<Payment> paymentList = customer.getPaymentList();
         paymentList.add(payment);
         customerService.saveCustomer(customer);
-
+        logger.info("/////// END - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
         return "redirect:/customersListHandler";
 
     }

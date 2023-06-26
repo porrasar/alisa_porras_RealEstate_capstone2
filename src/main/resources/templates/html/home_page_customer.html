@@ -56,19 +56,21 @@ background-position: right top;
     <img src="cross_in_sky.jpg"  alt="" width="2" height="2"><h1>BTB (Blessed To Bless) Properties, Inc.</h1>
 </div>
 <!--     HEADER ENDING -----------------------  -->
-
+<h2>Customer page</h2>
 
 <!--     BUTTONS BEGINNING -----------------------  -->
 
 <div class="container-fluid mt-3 text-center">
-    <a href="sign_in.html"  class="btn btn-success" target="_blank" text-align="right">Sign In</a>
-	
 
-     <a href="maintenance_companies.html"  class="btn btn-success" target="_blank" data-bs-toggle="tooltip" title="Need something fixed">Maintenance Companies</a>
+    <a href="about.html"  class="btn btn-success" target="_blank" data-bs-toggle="tooltip" title="About Info">Account info </a>
+
+     <a href="html/maintenance_companies.html"  class="btn btn-success" target="_blank" data-bs-toggle="tooltip" title="Need something fixed">Maintenance Companies</a>
 	 
-    <a href="contact_us.html"  class="btn btn-success" target="_blank">Contact Us</a>
+    <a href="contact_us.html"  class="btn btn-success" target="_blank">Make a payment</a>
 	
-	<a href="about.html"  class="btn btn-success" target="_blank" data-bs-toggle="tooltip" title="About Info">About </a>
+	<a href="about.html"  class="btn btn-success" target="_blank" data-bs-toggle="tooltip" title="About Info">Schedule Appointment </a>
+
+
 	<br></br>
     
 
@@ -85,15 +87,6 @@ background-position: right top;
 
 </div>
 <!---------     BUTTONS ENDING -----------------------  -->
-<br></br>
-
-<a th:href="@{/departmentsListHandler}" class="btn btn-primary btn-sm mb-3"> Department Info</a>
-
-
-<a th:href="@{/customersListHandler}" class="btn btn-primary btn-sm mb-3"> Customer Info</a>
-
-<a th:href="@{/housesListHandler}" class="btn btn-primary btn-sm mb-3"> House Info</a>
-
 
 <div class="container my-2">
     <a th:href="@{/logout}" class="btn btn-primary btn-sm mb-3"> Log out </a>
@@ -102,37 +95,7 @@ background-position: right top;
 
 
 
-
-
-
-
-<!--     OPEN CLOSED QUESTION  BEGINNING-----------------------  -->
-<br></br>
-
-<div class="container">
-<p>Are we opened or closed?</p>
-
-<p id="demo"></p>
-
-<script>
-const time = new Date().getHours();
-let greeting;
-if (time > 8 && time < 21) 
-{
-  greeting = "Hello, we're open until 9 PM EST!";
-} 
-else
-if (time > 21 && time < 8)
- {
-  greeting = "Sorry, we're closed. We will open at 8 AM EST.";
-} else {
-  greeting = "Sorry, we're closed. We will open at 8 AM EST.";
-}
-document.getElementById("demo").innerHTML = greeting;
-</script>
-</div>
-<!--     OPEN CLOSED QUESTION ENDING -----------------------  -->
-
+<a th:href="@{/}"> Back to Home Page</a>
 
 </body>
 
