@@ -19,19 +19,19 @@ public class Payment implements Serializable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int paymentId;
-     private String paymentType;
+    private String paymentType;
     private double paymentAmount;
+    private Date paymentTransactionDate;
     @CreationTimestamp
     private LocalDateTime createdDateTime;
 
 
     //----------------------------------CONSTRUCTORS-------------------------
-
-
-    public Payment(int paymentId, String paymentType, double paymentAmount, LocalDateTime createdDateTime) {
+    public Payment(int paymentId, String paymentType, double paymentAmount, Date paymentTransactionDate, LocalDateTime createdDateTime) {
         this.paymentId = paymentId;
         this.paymentType = paymentType;
         this.paymentAmount = paymentAmount;
+        this.paymentTransactionDate = paymentTransactionDate;
         this.createdDateTime = createdDateTime;
     }
 
@@ -65,6 +65,14 @@ public class Payment implements Serializable
         this.paymentAmount = paymentAmount;
     }
 
+    public Date getPaymentTransactionDate() {
+        return paymentTransactionDate;
+    }
+
+    public void setPaymentTransactionDate(Date paymentTransactionDate) {
+        this.paymentTransactionDate = paymentTransactionDate;
+    }
+
     public LocalDateTime getCreatedDateTime() {
         return createdDateTime;
     }
@@ -79,6 +87,7 @@ public class Payment implements Serializable
                 "paymentId=" + paymentId +
                 ", paymentType='" + paymentType + '\'' +
                 ", paymentAmount=" + paymentAmount +
+                ", paymentTransactionDate=" + paymentTransactionDate +
                 ", createdDateTime=" + createdDateTime +
                 '}';
     }
