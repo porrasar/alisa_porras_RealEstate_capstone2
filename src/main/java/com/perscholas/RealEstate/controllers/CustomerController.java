@@ -129,7 +129,7 @@ public class CustomerController
 
         //go get customer with the customerId that was passed in addPaymentToCustomer()
         Customer customer = customerService.getCustomerById(cId);
-        logger.info("/////// MIDDLE - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+
         if (bindingResult.hasErrors())
         {
             return "html/updateCustomerPage";
