@@ -1,6 +1,8 @@
 package com.perscholas.RealEstate.entities;
 
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -18,17 +20,19 @@ public class Payment implements Serializable
 
     private int paymentId;
      private String paymentType;
-    private LocalDateTime paymentDateTime;
     private double paymentAmount;
+    @CreationTimestamp
+    private LocalDateTime createdDateTime;
 
 
     //----------------------------------CONSTRUCTORS-------------------------
-      public Payment(String paymentType, LocalDateTime paymentDateTime, double paymentAmount)
-    {
-        super();
+
+
+    public Payment(int paymentId, String paymentType, double paymentAmount, LocalDateTime createdDateTime) {
+        this.paymentId = paymentId;
         this.paymentType = paymentType;
-        this.paymentDateTime = paymentDateTime;
         this.paymentAmount = paymentAmount;
+        this.createdDateTime = createdDateTime;
     }
 
     public Payment()
@@ -53,15 +57,7 @@ public class Payment implements Serializable
         this.paymentType = paymentType;
     }
 
-    public LocalDateTime getPaymentDateTime() {
-        return paymentDateTime;
-    }
-
-    public void setPaymentDateTime(LocalDateTime paymentDateTime) {
-        this.paymentDateTime = paymentDateTime;
-    }
-
-    public double getPaymentAmount() {
+     public double getPaymentAmount() {
         return paymentAmount;
     }
 
@@ -69,13 +65,21 @@ public class Payment implements Serializable
         this.paymentAmount = paymentAmount;
     }
 
+    public LocalDateTime getCreatedDateTime() {
+        return createdDateTime;
+    }
+
+    public void setCreatedDateTime(LocalDateTime createdDateTime) {
+        this.createdDateTime = createdDateTime;
+    }
+
     @Override
     public String toString() {
         return "Payment{" +
                 "paymentId=" + paymentId +
                 ", paymentType='" + paymentType + '\'' +
-                ", paymentDateTime=" + paymentDateTime +
                 ", paymentAmount=" + paymentAmount +
+                ", createdDateTime=" + createdDateTime +
                 '}';
     }
 }

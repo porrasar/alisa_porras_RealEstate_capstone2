@@ -19,8 +19,6 @@
     <input type="text" th:field="*{paymentType}" placeholder="Payment Type" class="form-control mb-4 col-4" >
     <div th:if="${#fields.hasErrors('paymentType')}" th:errors="*{paymentType}"> Payment Type Error</div>
 
-    <input type="text" th:field="*{paymentDateTime}" placeholder="Payment Date and Time" class="form-control mb-4 col-4">
-
     <input type="text" th:field="*{paymentAmount}" placeholder="Payment Amount" class="form-control mb-4 col-4">
 
 

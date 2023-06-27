@@ -40,7 +40,7 @@
         <tr th:each="payment : ${payments}">  <!-- 'payment' is my object variable from payment class.
                                                           'payments' is a made up name, for the key, of the key, valued pair of the Model class   -->
             <td th:text="${payment.paymentId}"></td>
-            <td th:text="${payment.paymentDateTime}"></td>
+
             <td th:text="${payment.paymentAmount}"></td>
 
             <td>

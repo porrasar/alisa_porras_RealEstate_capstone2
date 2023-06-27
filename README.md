@@ -4,15 +4,26 @@
 BTB (Blessed To Bless) Properties, Inc. RealEstate is a web-based application 
 intended to be used in house by a real estate investment business owner and 
 customers (current tenants and potential tenants).
-The application will be used for the
-- owners: to add and maintain customer information, list properties available for rent and sale
-- customer (current): - to have the ability to access general information about the company
-                      - access our approved maintenance company 
-                      - make appointments (talk to owners, repair an issue, inspections, etc) 
-                      - access, update and make payments to their account 
-- customer (potential): - to have the ability to access general information about the company
-                        - make appointments (talk to owners, tour of houses, etc)
-                        - make payments for application fees
+
+Currently, the owner keeps records of notes and customer transactions in a spreadsheet.
+The customer does not have the ability to access their transactions (i.e. payments, repairs made, lease, etc.).
+
+The application will be used for the:
+- owners: 
+    - to add, update, delete customer information
+    - list properties available for rent and sale
+    - 
+- customer (current): 
+    - to have the ability to access general information about the company
+    - view a list of properties available for rent or sale
+    - access our approved maintenance companies for repairs 
+    - view their account information
+    - update certain information in their account (i.e. phone number, etc.)        
+
+- customer (potential): 
+   - to have the ability to access general information about the company
+   - view a list of properties available for rent or sale 
+
 
 ## ------------------------------------------------------------------------------------------
 ##    ////////////come back to this part//////////////  
@@ -197,16 +208,15 @@ Potential Customer (someone visiting the web page or interested in our propertie
 - Project management and setting priorities and daily goals using a tool like Jira was very helpful.
 
 ## ------------------------- FUTURE IMPROVEMENTS ---------------------------------
-- Add functionality for an admin to create, read, update, delete:
-  - ingredients 
-  - list of ingredients with associated amount for each menu item. 
-  - a kitchen pick sheet after the order is submitted
-- Allow customers to log in as users, save the following customer information and use them for the order:
-  - first name
-  - last name
-  - address
-  - phone number
-  - credit card information
-- List menu item with associated total quantity ordered so that the business owner knows which menu items are popular.
+- Add functionality for:
+  - Owners:
+ 
+  - customer (current):
+    - make appointments (talk to owners, to repair an issue, inspections, etc.) 
+    - make payments to their account 
+
+  - customer (potential):
+    - make appointments (talk to owners, tour of houses, etc)
+    - make payments for application fees
 
 
