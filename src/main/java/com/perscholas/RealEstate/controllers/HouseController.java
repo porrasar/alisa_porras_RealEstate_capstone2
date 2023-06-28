@@ -1,12 +1,12 @@
 package com.perscholas.RealEstate.controllers;
 
 
-import com.perscholas.RealEstate.entities.Customer;
 import com.perscholas.RealEstate.entities.House;
-import com.perscholas.RealEstate.repositories.CustomerRepository;
 import com.perscholas.RealEstate.repositories.HouseRepository;
-import com.perscholas.RealEstate.services.CustomerService;
 import com.perscholas.RealEstate.services.HouseService;
+import com.perscholas.RealEstate.services.MaintenanceService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +28,8 @@ public class HouseController
     @Autowired
     private HouseRepository repository;
 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
     //-----------------CONSTRUCTOR---------------------------------
     @Autowired
     public HouseController(HouseService houseService)
@@ -38,13 +40,22 @@ public class HouseController
     //-------------------METHODS -----------------------------------
 
     //display initial view/html page, list of all customers
-    @GetMapping("/housesListHandler")
-    public String getAllHouses(Model model)
+    @GetMapping("/housesListHandlerAdmin")
+    public String getAllHousesAdmin(Model model)
     {
         List<House> houses = repository.findAll();
         model.addAttribute("houses", houses);
-        return "html/houses";
+        return "html/house_for_Admin";
     }
+
+    @GetMapping("/housesListHandlerCustomer")
+    public String getAllHousesCustomer(Model model)
+    {
+        List<House> houses = repository.findAll();
+        model.addAttribute("houses", houses);
+        return "html/house_for_Customer";
+    }
+
 
 
     //Add a new customer
@@ -62,7 +73,9 @@ public class HouseController
     {
         // call delete house method
         this.houseService.deleteHouseById(id);
-        return "redirect:/housesListHandler";
+        logger.info("///////HOUSE ENTITY - DELETE HOUSE  - AFTER ADDING TO HOUSE @POSTMAPPING//////// :" + id);
+
+        return "redirect:/housesListHandlerAdmin";
 
     }
 
@@ -89,7 +102,7 @@ public class HouseController
         }
         // save house to database
         houseService.saveHouse(house);
-        return "redirect:/housesListHandler";
+        return "redirect:/housesListHandlerAdmin";
     }
 
 }

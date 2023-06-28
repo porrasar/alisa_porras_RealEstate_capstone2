@@ -1,6 +1,5 @@
 package com.perscholas.RealEstate.services;
 
-import com.perscholas.RealEstate.entities.Customer;
 import com.perscholas.RealEstate.entities.House;
 
 import java.util.List;

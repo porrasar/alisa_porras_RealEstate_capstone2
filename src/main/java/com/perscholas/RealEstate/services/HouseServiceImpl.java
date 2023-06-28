@@ -1,10 +1,6 @@
 package com.perscholas.RealEstate.services;
 
-import com.perscholas.RealEstate.entities.Customer;
-import com.perscholas.RealEstate.entities.Department;
 import com.perscholas.RealEstate.entities.House;
-import com.perscholas.RealEstate.repositories.CustomerRepository;
-import com.perscholas.RealEstate.repositories.DepartmentRepository;
 import com.perscholas.RealEstate.repositories.HouseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,7 +40,7 @@ public class HouseServiceImpl implements HouseService
 
 
     /**
-     * Returns an House object based on id argument.
+     * Returns a House object based on id argument.
      * <p>
      * Some more description of the method.
      *
