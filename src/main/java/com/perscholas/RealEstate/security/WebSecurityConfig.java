@@ -12,8 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-//@Configuration
-//@EnableWebSecurity
+@Configuration
+@EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 {
 
@@ -79,7 +79,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                 .roles("USER", "ADMIN", "SUPERADMIN")
 
                 .and()
-                .withUser("karolyn").password(passwordEncoder.encode("karolyn")).roles("USER")
+                .withUser("LYNN").password(passwordEncoder.encode("lynn")).roles("ADMIN")
+
+                .and()
+                .withUser("TOM").password(passwordEncoder.encode("tom")).roles("SUPERADMIN")
 
                 ;
 //                .and()

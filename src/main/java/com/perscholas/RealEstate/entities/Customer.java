@@ -26,20 +26,23 @@ public class Customer implements Serializable
     private String state;
     private Integer zip;
 
+    @NotNull
+    private String userName;
+
 
     @OneToMany(cascade = {CascadeType.ALL})
     private List <Payment> paymentList;
 
     //--------------------------CONSTRUCTOR--------------
 
-
-    public Customer(int cId, String name, String address, String city, String state, Integer zip) {
+    public Customer(int cId, String name, String address, String city, String state, Integer zip, String userName) {
         this.cId = cId;
         this.name = name;
         this.address = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
+        this.userName = userName;
     }
 
     public Customer()
@@ -95,6 +98,14 @@ public class Customer implements Serializable
         this.zip = zip;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUsername(String username) {
+        this.userName = userName;
+    }
+
     public List<Payment> getPaymentList() {
         return paymentList;
     }
@@ -112,6 +123,7 @@ public class Customer implements Serializable
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip=" + zip +
+                ", userName='" + userName + '\'' +
                 ", paymentList=" + paymentList +
                 '}';
     }

@@ -39,8 +39,6 @@ public class CustomerController
     }
 
     //-------------------METHODS -----------------------------------
-
-
     //---------------------LIST ALL CUSTOMERS -----------
     //display initial view/html page, list of all customers
     @GetMapping("/customersListHandler")
@@ -99,7 +97,7 @@ public class CustomerController
             return "html/addCustomerPage";
         }
         // save customer to database
-        logger.info("/////// SAVE CUSTOMER - @PostMapping  //////// :" );
+        logger.info("/////// SAVE CUSTOMER - @PostMapping  //////// :" + customer);
         customerService.saveCustomer(customer);
         return "redirect:/customersListHandler";
     }
