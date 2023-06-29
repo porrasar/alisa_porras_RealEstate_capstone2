@@ -5,8 +5,12 @@ BTB (Blessed To Bless) Properties, Inc. RealEstate is a web-based application
 intended to be used in house by a real estate investment business owner and 
 customers (current tenants and potential tenants).
 
-Currently, the owner keeps records of notes and customer transactions in a spreadsheet.
-The customer does not have the ability to access their transactions (i.e. payments, repairs made, lease, etc.).
+Currently, 
+- the owner keeps records of notes and customer transactions in a spreadsheet
+- payments: there are 3 ways they pay...electronic transfer from their bank to ours, 
+  direct deposit in our account through drive-thru or inside bank, and mail in payment
+- the customer does not have the ability to access their transactions (i.e. payments, repairs made,
+  lease, documents, etc).
 
 The application will be used for the:
 - owners: 

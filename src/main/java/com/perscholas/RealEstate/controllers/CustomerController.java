@@ -9,6 +9,8 @@ import com.perscholas.RealEstate.services.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -142,5 +144,20 @@ public class CustomerController
 
     }
 
+
+    @GetMapping("/myIndividualCustomerHandler")
+    public String showIndividualCustomerInfo(Model model)
+    {
+        UserDetails userPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        String username = userPrincipal.getUsername();
+
+        Customer customer = repository.findByUserName(username);
+
+        model.addAttribute("customer", customer);
+        model.addAttribute("username", username);
+
+        return "html/individualCustomerPage";
+    }
 
 }

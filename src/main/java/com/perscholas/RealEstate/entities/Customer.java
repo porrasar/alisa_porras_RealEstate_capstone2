@@ -25,8 +25,7 @@ public class Customer implements Serializable
     private String city;
     private String state;
     private Integer zip;
-
-    @NotNull
+    private String securityName;
     private String userName;
 
 
@@ -35,13 +34,25 @@ public class Customer implements Serializable
 
     //--------------------------CONSTRUCTOR--------------
 
-    public Customer(int cId, String name, String address, String city, String state, Integer zip, String userName) {
+//    public Customer(int cId, String name, String address, String city, String state, Integer zip, String userName) {
+//        this.cId = cId;
+//        this.name = name;
+//        this.address = address;
+//        this.city = city;
+//        this.state = state;
+//        this.zip = zip;
+//        this.userName = userName;
+//    }
+
+
+    public Customer(int cId, String name, String address, String city, String state, Integer zip, String securityName, String userName) {
         this.cId = cId;
         this.name = name;
         this.address = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
+        this.securityName = securityName;
         this.userName = userName;
     }
 
@@ -98,11 +109,19 @@ public class Customer implements Serializable
         this.zip = zip;
     }
 
+    public String getSecurityName() {
+        return securityName;
+    }
+
+    public void setSecurityName(String securityName) {
+        this.securityName = securityName;
+    }
+
     public String getUserName() {
         return userName;
     }
 
-    public void setUsername(String username) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
@@ -114,6 +133,21 @@ public class Customer implements Serializable
         this.paymentList = paymentList;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Customer{" +
+//                "cId=" + cId +
+//                ", name='" + name + '\'' +
+//                ", address='" + address + '\'' +
+//                ", city='" + city + '\'' +
+//                ", state='" + state + '\'' +
+//                ", zip=" + zip +
+//                ", userName='" + userName + '\'' +
+//                ", paymentList=" + paymentList +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -123,6 +157,7 @@ public class Customer implements Serializable
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip=" + zip +
+                ", securityName='" + securityName + '\'' +
                 ", userName='" + userName + '\'' +
                 ", paymentList=" + paymentList +
                 '}';
