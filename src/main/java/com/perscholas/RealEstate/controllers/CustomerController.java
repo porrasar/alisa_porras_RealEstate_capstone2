@@ -99,7 +99,7 @@ public class CustomerController
             return "html/addCustomerPage";
         }
         // save customer to database
-        logger.info("/////// SAVE CUSTOMER - @PostMapping  //////// :" + customer);
+
         customerService.saveCustomer(customer);
         return "redirect:/customersListHandler";
     }
