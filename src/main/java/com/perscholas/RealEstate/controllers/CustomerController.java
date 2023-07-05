@@ -153,23 +153,38 @@ public class CustomerController
 
 
 
-    //------------------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY---THEY ALREADY HAVE AN ACCOUNT---------------
+    //---------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY BY USERNAME ---THEY ALREADY HAVE AN ACCOUNT---------------
 
     @GetMapping("/myIndividualCustomerHandler")      // this is coming from home_page_customer.html
     public String showIndividualCustomerInfo(Model model)
     {
-
-        logger.info("/////// INDIVIDUAL CUSTOMER - ////////" );
         UserDetails userPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        logger.info("/////// INDIVIDUAL CUSTOMER - BEFORE USERNAME////////" );
+
         String username = userPrincipal.getUsername();
-        logger.info("/////// INDIVIDUAL CUSTOMER - AFTER GET USERNAME////////" );
+
         Customer customer = repository.findByUserName(username);
-        logger.info("/////// INDIVIDUAL CUSTOMER - GET CUSTOMER WITH USERNAME////////" );
+        logger.info("/////// INDIVIDUAL AFTER GETTING CUSTOMER:  //////// :" + username );
         model.addAttribute("customer", customer);
         model.addAttribute("username", username);
-        logger.info("/////// INDIVIDUAL CUSTOMER - GET READY TO DISPLAY INDVID. PAGE////////" );
-        return "html/individualCustomerPage";
+
+        return individualCustomerHtml;
     }
+
+    //---------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY BY LASTNAME ---THEY ALREADY HAVE AN ACCOUNT---------------
+
+//    @GetMapping("/myIndividualCustomerLastNameHandler")      // this is coming from home_page_customer.html
+//    public String showIndividualCustomerInfoByLastName(Model model)
+//    {
+//        UserDetails userPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//
+//        String username = userPrincipal.getUsername();
+//
+//        Customer customer = repository.findByUserName(username);
+//
+//        model.addAttribute("customer", customer);
+//        model.addAttribute("username", username);
+//
+//        return individualCustomerHtml;
+//    }
 
 }

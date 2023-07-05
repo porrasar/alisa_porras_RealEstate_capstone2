@@ -14,7 +14,7 @@ public interface CustomerService
     Customer getCustomerById(int id);
 
 
-//    Customer getCustomerByName(String name);
+//    Customer getCustomerByLastName(String lastName);
 
     void deleteCustomerById(int id);
 }

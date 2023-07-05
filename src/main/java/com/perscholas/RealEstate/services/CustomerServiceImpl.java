@@ -61,13 +61,14 @@ public class CustomerServiceImpl implements CustomerService
     }
 
 //    @Override
-//    public Customer getCustomerByName(String name)
+//    public Customer getCustomerByLastName(String lastName)
 //    {
-//        Customer employee = customerRepository.findFirstByName(name);
-//        if (employee == null) {
+//        Customer customer = customerRepository.findFirstByLastName(lastName);
+//        if (customer == null)
+//        {
 //            throw new CustomerNotFoundException();
 //        }
-//        return employee;
+//        return customer;
 //    }
 //
     @Override

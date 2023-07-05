@@ -15,5 +15,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer>
 
 //    public Customer findByLastName(String lastName);
 
-    public Customer findByUserName(String userName);
+    public Customer findByUserName(String userName);  //used in customerController in "myIndividualCustomerHandler" handler
+
 }
