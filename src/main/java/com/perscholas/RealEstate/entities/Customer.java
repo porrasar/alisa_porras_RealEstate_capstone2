@@ -20,6 +20,8 @@ public class Customer implements Serializable
     private int cId;
     @NotNull
     @Size(min=2, max=30)
+//    private String firstName;
+//    private String lastName;
     private String name;
     private String address;
     private String city;
@@ -34,17 +36,6 @@ public class Customer implements Serializable
 
     //--------------------------CONSTRUCTOR--------------
 
-//    public Customer(int cId, String name, String address, String city, String state, Integer zip, String userName) {
-//        this.cId = cId;
-//        this.name = name;
-//        this.address = address;
-//        this.city = city;
-//        this.state = state;
-//        this.zip = zip;
-//        this.userName = userName;
-//    }
-
-
     public Customer(int cId, String name, String address, String city, String state, Integer zip, String securityName, String userName) {
         this.cId = cId;
         this.name = name;
@@ -55,6 +46,19 @@ public class Customer implements Serializable
         this.securityName = securityName;
         this.userName = userName;
     }
+
+//    public Customer(int cId, String firstName, String lastName, String address, String city, String state,
+//                    Integer zip, String securityName, String userName) {
+//        this.cId = cId;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.address = address;
+//        this.city = city;
+//        this.state = state;
+//        this.zip = zip;
+//        this.securityName = securityName;
+//        this.userName = userName;
+//    }
 
     public Customer()
     {
@@ -76,6 +80,22 @@ public class Customer implements Serializable
     public void setName(String name) {
         this.name = name;
     }
+
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public void setFirstName(String firstName) {
+//        this.firstName = firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
 
     public String getAddress() {
         return address;
@@ -137,11 +157,13 @@ public class Customer implements Serializable
 //    public String toString() {
 //        return "Customer{" +
 //                "cId=" + cId +
-//                ", name='" + name + '\'' +
+//                ", firstName='" + firstName + '\'' +
+//                ", lastName='" + lastName + '\'' +
 //                ", address='" + address + '\'' +
 //                ", city='" + city + '\'' +
 //                ", state='" + state + '\'' +
 //                ", zip=" + zip +
+//                ", securityName='" + securityName + '\'' +
 //                ", userName='" + userName + '\'' +
 //                ", paymentList=" + paymentList +
 //                '}';

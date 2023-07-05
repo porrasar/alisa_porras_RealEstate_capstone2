@@ -14,15 +14,27 @@ public class MainController
     }
 
 //NEED TO ADD IF STATEMENTS
-    @GetMapping("/tempCustButtonHandler")
+    @GetMapping("/custButtonHandler")
     public String rootCustomerHomePage()
     {
         return "html/home_page_customer";
     }
 
-    @GetMapping("/tempAdminButtonHandler")
+    @GetMapping("/adminButtonHandler")
     public String rootAdminHomePage()
     {
         return "html/home_page_admin";
+    }
+
+    @GetMapping("/contactButtonHandler")
+    public String contactPage()
+    {
+        return "html/contact_us";
+    }
+
+    @GetMapping("/aboutButtonHandler")
+    public String aboutPage()
+    {
+        return "html/about";
     }
 }

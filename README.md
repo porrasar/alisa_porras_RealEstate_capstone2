@@ -7,8 +7,8 @@ customers (current tenants and potential tenants).
 
 Currently, 
 - the owner keeps records of notes and customer transactions in a spreadsheet
-- payments: there are 3 ways they pay...electronic transfer from their bank to ours, 
-  direct deposit in our account through drive-thru or inside bank, and mail in payment
+- payments: there are 3 ways tenants pay...electronic transfer from their bank to ours, 
+  direct deposit in our account through drive-thru or inside the bank, and mail in payment
 - the customer does not have the ability to access their transactions (i.e. payments, repairs made,
   lease, documents, etc).
 
@@ -214,6 +214,7 @@ Potential Customer (someone visiting the web page or interested in our propertie
 ## ------------------------- FUTURE IMPROVEMENTS ---------------------------------
 - Add functionality for:
   - Owners:
+    - add customer documents to their account    
  
   - customer (current):
     - make appointments (talk to owners, to repair an issue, inspections, etc.) 

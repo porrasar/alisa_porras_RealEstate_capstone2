@@ -14,8 +14,13 @@ import org.springframework.context.annotation.Bean;
 public class AlisaPorrasRealEstateCapstone2Application
 {
 
+	final String  companyName = "BTB Properties,Inc.";
+
 	public static void main(String[] args)
 	{
+
+
+
 		ConfigurableApplicationContext applicationContext
 		    = SpringApplication.run(AlisaPorrasRealEstateCapstone2Application.class, args);
 
@@ -29,7 +34,14 @@ public class AlisaPorrasRealEstateCapstone2Application
 	@Bean
 	public CommandLineRunner commandLineRunner1()
 	{
-		CommandLineRunner commandLineRunner = args1 -> System.out.println("BTB Properties application started");
+				CommandLineRunner commandLineRunner = args1 -> System.out.println(companyName + " application has started");
+		return  commandLineRunner;
+	}
+
+	@Bean
+	public CommandLineRunner commandLineRunner2()
+	{
+		CommandLineRunner commandLineRunner = args1 -> System.out.println(companyName + " application has started, enjoy!!");
 		return  commandLineRunner;
 	}
 }//class end

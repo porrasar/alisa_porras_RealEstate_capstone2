@@ -32,6 +32,12 @@ public class CustomerController
     private CustomerRepository repository;
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
+    private final String customersHtml = "html/customers";
+    private final String addCustomerHtml = "html/addCustomerPage";
+    private final String updateCustomerHtml = "html/updateCustomerPage";
+
+    private final String individualCustomerHtml = "html/individualCustomerPage";
+
 
     //-----------------CONSTRUCTOR---------------------------------
     @Autowired
@@ -49,7 +55,8 @@ public class CustomerController
         List<Customer> customers = repository.findAll();
         model.addAttribute("customers", customers);
         logger.info("/////// LIST CUSTOMERS //////// " );
-        return "html/customers";
+//        return "html/customers";
+        return customersHtml;
     }
 
 
@@ -60,7 +67,7 @@ public class CustomerController
         // create model attribute to bind form data
         Customer customer = new Customer();
         model.addAttribute("customer", customer);
-        return "html/addCustomerPage";
+        return addCustomerHtml;
     }
 
     //---------------------DELETE A CUSTOMER -----------
@@ -84,7 +91,7 @@ public class CustomerController
         // set employee as a model attribute to pre-populate the form
         model.addAttribute("customer", customer);
         logger.info("/////// UPDATE CUSTOMER - @GETMAPPING  //////// :" + id );
-        return "html/updateCustomerPage";
+        return updateCustomerHtml;
     }
 
 
@@ -96,7 +103,7 @@ public class CustomerController
     {
         if (bindingResult.hasErrors())
         {
-            return "html/addCustomerPage";
+            return addCustomerHtml;
         }
         // save customer to database
 
@@ -117,7 +124,7 @@ public class CustomerController
         return "html/payment/addPaymentToCustomerPage";
     }
 
-//    @PostMapping("/customerPageHandler/{customerId}/paymentPageHandler")
+
     @PostMapping("/customerPageHandler/{cId}/paymentPageHandler")
     public String savePaymentToCustomer(@PathVariable int cId,
                                         Model model,
@@ -132,31 +139,36 @@ public class CustomerController
 
         if (bindingResult.hasErrors())
         {
-            return "html/updateCustomerPage";
+            return updateCustomerHtml;
         }
-        logger.info("/////// CUST ENTITY - BEFORE LIST - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+
         List<Payment> paymentList = customer.getPaymentList();
         paymentList.add(payment);
-        logger.info("/////// CUST ENTITY - PAY TO PAY LIST - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+
         customerService.saveCustomer(customer);
-        logger.info("/////// CUST ENTITY - END - ADD PAYMENT TO CUSTOMER - @PostMapping  //////// :" + cId );
+
         return "redirect:/customersListHandler";
 
     }
 
 
-    @GetMapping("/myIndividualCustomerHandler")
+
+    //------------------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY---THEY ALREADY HAVE AN ACCOUNT---------------
+
+    @GetMapping("/myIndividualCustomerHandler")      // this is coming from home_page_customer.html
     public String showIndividualCustomerInfo(Model model)
     {
+
+        logger.info("/////// INDIVIDUAL CUSTOMER - ////////" );
         UserDetails userPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
+        logger.info("/////// INDIVIDUAL CUSTOMER - BEFORE USERNAME////////" );
         String username = userPrincipal.getUsername();
-
+        logger.info("/////// INDIVIDUAL CUSTOMER - AFTER GET USERNAME////////" );
         Customer customer = repository.findByUserName(username);
-
+        logger.info("/////// INDIVIDUAL CUSTOMER - GET CUSTOMER WITH USERNAME////////" );
         model.addAttribute("customer", customer);
         model.addAttribute("username", username);
-
+        logger.info("/////// INDIVIDUAL CUSTOMER - GET READY TO DISPLAY INDVID. PAGE////////" );
         return "html/individualCustomerPage";
     }
 

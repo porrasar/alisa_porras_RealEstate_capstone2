@@ -9,12 +9,22 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController
 {
+//    @GetMapping("/loginHomePageGeneralHandler")
+//    public String loginHomeGeneral()
+//    {
+//        return "html/home_page_general";
+//    }
 
+//    @GetMapping("/login")
+//    public String login() {
+////        return "html/login";
+//        return "html/home_page_customer";
+//    }
     @GetMapping("/login")
-    public String login() {
+    public String loginPage()
+    {
         return "html/login";
     }
-
     @GetMapping("/logout")
     public String logout(HttpServletRequest request){
         HttpSession httpSession = request.getSession();

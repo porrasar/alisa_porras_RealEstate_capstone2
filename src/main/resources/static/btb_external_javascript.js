@@ -2,13 +2,13 @@
 
 //document.write ("Alisa im writing to document");
 
-// ---------------------------VARIABLES------------------------------------- 
-
-var firstNickName = "Boo";
-let lastNickName = "Whoperler :)";
-var message = "...Glad we go by Blessed To Bless instead!'";
+// ---------------------------VARIABLES-------------------------------------
+// All of these variables used in the home page (home_page_general.html)
 const time = new Date().getHours();
-let greeting;
+const greetingHello = "Hello, our office is open until 9 PM EST!"
+const greetingClosed1 = "Sorry, our office is closed, we will open at 8 AM EST. " +
+                        " Feel free to still access information through our website.";
+
 
 // ---------------------------FUNCTIONS------------------------------------- 
 
