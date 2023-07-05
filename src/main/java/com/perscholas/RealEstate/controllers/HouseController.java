@@ -39,7 +39,7 @@ public class HouseController
 
     //-------------------METHODS -----------------------------------
 
-    //display initial view/html page, list of all customers
+    //display initial view/html page, list of all houses
     @GetMapping("/housesListHandlerAdmin")
     public String getAllHousesAdmin(Model model)
     {

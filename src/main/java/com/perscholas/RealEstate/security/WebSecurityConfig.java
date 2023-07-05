@@ -44,7 +44,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                         .mvcMatchers("/updateHousePage/**").hasAnyRole("ADMIN", "SUPERADMIN")
                         .mvcMatchers("/saveHouse/**").hasAnyRole("ADMIN", "SUPERADMIN")
 
+
+                        .mvcMatchers("/addNewMaintenanceForm").hasAnyRole("SUPERADMIN")
+                        .mvcMatchers("/deleteMaintenancePage/**").hasAnyRole("SUPERADMIN")
+                        .mvcMatchers("/updateMaintenancePage/**").hasAnyRole("ADMIN", "SUPERADMIN")
+                        .mvcMatchers("/saveMaintenance/**").hasAnyRole("ADMIN", "SUPERADMIN")
+
                         .mvcMatchers("/adminButtonHandler").hasAnyRole("SUPERADMIN")
+                        .mvcMatchers("/customerByLastNameHandler/**").hasAnyRole("SUPERADMIN")
+
 
 
                         .mvcMatchers("/**").hasAnyRole("USER", "ADMIN", "SUPERADMIN")

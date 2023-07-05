@@ -69,16 +69,4 @@ public class MaintenanceServiceImpl implements MaintenanceService
         maintenanceRepository.deleteById(id);
     }
 
-
-    //    @Override
-//    public House getHouseByAddress(String houseAddress)
-//    {
-//        House house = houseRepository.findFirstByhouseAddress(houseAddress);
-//        if (house == null) {
-//            throw new HouseNotFoundException();
-//        }
-//        return house;
-//    }
-//
-
 }

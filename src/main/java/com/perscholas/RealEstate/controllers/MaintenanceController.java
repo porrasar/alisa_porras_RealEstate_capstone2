@@ -6,6 +6,8 @@ import com.perscholas.RealEstate.entities.Maintenance;
 import com.perscholas.RealEstate.repositories.HouseRepository;
 import com.perscholas.RealEstate.repositories.MaintenanceRepository;
 import com.perscholas.RealEstate.services.MaintenanceService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,6 +29,7 @@ public class MaintenanceController
     @Autowired
     private MaintenanceRepository repository;
 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
     //-----------------CONSTRUCTOR---------------------------------
     @Autowired
     public MaintenanceController(MaintenanceService maintenanceService)
@@ -34,47 +37,51 @@ public class MaintenanceController
         this.maintenanceService = maintenanceService;
     }
 
-    //-------------------METHODS -----------------------------------
-
-    //display initial view/html page, list of all maintenances
-    @GetMapping("/MaintenanceListHandlerAdmin")
+    //------------------- METHODS -----------------------------------
+    //---------------------LIST ALL MAINTENANCE COMPANIES ------------------------
+    // ------------Page for list of maintenance companies for administration ------
+    @GetMapping("/maintenanceListHandlerAdmin")
     public String getAllMaintenanceAdmin(Model model)
     {
         List<Maintenance> maintenances = repository.findAll();
         model.addAttribute("maintenances", maintenances);
-        return "html/Maintenance_for_Admin";
+        return "html/maintenance_for_admin";
     }
 
-    @GetMapping("/MaintenanceListHandlerCustomer")
-    public String getAllMaintenanceCustomer(Model model)
+    // ------------Page for list of maintenance companies for customer -----------
+    @GetMapping("/maintenanceListHandlerCustomer")
+    public String getAllMaintenanceCust(Model model)
     {
         List<Maintenance> maintenances = repository.findAll();
         model.addAttribute("maintenances", maintenances);
-        return "html/Maintenance_for_Customer";
+        return "html/maintenance_for_cust";
     }
 
-
+//---------------------ADD NEW MAINTENANCE COMPANY -----------------------------
 
     //Add a new customer
     @GetMapping("/addNewMaintenanceForm")
     public String addNewMaintenanceForm(Model model)
     {
         // create model attribute to bind form data
+        logger.info("///////ADD MAINTENANCE COMPANY //////// " );
         Maintenance maintenance = new Maintenance();
         model.addAttribute("maintenance", maintenance);
+        logger.info("///////ADD MAINTENANCE COMPANY - before html  /////// " );
         return "html/addMaintenancePage";
     }
-
+    //---------------------DELETE A MAINTENANCE COMPANY -----------------------
     @GetMapping("/deleteMaintenancePage/{id}")
     public String deleteMaintenancePage(@PathVariable(value = "id") int id)
     {
         // call delete Maintenance method
         this.maintenanceService.deleteMaintenanceById(id);
-        return "redirect:/MaintenanceListHandler";
+        return "redirect:/maintenanceListHandler";
 
     }
 
 
+    //---------------------UPDATE A MAINTENANCE COMPANY -----------------------
     @GetMapping("/updateMaintenancePage/{id}")
     public String updateMaintenancePage(@PathVariable(value = "id") int id, Model model)
     {
@@ -86,6 +93,7 @@ public class MaintenanceController
         return "html/updateMaintenancePage";
     }
 
+    //---------------------SAVE DATA TO DATABASE ------------------------------
     //Save user data to database
     @PostMapping("/saveMaintenance")
     public String saveMaintenance(@ModelAttribute("maintenance") @Valid Maintenance maintenance,
@@ -97,7 +105,7 @@ public class MaintenanceController
         }
         // save Maintenance to database
         maintenanceService.saveMaintenance(maintenance);
-        return "redirect:/MaintenanceListHandlerAdmin";
+        return "redirect:/MaintenanceListHandler";
     }
 
 }

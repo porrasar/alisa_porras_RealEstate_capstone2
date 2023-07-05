@@ -14,7 +14,7 @@ public interface MaintenanceService
     Maintenance getMaintenanceById(int id);
 
 //
-//    House getMaintenanceByMaintenanceName(String maintenanceName);
+//    Maintenance getMaintenanceByMaintenanceName(String maintenanceName);
 
     void deleteMaintenanceById(int id);
 }

@@ -69,9 +69,6 @@ background-position: right top;
                 <a class="nav-link" th:href="@{/aboutButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="About Info">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" th:href="@{/adminButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="Admin Only"> Administration</a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" th:href="@{/logout}" > Log out </a>
             </li>
         </ul>
@@ -83,22 +80,10 @@ background-position: right top;
 
 
     <a th:href="@{/myIndividualCustomerHandler}" class="btn btn-primary btn-sm mb-3"> My Customer/Acct Info</a>
-    <a th:href="@{/MaintenanceListHandlerCustomer}" class="btn btn-primary btn-sm mb-3"> Maintenance Companies Info</a>
+    <a th:href="@{/maintenanceListHandlerCustomer}" class="btn btn-primary btn-sm mb-3"> Maintenance Companies Info</a>
     <a th:href="@{/housesListHandlerCustomer}" class="btn btn-primary btn-sm mb-3"> House Info</a>
 
     <br></br>
-    
-
-    <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-            Houses Available
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="houses_available_rent.html" target="_blank" data-bs-toggle="tooltip" title="Houses Rent">Houses for rent</a></li>
-            <li><a class="dropdown-item" href="houses_available_purchase.html" target="_blank" data-bs-toggle="tooltip" title="Houses Purchase">Houses for purchase</a></li>
-			<li><a class="dropdown-item" href="remodeled_houses.html" target="_blank" data-bs-toggle="tooltip" title="Houses Remodeled">Remodeled Houses</a></li>
-        </ul>
-    </div>
 
 </div>
 

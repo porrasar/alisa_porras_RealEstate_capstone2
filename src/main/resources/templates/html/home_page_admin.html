@@ -68,9 +68,11 @@ background-position: right top;
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/aboutButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="About Info">About</a>
             </li>
+            <!--
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/adminButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="Admin Only"> Administration</a>
             </li>
+            -->
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/logout}" > Log out </a>
             </li>
@@ -84,11 +86,15 @@ background-position: right top;
 <a th:href="@{/departmentsListHandler}" class="btn btn-primary btn-sm mb-3"> Department Info</a>
 
 
-<a th:href="@{/customersListHandler}" class="btn btn-primary btn-sm mb-3"> Customer Info</a>
+<a th:href="@{/customersListHandler}" class="btn btn-primary btn-sm mb-3"> Customer List</a>
+    <!--
+  <a th:href="@{customerByLastNameHandler/{holdLastName}(holdLastName=${customer.lastName})}" class="btn btn-primary btn-sm mb-3"> Customer By Last Name</a>
+  -->
+<a th:href="@{/displayCustomerByLastNameFormHandler}" class="btn btn-primary btn-sm mb-3"> Customer By Last Name</a>
 
 <a th:href="@{/housesListHandlerAdmin}" class="btn btn-primary btn-sm mb-3"> House Info</a>
 
-<a th:href="@{/MaintenanceListHandlerAdmin}" class="btn btn-primary btn-sm mb-3"> Maintenance Companies Info</a>
+<a th:href="@{/maintenanceListHandlerAdmin}" class="btn btn-primary btn-sm mb-3"> Maintenance Companies Info</a>
 </div>
 
 

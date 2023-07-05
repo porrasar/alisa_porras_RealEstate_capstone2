@@ -32,7 +32,7 @@ public class CustomerController
     private CustomerRepository repository;
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    private final String customersHtml = "html/customers";
+    private final String customersHtml = "html/customer_for_admin";
     private final String addCustomerHtml = "html/addCustomerPage";
     private final String updateCustomerHtml = "html/updateCustomerPage";
 
@@ -163,28 +163,52 @@ public class CustomerController
         String username = userPrincipal.getUsername();
 
         Customer customer = repository.findByUserName(username);
-        logger.info("/////// INDIVIDUAL AFTER GETTING CUSTOMER:  //////// :" + username );
+
         model.addAttribute("customer", customer);
-        model.addAttribute("username", username);
 
         return individualCustomerHtml;
     }
 
     //---------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY BY LASTNAME ---THEY ALREADY HAVE AN ACCOUNT---------------
 
-//    @GetMapping("/myIndividualCustomerLastNameHandler")      // this is coming from home_page_customer.html
-//    public String showIndividualCustomerInfoByLastName(Model model)
+
+//   @GetMapping("/displayCustomerByLastNameFormHandler")      // this is coming from home_page_admin.html
+//    public String displayCustomerByLastNameForm(Model model)
 //    {
-//        UserDetails userPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//
-//        String username = userPrincipal.getUsername();
-//
-//        Customer customer = repository.findByUserName(username);
-//
-//        model.addAttribute("customer", customer);
-//        model.addAttribute("username", username);
-//
-//        return individualCustomerHtml;
+//        logger.info("/////// CUSTOMER BY LAST NAME - in beginning/////// :" );
+//        return "html/customerByLastName";
 //    }
 
-}
+//    @GetMapping("/updateCustomerPage/{id}")
+//    public String updateCustomerPage(@PathVariable(value = "id") int id, Model model)
+//    {
+//        // get employee from the service
+//        Customer customer = customerService.getCustomerById(id);
+//
+//        // set employee as a model attribute to pre-populate the form
+//        model.addAttribute("customer", customer);
+//        logger.info("/////// UPDATE CUSTOMER - @GETMAPPING  //////// :" + id );
+//        return updateCustomerHtml;
+
+
+//    @GetMapping("/addNewCustomerForm")
+//    public String addNewCustomerForm(Model model)
+//    {
+//        // create model attribute to bind form data
+//        Customer customer = new Customer();
+//        model.addAttribute("customer", customer);
+//        return addCustomerHtml;
+//    }
+
+//    @GetMapping("/customersListHandler")
+//    public String getAllCustomers(Model model)
+//    {
+//        List<Customer> customers = repository.findAll();
+//        model.addAttribute("customers", customers);
+//        logger.info("/////// LIST CUSTOMERS //////// " );
+////        return "html/customers";
+//        return customersHtml;
+//    }
+
+
+    }
