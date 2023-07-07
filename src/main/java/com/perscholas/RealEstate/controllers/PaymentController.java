@@ -108,9 +108,18 @@ public class PaymentController
             return "html/addPaymentPage";
         }
         // save customer to database
-        paymentService.savePayment(payment);
-        return "redirect:/paymentsListHandler";
+//        paymentService.savePayment(payment);
+//        return "redirect:/paymentsListHandler";
 
+        try
+        {
+            paymentService.savePayment(payment);
+        }
+        catch(Exception e)
+        {
+            logger.info("/////// Failed to save request //////// ");
+        }
+        return "redirect:/paymentsListHandler";
 
     }
 

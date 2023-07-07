@@ -104,8 +104,21 @@ public class MaintenanceController
             return "html/addMaintenancePage";
         }
         // save Maintenance to database
-        maintenanceService.saveMaintenance(maintenance);
+//        maintenanceService.saveMaintenance(maintenance);
+//        return "redirect:/MaintenanceListHandler";
+
+
+        try
+        {
+            maintenanceService.saveMaintenance(maintenance);
+        }
+        catch(Exception e)
+        {
+            logger.info("/////// Failed to save request //////// ");
+        }
+
         return "redirect:/MaintenanceListHandler";
+
     }
 
 }

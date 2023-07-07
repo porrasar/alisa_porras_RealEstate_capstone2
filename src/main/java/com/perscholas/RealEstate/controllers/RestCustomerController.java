@@ -4,6 +4,8 @@ import com.perscholas.RealEstate.entities.Customer;
 import com.perscholas.RealEstate.repositories.CustomerRepository;
 import com.perscholas.RealEstate.services.CustomerNotFoundException;
 import com.perscholas.RealEstate.services.CustomerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.ui.Model;
@@ -21,6 +23,8 @@ public class RestCustomerController
     private CustomerService customerService;
     @Autowired
     private CustomerRepository repository;
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     //-----------------CONSTRUCTOR---------------------------------
     @Autowired
@@ -49,7 +53,16 @@ public class RestCustomerController
     //http://localhost:8081/rest/addNewCustomerForm
     public void addNewCustomer(@RequestBody Customer customer)
     {
-        customerService.saveCustomer(customer);
+//        customerService.saveCustomer(customer);
+        try
+        {
+            customerService.saveCustomer(customer);
+        }
+        catch(Exception e)
+        {
+            logger.info("/////// Failed to save request //////// ");
+        }
+
     }
 
     //---------------------DELETE A CUSTOMER -----------

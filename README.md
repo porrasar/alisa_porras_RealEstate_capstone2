@@ -146,34 +146,29 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - Made Order -> OrderItem relationship uni-directional instead of bi-directional.
   
 
-- April 16th (85% done)
-  - styled the order search boxes so they align properly
-  - rename things to match the requirements
-  - changed permissions so anyone can view orders but only ADMIN and SUPERADMIN can edit or delete.
+- Thrus. Wed., July 6 (65% done)
+  - working on exception handling
+  - updating README.md file
+  - create a logging file (error.log)
+  - added @Transactional annotation to customerService class
 
 
-- April 15th (80% done)
-  - Added ADMIN, SUPERADMIN roles and have permission set for "/users" as accessible by SUPERADMIN and "/menu" and
-    "/viewOrders" are for ADMIN & SUPERADMIN
-  - Addressed role assignment with:
-    - any user with first name starting with "admin" will be assigned "ROLE_USER" and "ROLE_ADMIN" role
-    - any user with first name starting with "superadmin" will be assigned "ROLE_USER", "ROLE_ADMIN", and "SUPERADMIN" role
-  - added 3 error html pages - 403, 404, and 500 errors under "templates/error" folder.
-  - added 3 custom queries for Order class and add search boxes in "View Orders" page (currently all 3 searches are "OR"
-    together)
-  - TODO: style 3 search boxes so they align
+- Wed., July 5 (60% done)
+  - added 4th model (maintenance) and all classes, html, tables, etc. that goes with it
+  - worked on separating the customer and admin permissions page flow
+
+- Tues., July 4 (52% done)
+  - webpages: cleaned up format of home page, customer, and adin page 
+  - attempted to add custom queries to customer repository, no success 
+  
 
 
-- April 14th (75% done)
-  - created a MenuItemServiceImpl bean using @Bean annotation (to satisfy a Capstone requirement)
-  - finished styling registration page
-  - merged the old User class to Spring security login User class
-
-
-- April 12th (70% done)
-  - add Spring security login from class example - still need to style registration.html page
-    and merge the old User class and related code to the example User class
-
+- Fri., July 30 (50% done)
+  - add Spring security login. I originally wanted to have the home page to display first,
+    then provide the option to sign in or browse website as a guess. At this point, we
+    have not learned how to do that, it was also time-consuming to learn, so I decided
+    to have sign-in or sign-up display first, then allow access per username and password.
+   
 
 ## -------------------------NOT IMPLEMENTED IN THIS VERSION -----------------------
   ### Admin

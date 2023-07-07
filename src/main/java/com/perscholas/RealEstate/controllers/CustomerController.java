@@ -9,18 +9,20 @@ import com.perscholas.RealEstate.services.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+
 import javax.validation.Valid;
 
+import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.Scanner;
 
 @Controller
 public class CustomerController
@@ -75,41 +77,68 @@ public class CustomerController
     public String deleteCustomerPage(@PathVariable(value = "id") int id)
     {
         // call delete customer method
-        this.customerService.deleteCustomerById(id);
-        return "redirect:/customersListHandler";
+//        this.customerService.deleteCustomerById(id);
+//        return "redirect:/customersListHandler";
 
+
+        try
+        {
+            this.customerService.deleteCustomerById(id);
+        }
+        catch(Exception e)
+        {
+            logger.info("/////// Customer not found  //////// ");
+        }
+
+        return "redirect:/customersListHandler";
     }
 
 
     //---------------------UPDATE A CUSTOMER -----------
     @GetMapping("/updateCustomerPage/{id}")
     public String updateCustomerPage(@PathVariable(value = "id") int id, Model model)
-    {
+    {//beginning
         // get employee from the service
         Customer customer = customerService.getCustomerById(id);
 
         // set employee as a model attribute to pre-populate the form
         model.addAttribute("customer", customer);
-        logger.info("/////// UPDATE CUSTOMER - @GETMAPPING  //////// :" + id );
-        return updateCustomerHtml;
-    }
+        logger.info("/////// UPDATE CUSTOMER - @GETMAPPING  //////// :" + id);
 
+        return updateCustomerHtml;
+
+    }//ending
 
     //---------------------SAVE DATA TO DATABASE -----------
     //Save user data to database
     @PostMapping("/saveCustomer")
     public String saveCustomer(@ModelAttribute("customer") @Valid Customer customer,
                                BindingResult bindingResult)
-    {
+    {//beginning
         if (bindingResult.hasErrors())
         {
             return addCustomerHtml;
         }
         // save customer to database
 
-        customerService.saveCustomer(customer);
+//        customerService.saveCustomer(customer);
+//        return "redirect:/customersListHandler";
+
+        try
+        {
+          customerService.saveCustomer(customer);
+        }
+        catch(Exception e)
+        {
+            logger.info("/////// Failed to save request //////// ");
+        }
+
         return "redirect:/customersListHandler";
-    }
+
+    }//ending
+
+
+
 
 
     //-----------------ADD A PAYMENT TO A CUSTOMER PROCESS------------------

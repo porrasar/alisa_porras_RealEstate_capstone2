@@ -53,7 +53,8 @@ public class CustomerServiceImpl implements CustomerService
     {
 
         Optional<Customer> optionalCustomer = customerRepository.findById(id);
-        if (optionalCustomer.isPresent()) {
+        if (optionalCustomer.isPresent())
+        {
             Customer customer = optionalCustomer.get();
             return customer;
         }

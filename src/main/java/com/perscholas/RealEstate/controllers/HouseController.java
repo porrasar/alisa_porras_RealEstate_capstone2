@@ -101,8 +101,21 @@ public class HouseController
             return "html/addHousePage";
         }
         // save house to database
-        houseService.saveHouse(house);
+//        houseService.saveHouse(house);
+//        return "redirect:/housesListHandlerAdmin";
+
+
+        try
+        {
+            houseService.saveHouse(house);
+        }
+        catch(Exception e)
+        {
+            logger.info("/////// Failed to save request //////// ");
+        }
+
         return "redirect:/housesListHandlerAdmin";
+
     }
 
 }

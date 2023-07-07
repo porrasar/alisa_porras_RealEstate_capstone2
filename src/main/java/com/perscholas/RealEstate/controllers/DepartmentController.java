@@ -112,8 +112,18 @@ public class DepartmentController
             return "html/addDepartmentPage";
         }
         // save customer to database
-        departmentService.saveDepartment(department);
-        logger.info("///////  SAVE UPDATE DEPARTMENT //////// :");
+//        departmentService.saveDepartment(department);
+//        return "redirect:/departmentsListHandler";
+
+        try
+        {
+            departmentService.saveDepartment(department);
+        }
+        catch(Exception e)
+        {
+            logger.info("/////// Failed to save request //////// ");
+        }
+
         return "redirect:/departmentsListHandler";
 
 
