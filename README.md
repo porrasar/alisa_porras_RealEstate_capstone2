@@ -144,13 +144,21 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - Updated README.md file to have links and Contents section.
   - Created Schema.mwb file from SQL Server database.
   - Made Order -> OrderItem relationship uni-directional instead of bi-directional.
-  
 
-- Thrus. Wed., July 6 (65% done)
+- Sat., July 8
+  - try custom queries again 
+
+- Fri., July 7 
+- used Spring data binding (@Null, @Size, @Digits)
+
+
+- Thrus.July 6 (65% done)
   - working on exception handling
   - updating README.md file
   - create a logging file (error.log)
   - added @Transactional annotation to customerService class
+  - making sure to have two ways to create beans (@Bean in application and 
+    @ComponentScanning (through using @SpringBootApplication)  
 
 
 - Wed., July 5 (60% done)

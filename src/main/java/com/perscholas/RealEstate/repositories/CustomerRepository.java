@@ -9,12 +9,11 @@ import java.util.List;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer>
 {
-//    public List<Customer> findByName(String name);
+    public Customer findByUserName(String userName);   //used in customerController in "myIndividualCustomerHandler" handler
+
+//   public List<Customer> findByName(String name);
 
 //    public List<Customer> findByUserName(String userName);
-
-    public Customer findByLastName(String lastName);
-
-    public Customer findByUserName(String userName);  //used in customerController in "myIndividualCustomerHandler" handler
+//public Customer findByLastName(String lastName);
 
 }

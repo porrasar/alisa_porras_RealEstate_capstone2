@@ -1,9 +1,12 @@
 package com.perscholas.RealEstate.entities;
 
 
+import com.sun.istack.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -19,7 +22,9 @@ public class Payment implements Serializable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int paymentId;
+
     private String paymentType;
+    @Digits(integer = 4, fraction = 2, message = "whole and cents")
     private double paymentAmount;
     private Date paymentTransactionDate;
     @CreationTimestamp

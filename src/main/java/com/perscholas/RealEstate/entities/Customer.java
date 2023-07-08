@@ -19,14 +19,23 @@ public class Customer implements Serializable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cId;
     @NotNull
-    @Size(min=2, max=30)
+    @Size(min=1, max=75)
     private String firstName;
+
+    @NotNull
+    @Size(min=1, max=75)
     private String lastName;
+
     private String address;
+
     private String city;
+
     private String state;
+
     private Integer zip;
+
     private String securityName;
+
     private String userName;
 
 

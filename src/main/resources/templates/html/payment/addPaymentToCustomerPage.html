@@ -32,6 +32,8 @@
 
       <br></br>
 
+    <div th:if="${#fields.hasErrors('paymentAmount')}" th:errors="*{paymentAmount}"> Payment Amount Format Wrong</div>
+
     <input type="text" th:field="*{paymentAmount}" placeholder="Payment Amount" class="form-control mb-4 col-4">
 
       <input type="text" th:field="*{paymentTransactionDate}" placeholder="Payment Date" class="form-control mb-4 col-4">

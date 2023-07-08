@@ -20,6 +20,7 @@ public class House implements Serializable
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int hId;
     @NotNull
+    @Size(min=4, max=100)
     private String houseAddress;
     private String houseCity;
     private String houseState;
