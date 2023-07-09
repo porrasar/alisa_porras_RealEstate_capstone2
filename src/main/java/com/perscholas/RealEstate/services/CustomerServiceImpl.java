@@ -77,4 +77,11 @@ public class CustomerServiceImpl implements CustomerService
     {
         customerRepository.deleteById(id);
     }
+
+    @Override
+    public List<Customer> findByLastName(String lastName)
+    {
+        return customerRepository.findByLastName(lastName);
+    }
+
 }

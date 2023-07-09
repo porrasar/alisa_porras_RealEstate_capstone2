@@ -55,12 +55,57 @@ public class CustomerController
     public String getAllCustomers(Model model)
     {
         List<Customer> customers = repository.findAll();
-        model.addAttribute("customers", customers);
+        model.addAttribute("customers", customers);  // i'm passing the 'customers' object into
         logger.info("/////// LIST CUSTOMERS //////// " );
 //        return "html/customers";
         return customersHtml;
     }
 
+
+// ---------------------- practing
+
+
+//    @GetMapping("/addNewDepartmentPage")
+//    public String addNewDepartmentForm(Model model)
+//    {
+//        // create model attribute to bind form data
+//        Department department = new Department();
+//        model.addAttribute("department", department);
+//        return "html/addDepartmentPage";
+//    }
+    @GetMapping("/customersByLastNameDisplayPageHandler")
+    public String customersByLastNameDisplayPage()
+    {
+        logger.info("/////// IN CUSTOMER LIST BY LAST NAME DISPLAY //////// " );
+        return "html/customersByLastNameDisplayPage";
+
+    }
+
+    @GetMapping("/customersByLastNameDisplayPageHandler2")
+    public String customersByLastNameDisplayPage2()
+    {
+        logger.info("/////// IN CUSTOMER LIST BY LAST NAME DISPLAY //////// " );
+        return "/customersListHandler";
+//        "redirect:/customersListHandler"
+
+    }
+
+
+    @GetMapping("/customersByLastNameListHandler/{lastNameId}")
+    public String getAllCustomersByLastName(@PathVariable String lastNameId, Model model)
+    {
+        logger.info("/////// IN GET ALL LAST NAMES BEFORE READING DB //////// " );
+        List<Customer> customersLastName = repository.findByLastName(lastNameId);
+
+        logger.info("/////// IN GET ALL LAST -  AFTER READING DB //////// " );
+        model.addAttribute("customers", customersLastName);
+
+        logger.info("/////// IN GET ALL LAST -  AFTER ADDING TO MDL//////// " );
+
+        return "html/customersByLastName";
+    }
+
+// ---------------------- practing
 
     //---------------------ADD NEW CUSTOMER -----------
     @GetMapping("/addNewCustomerForm")

@@ -23,7 +23,7 @@
 <body>
 
 <div class="container my-2">
-    <h1>Customer List</h1>
+    <h1>Customer List By Last Name</h1>
 
     <a th:href="@{/addNewCustomerForm}" class="btn btn-primary btn-sm mb-3"> Add Customer </a>
 
@@ -43,9 +43,8 @@
         </thead>
         <tbody>
         <tr th:each="customer : ${customers}">   <!-- 'customer' is my object variable from customer class.
-                                                       'customers' is a made up name, for the key, of the key, valued pair of the Model class
-                                                        used in handler "customersListHandler" in customer controller -->
-            <td th:text="${customer.firstName}"></td>   <!--  these are fields from my customer class-->
+                                                       'customers' is a made up name, for the key, of the key, valued pair of the Model class   -->
+            <td th:text="${customer.firstName}"></td>
             <td th:text="${customer.lastName}"></td>
             <td th:text="${customer.address}"></td>
             <td th:text="${customer.city}"></td>

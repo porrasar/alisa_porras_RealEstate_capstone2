@@ -19,6 +19,8 @@ public interface CustomerService
 //    Customer getCustomerByLastName(String lastName);
 
     void deleteCustomerById(int id);
+
+    List<Customer> findByLastName(String lastName);
 }
 
 
