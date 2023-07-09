@@ -145,10 +145,13 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - Created Schema.mwb file from SQL Server database.
   - Made Order -> OrderItem relationship uni-directional instead of bi-directional.
 
-- Sat., July 8
+- Sat., Sun., July 9
+  - added test in each ServiceImpl class, autowired in the Service class 
+
+- Sat., Sat., July 8
   - try custom queries again ...uuughhh accomplished nothing can't figure this out!
 
-- Fri., July 7 
+- Fri., Fri., July 7 
 - used Spring data binding (@Null, @Size, @Digits)
 
 
