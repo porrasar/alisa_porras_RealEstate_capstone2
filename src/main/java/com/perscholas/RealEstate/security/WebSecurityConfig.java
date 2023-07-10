@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
         http.authorizeRequests(requests -> requests
                         .mvcMatchers("/login").permitAll()   //these are url's/handlers
                         .mvcMatchers("/signup").permitAll()
-//                        .mvcMatchers("/").permitAll()
+                        .mvcMatchers("/").permitAll()
 
                         .mvcMatchers("/addNewDepartmentPage").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/deleteDepartmentPageHandler/**").hasAnyRole("SUPERADMIN")

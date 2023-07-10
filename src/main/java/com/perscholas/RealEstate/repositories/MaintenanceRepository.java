@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface MaintenanceRepository extends JpaRepository<Maintenance, Integer>
 {
-    public List<Maintenance> findByMaintenanceName(String maintenanceName);
+
 }

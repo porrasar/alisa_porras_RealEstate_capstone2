@@ -81,17 +81,7 @@ public class CustomerController
 
     }
 
-    @GetMapping("/customersByLastNameDisplayPageHandler2")
-    public String customersByLastNameDisplayPage2()
-    {
-        logger.info("/////// IN CUSTOMER LIST BY LAST NAME DISPLAY //////// " );
-        return "/customersListHandler";
-//        "redirect:/customersListHandler"
-
-    }
-
-
-    @GetMapping("/customersByLastNameListHandler/{lastNameId}")
+    @GetMapping("/searchCustomersByLastNameDisplayPageHandler/{lastNameId}")
     public String getAllCustomersByLastName(@PathVariable String lastNameId, Model model)
     {
         logger.info("/////// IN GET ALL LAST NAMES BEFORE READING DB //////// " );

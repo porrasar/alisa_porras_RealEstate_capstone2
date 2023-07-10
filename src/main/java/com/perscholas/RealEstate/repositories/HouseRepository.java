@@ -12,5 +12,4 @@ import java.util.List;
 public interface HouseRepository extends JpaRepository<House, Integer>
 {
 
-    public List<House> findByHouseAddress(String houseAddress);
 }

@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -22,8 +23,10 @@ class CustomerServiceImplTest
     private CustomerService customerService;
 
     // ---------------------------------TESTING METHODS ------------------------------
+
+
     @Test
-    void getAllCustomers()
+    void getAllCustomers_should_return_that_a_new_record_has_been_added()
     {
 
             List<Customer> allCustomers = customerService.getAllCustomers();

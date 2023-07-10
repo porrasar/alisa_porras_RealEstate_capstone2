@@ -145,6 +145,10 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - Created Schema.mwb file from SQL Server database.
   - Made Order -> OrderItem relationship uni-directional instead of bi-directional.
 
+- Mon., July 10 (??  done) 
+  - added unit testing for each query in customer repository
+  - added a parameterized test for maintenance serviceImpl  
+    
 - Sun., July 9 (70% done)
   - added unit test in each ServiceImpl class, autowired in the Service class 
   - attempted parameterized test, no success

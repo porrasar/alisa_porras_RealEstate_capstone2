@@ -17,13 +17,14 @@
 
   <div>
 
-<!--
 
-what's wrong with this? how do i make it accept the last name and go into handler and get the last names
-     <form action="#" th:action="@{/customersByLastNameListHandler/{lastNameId}(lastNameId=${customer.lastName})}" th:object="${customer}" method="POST">
+
+
+
+
  </form>
--->
 
+    <form action="#" th:action="@{/searchCustomersByLastNameDisplayPageHandler/{lastNameId}(lastNameId=${customer.lastName})}" th:object="${customer}" method="POST">
 
 
        <label>Last Name </label>
@@ -35,14 +36,14 @@ what's wrong with this? how do i make it accept the last name and go into handle
 
       <input type="submit" value="Click To Search By Last Name">
 
-
+</form>
 
   </div>
 
 
 
 
-<!--
+
      <input type="text" th:field="*{departmentName}" placeholder="Department Name" class="form-control mb-4 col-4" >
 
       <form action="#" th:action="@{/customersByLastNameListHandler/{lastNameId}(lastNameId=${customer.lastName})}"

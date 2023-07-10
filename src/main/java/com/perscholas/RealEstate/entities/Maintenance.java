@@ -55,8 +55,7 @@ public class Maintenance implements Serializable
 //    }
 
 
-    public Maintenance(int mId, String maintenanceName) {
-        this.mId = mId;
+    public Maintenance(String maintenanceName) {
         this.maintenanceName = maintenanceName;
     }
 

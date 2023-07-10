@@ -30,7 +30,7 @@ class MaintenanceServiceImplTest {
 
     // ---------------------------------TESTING METHODS ------------------------------
     @Test
-    void getAllMaintenances()
+    void getAllMaintenances_should_return_that_a_new_record_has_been_added()
     {
         List<Maintenance> allMaintenances = maintenanceService.getAllMaintenances();
 
@@ -50,44 +50,24 @@ class MaintenanceServiceImplTest {
 
         // verify
     }
-    // -------------------------
-    @DisplayName("parameterized test")  // example in test_demo
-    @ParameterizedTest
-    @ValueSource(strings = {"Plumbing for you", "Electricity Reigns", "We Clean Everything"})
 
-    void test_saveMaintenance_should_save_maintenance_name
-                     (Maintenance maintenance, int expectedResult)
+    @DisplayName("Parameterized Test")
+    @ParameterizedTest
+    @ValueSource(strings = {"Plumbing for you Company", "Electricity Reigns, Inc.", "We Clean Everything LLC"})
+
+    void saveMaintenance_should_save_each_maintenance_company_name(String nameOfCompany)
     {
         List<Maintenance> allMaintenances = maintenanceService.getAllMaintenances();
 
         int beforeAddingMoreMaintenances = allMaintenances.size();
 
-        Maintenance maintenance1 = new Maintenance();
-
-//       assertEquals(expectedResult, maintenanceRepository.save(maintenance),
-//                () -> first + " + " + second + " should equal " + expectedResult);
-//        System.out.println("parameterized test");
+        Maintenance maintenance1 = new Maintenance(nameOfCompany);
+        maintenanceService.saveMaintenance(maintenance1);
 
         int afterAddingMoreMaintenances = maintenanceService.getAllMaintenances().size();
 
+        Assertions.assertThat(afterAddingMoreMaintenances).isEqualTo(beforeAddingMoreMaintenances + 1);
+        Assertions.assertThat(allMaintenances.contains(maintenance1));
 
     }
-
-//    @DisplayName("parameterized test")  // example in test_demo
-//    @ParameterizedTest(name = "{0} - {1} = {2}")
-//    @CsvSource
-//    ({
-//            "0, 1, 1",
-//            "1, 2, 3",
-//            "49, 51, 100",
-//            "1, 100, 101"
-//    })
-//    void add(int first, int second, int expectedResult) {
-//        Customer calculator = new Customer();
-//        assertEquals(expectedResult, calculator.add(first, second),
-//                () -> first + " + " + second + " should equal " + expectedResult);
-//        System.out.println("parameterized test");
-//    }
-
-
 }
