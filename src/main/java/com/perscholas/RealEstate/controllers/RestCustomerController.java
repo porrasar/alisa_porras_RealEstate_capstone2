@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -86,5 +87,28 @@ public class RestCustomerController
         customerService.saveCustomer(customer);
         return customerService.getCustomerById(id);
     }
+
+
+    @GetMapping("/customers/lastName")
+    //http://localhost:8081/rest/customers/lastName?lastName=jones
+    public ResponseEntity<List<Customer>> getCustomerByLastName(@RequestParam String lastName)
+    {
+        return new ResponseEntity<List<Customer>>(repository.findByLastName(lastName),HttpStatus.OK);
+    }
+
+    @GetMapping("/customers/firstName")
+    //http://localhost:8081/rest/customers/firstName?firstName=lynn
+    public ResponseEntity<List<Customer>> getCustomerByFirstName(@RequestParam String firstName)
+    {
+        return new ResponseEntity<List<Customer>>(repository.findByFirstName(firstName),HttpStatus.OK);
+    }
+
+    @GetMapping("/customers/state")
+    //http://localhost:8081/rest/customers/state?state=oh
+    public ResponseEntity<List<Customer>> getCustomerByState(@RequestParam String state)
+    {
+        return new ResponseEntity<List<Customer>>(repository.findByState(state),HttpStatus.OK);
+    }
+
 
 }

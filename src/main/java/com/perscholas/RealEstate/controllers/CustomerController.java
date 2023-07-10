@@ -225,8 +225,6 @@ public class CustomerController
 
     }
 
-
-
     //---------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY BY USERNAME ---THEY ALREADY HAVE AN ACCOUNT---------------
 
     @GetMapping("/myIndividualCustomerHandler")      // this is coming from home_page_customer.html
@@ -243,46 +241,6 @@ public class CustomerController
         return individualCustomerHtml;
     }
 
-    //---------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY BY LASTNAME ---THEY ALREADY HAVE AN ACCOUNT---------------
-
-
-//   @GetMapping("/displayCustomerByLastNameFormHandler")      // this is coming from home_page_admin.html
-//    public String displayCustomerByLastNameForm(Model model)
-//    {
-//        logger.info("/////// CUSTOMER BY LAST NAME - in beginning/////// :" );
-//        return "html/customerByLastName";
-//    }
-
-//    @GetMapping("/updateCustomerPage/{id}")
-//    public String updateCustomerPage(@PathVariable(value = "id") int id, Model model)
-//    {
-//        // get employee from the service
-//        Customer customer = customerService.getCustomerById(id);
-//
-//        // set employee as a model attribute to pre-populate the form
-//        model.addAttribute("customer", customer);
-//        logger.info("/////// UPDATE CUSTOMER - @GETMAPPING  //////// :" + id );
-//        return updateCustomerHtml;
-
-
-//    @GetMapping("/addNewCustomerForm")
-//    public String addNewCustomerForm(Model model)
-//    {
-//        // create model attribute to bind form data
-//        Customer customer = new Customer();
-//        model.addAttribute("customer", customer);
-//        return addCustomerHtml;
-//    }
-
-//    @GetMapping("/customersListHandler")
-//    public String getAllCustomers(Model model)
-//    {
-//        List<Customer> customers = repository.findAll();
-//        model.addAttribute("customers", customers);
-//        logger.info("/////// LIST CUSTOMERS //////// " );
-////        return "html/customers";
-//        return customersHtml;
-//    }
 
 
     }

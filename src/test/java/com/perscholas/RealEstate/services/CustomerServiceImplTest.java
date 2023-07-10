@@ -51,20 +51,7 @@ class CustomerServiceImplTest
             // verify
     }
 
-//    @DisplayName("parameterized test")  // example in test_demo
-//    @ParameterizedTest(name = "{0} - {1} = {2}")
-//    @CsvSource({
-//            "0, 1, 1",
-//            "1, 2, 3",
-//            "49, 51, 100",
-//            "1, 100, 101"
-//    })
-//    void add(int first, int second, int expectedResult) {
-//        Customer calculator = new Customer();
-//        assertEquals(expectedResult, calculator.add(first, second),
-//                () -> first + " + " + second + " should equal " + expectedResult);
-//        System.out.println("parameterized test");
-//    }
+
 
 
 //    @Test

@@ -145,13 +145,18 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - Created Schema.mwb file from SQL Server database.
   - Made Order -> OrderItem relationship uni-directional instead of bi-directional.
 
-- Sat., Sun., July 9
-  - added test in each ServiceImpl class, autowired in the Service class 
+- Sun., July 9 (70% done)
+  - added unit test in each ServiceImpl class, autowired in the Service class 
+  - attempted parameterized test, no success
+  - added 3 custom finder queries to RestCustomerController! Originally, I was
+      trying to add it to the MVC Customer Controller, but I could not figure 
+      the HTML Thymeleaf 'form' tag format. Finally, realized it was easier to add
+      it to the Rest Controller, if only I would've known this 48 hours ago! :) 
 
-- Sat., Sat., July 8
+- Sat., July 8 (67% done)
   - try custom queries again ...uuughhh accomplished nothing can't figure this out!
 
-- Fri., Fri., July 7 
+- Fri., July 7 (67% done)
 - used Spring data binding (@Null, @Size, @Digits)
 
 
