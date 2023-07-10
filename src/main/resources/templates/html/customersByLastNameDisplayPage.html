@@ -15,62 +15,53 @@
 
     <p>HEY I'M IN TRYING TO DISPLAY</p>
 
-  <div>
+    <div>
 
 
+        <form action="#"
+              th:action="@{/searchCustomersByLastNameDisplayPageHandler/{lastNameId}(lastNameId=${customer.lastName})}"
+              th:object="${customer}" method="POST">
 
 
+            <label>Last Name </label>
+            <br></br>
+            <input type="text" name="lastName">
 
+            <br></br>
+            <br></br>
 
- </form>
+            <input type="submit" value="Click To Search By Last Name">
 
-    <form action="#" th:action="@{/searchCustomersByLastNameDisplayPageHandler/{lastNameId}(lastNameId=${customer.lastName})}" th:object="${customer}" method="POST">
+        </form>
 
+    </div>
 
-       <label>Last Name </label>
-      <br></br>
-      <input type="text" name="lastName" >
-
-      <br></br>
-      <br></br>
-
-      <input type="submit" value="Click To Search By Last Name">
-
-</form>
-
-  </div>
-
-
-
-
-
-     <input type="text" th:field="*{departmentName}" placeholder="Department Name" class="form-control mb-4 col-4" >
-
-      <form action="#" th:action="@{/customersByLastNameListHandler/{lastNameId}(lastNameId=${customer.lastName})}"
-            th:object="${customer}" method="GET">
-
-
-
-        <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4" >
-   <input type="text" name="lastName" th:field="${lastName}">
-
-
+<!--
+    <input type="text" th:field="*{departmentName}" placeholder="Department Name" class="form-control mb-4 col-4">
 
     <form action="#" th:action="@{/customersByLastNameListHandler/{lastNameId}(lastNameId=${customer.lastName})}"
           th:object="${customer}" method="GET">
-        <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4" >
 
-        <button type="submit" class="btn btn-info col-2"> List By Last Name</button>
-    </form>
 
-      <input type="text"  th:text="${customer.lastName}">
--->
-    <hr>
+        <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
+        <input type="text" name="lastName" th:field="${lastName}">
 
-    <a th:href="@{/tempAdminButtonHandler}"> Back to Admin Page</a>
 
-    <br></br>
-    <a th:href="@{/}"> Back to Department List</a>
+        <form action="#" th:action="@{/customersByLastNameListHandler/{lastNameId}(lastNameId=${customer.lastName})}"
+              th:object="${customer}" method="GET">
+            <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2"> List By Last Name</button>
+        </form>
+
+        <input type="text" th:text="${customer.lastName}">
+        -->
+
+
+        <a th:href="@{/tempAdminButtonHandler}"> Back to Admin Page</a>
+
+        <br></br>
+        <a th:href="@{/}"> Back to Department List</a>
 </div>
 </body>
 
