@@ -13,7 +13,7 @@ const greetingClosed1 = "Sorry, our office is closed, we will open at 8 AM EST. 
 // ---------------------------FUNCTIONS------------------------------------- 
 
 
-function myDateFunction()                      //used in maintenance 
+function myDateFunction()                      //used in customer maintenance
 {
   document.getElementById('demoDate').innerHTML = Date(); 
 }
@@ -25,9 +25,14 @@ function myGeneralWriteFunction()              //used in Sign In
 }
 
 
-function myNickNameFunction()                            //used in about 
+function myThemeSongFunction()                            //used in general home page
 {
-  document.getElementById('demoNickName').innerHTML = firstNickName + " " + lastNickName + " " + message; 
+  document.getElementById('demoThemeSong').innerHTML = Date();
+}
+
+function themeSongFunction()                            //used in general home page
+{
+  document.getElementById('blessedVideo');
 }
 
 

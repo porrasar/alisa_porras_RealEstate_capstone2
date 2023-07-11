@@ -5,7 +5,7 @@ import com.perscholas.RealEstate.entities.Customer;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@Transactional
+
 public interface CustomerService
 {
 

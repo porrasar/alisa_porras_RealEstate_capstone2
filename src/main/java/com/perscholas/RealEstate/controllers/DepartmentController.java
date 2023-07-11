@@ -25,8 +25,6 @@ import java.util.List;
 public class DepartmentController
 {
 
-
-
     //-----------------VARIABLES ----------------------------------------------------------
     private DepartmentService departmentService;
 
