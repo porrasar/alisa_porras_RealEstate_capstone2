@@ -79,28 +79,38 @@ background-position: right top;
     document.getElementById("demo").innerHTML = greeting;
     </script>
 </div>
+
+
 <!--     OPEN CLOSED QUESTION ENDING -----------------------  -->
 
-
 <header>
-    <nav class="navbar navbar-expand-lg">
-        <i class="bi bi-file-post"></i>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                 <a class="nav-link" th:href="@{/contactButtonHandler}"  >Contact Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/aboutButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="About Info">About</a>
-             </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/adminButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="Admin Only"> Administration</a>
-            </li>
-            <li class="nav-item">
-                 <a class="nav-link" th:href="@{/logout}" > Log out </a>
-            </li>
-        </ul>
+     <nav id="navBarRow" class="navbar navbar-expand-lg navbar-inverse  navbar-fixed-top">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav ">
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/contactButtonHandler}" target="_blank" data-bs-toggle="tooltip" title="Contact Us" >Contact Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/aboutButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="About Info">About</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/adminButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="Admin Only"> Administration</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/logout}" > Log out </a>
+                </li>
+            </ul>
+
+        </div>
     </nav>
 </header>
+
 
 <!--     HEADER ENDING -----------------------  -->
 
@@ -131,25 +141,40 @@ background-position: right top;
 </div>
 <!---------     BUTTONS ENDING -----------------------  -->
 
-
-
-
-
-
-
 <footer class="footer d-flex justify-content-center align-items-center">
+
+
     <div class="container text-center">
 
-        <div class="container my-2">
-            <a th:href="@{/logout}" class="btn btn-primary btn-sm mb-3"> Log out </a>
-
-        <br></br>
-
         <p class="mb-3" >God Bless! </p>
+<!--
+        <a th:href="@{/logout}" class="btn btn-primary btn-sm mb-3"> Log out </a>   // blue button
+                       <a class="navbar-brand" th:href="@{/logout}" > Log out </a>   // makes it bigger and bold
 
-        </div>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="nav-link" th:href="@{/adminButtonHandler}"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                </li>
+                <li>
+                    <a class="nav-link" th:href="@{/adminButtonHandler}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+                </li>
+
+                <a class="nav-link" th:href="@{/logout}" > Log out </a>
+            </ul>
+
+
+
+            <div class="navbar-header">
+                <p class="navbar-brand">BTB Properties, Inc.</p>
+
+            </div>
+-->
+
     </div>
 </footer>
+
+
 
 </body>
 

@@ -25,9 +25,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
     protected void configure(HttpSecurity http) throws Exception
     {
         http.authorizeRequests(requests -> requests
-                        .mvcMatchers("/login").permitAll()   //these are url's/handlers
+                        .mvcMatchers("/login").permitAll()
                         .mvcMatchers("/signup").permitAll()
-                        .mvcMatchers("/").permitAll()
+
+//                        .mvcMatchers("/").permitAll()              //these are url's/handlers, not html pages
+                        .mvcMatchers("/aboutButtonHandler").permitAll()
+                        .mvcMatchers("/contactButtonHandler").permitAll()
+                        .mvcMatchers("/housesListHandlerCustomer").permitAll()
+
+
 
                         .mvcMatchers("/addNewDepartmentPage").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/deleteDepartmentPageHandler/**").hasAnyRole("SUPERADMIN")
@@ -61,6 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                 .formLogin(login -> login
                         .loginPage("/login")        //this starts the login process
                         .defaultSuccessUrl("/")     // this statement controls what is the next page after the login
+//                        .defaultSuccessUrl("/home_general")     // this statement controls what is the next page after the login
                         .failureForwardUrl("/")
                         .permitAll())
                 .logout(logout -> logout

@@ -35,14 +35,14 @@ public class MainController
 //        return "redirect:/html/home_page_customer/";
 //    }
 
-//    @RequestMapping("/")
+//    @RequestMapping("/home_general")
 //    public String rootHomePage(HttpServletRequest request)
 //    {
 //        if(request.isUserInRole("ROLE_ADMIN"))    //this is determined in the user.java class
 //        {
-//            return "redirect:/html/home_page_admin/";
+//            return "redirect:/html/home_page_customer/";
 //        }
-//        return "redirect:/html/home_page_customer/";
+//        return "redirect:/html/home_page_admin/";
 //    }
 
 
