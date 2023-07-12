@@ -57,22 +57,11 @@ public class CustomerController
         List<Customer> customers = repository.findAll();
         model.addAttribute("customers", customers);  // i'm passing the 'customers' object into
         logger.info("/////// LIST CUSTOMERS //////// " );
-//        return "html/customers";
         return customersHtml;
     }
 
+// ---------------------- practing lastname access
 
-// ---------------------- practing
-
-
-//    @GetMapping("/addNewDepartmentPage")
-//    public String addNewDepartmentForm(Model model)
-//    {
-//        // create model attribute to bind form data
-//        Department department = new Department();
-//        model.addAttribute("department", department);
-//        return "html/addDepartmentPage";
-//    }
     @GetMapping("/customersByLastNameDisplayPageHandler")
     public String customersByLastNameDisplayPage()
     {
@@ -111,19 +100,9 @@ public class CustomerController
     @GetMapping("/deleteCustomerPage/{id}")
     public String deleteCustomerPage(@PathVariable(value = "id") int id)
     {
-        // call delete customer method
-//        this.customerService.deleteCustomerById(id);
-//        return "redirect:/customersListHandler";
 
-
-        try
-        {
-            this.customerService.deleteCustomerById(id);
-        }
-        catch(Exception e)
-        {
-            logger.info("/////// Customer not found  //////// ");
-        }
+        this.customerService.deleteCustomerById(id);
+        logger.info("/////// Customer not found  //////// ");
 
         return "redirect:/customersListHandler";
     }
@@ -156,24 +135,12 @@ public class CustomerController
         }
         // save customer to database
 
-//        customerService.saveCustomer(customer);
-//        return "redirect:/customersListHandler";
-
-        try
-        {
-          customerService.saveCustomer(customer);
-        }
-        catch(Exception e)
-        {
-            logger.info("/////// Failed to save request //////// ");
-        }
+        customerService.saveCustomer(customer);
+        logger.info("/////// Failed to save request //////// ");
 
         return "redirect:/customersListHandler";
 
     }//ending
-
-
-
 
 
     //-----------------ADD A PAYMENT TO A CUSTOMER PROCESS------------------
@@ -196,8 +163,6 @@ public class CustomerController
                                         @Valid Payment payment,
                                         BindingResult bindingResult)
     {
-
-
         //go get customer with the customerId that was passed in addPaymentToCustomer()
         Customer customer = customerService.getCustomerById(cId);
 
@@ -212,7 +177,6 @@ public class CustomerController
         customerService.saveCustomer(customer);
 
         return "redirect:/customersListHandler";
-
     }
 
     //---------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY BY USERNAME ---THEY ALREADY HAVE AN ACCOUNT---------------
@@ -233,4 +197,4 @@ public class CustomerController
 
 
 
-    }
+}

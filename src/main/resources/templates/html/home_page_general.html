@@ -2,9 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
 >
-<!-- <html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
-greeting = "Hello, we're open until 9 PM EST!";
--->
+
 <!--     ----------------------------------HOME PAGE ------------------------------     -->
 <head>
     <title>BTB (Blessed To Blessed) Properties, Inc.</title>
@@ -38,6 +36,7 @@ h1
   color: white;
   text-align: center;
   background-color: tan;
+  font-family: "Lucida Handwriting", "Lucida Console"
 }
 
 img 
@@ -50,8 +49,6 @@ padding: 20px;
 background-position: right top;
    
 }
-
-
 </style>
 
 <!--     HEADER BEGINNING -----------------------  -->
@@ -59,7 +56,6 @@ background-position: right top;
     <img src="cross_in_sky.jpg" alt="" width="2" height="2">
     <h1>BTB (Blessed To Bless) Properties, Inc.</h1>
 </div>
-
 <header>
     <nav id="navBarRow" class="navbar navbar-expand-lg navbar-inverse  navbar-fixed-top">
         <div class="container-fluid">
@@ -103,11 +99,11 @@ background-position: right top;
     else
     if (time > 21 && time < 8)
     {
-        document.write(greetingClosed);
+        document.write(greetingClosed1);
     }
     else
     {
-        document.write(greetingClosed);
+        document.write(greetingClosed1);
      }
     document.getElementById("demo").innerHTML = greeting;
 
@@ -119,19 +115,17 @@ background-position: right top;
 
 
 <!--     HEADER ENDING -----------------------  -->
-
-<h2>HOME PAGE</h2>
 <br></br>
+<h2>HOME PAGE</h2>
+
 <!--     BUTTONS BEGINNING -----------------------  -->
 
 <div class="containHOME PAGEer-fluid mt-3 text-center">
 
+
     <a th:href="@{/housesListHandlerCustomer}" class="btn btn-primary btn-sm mb-3"> House Info</a>
 
     <a th:href="@{/custButtonHandler}" class="btn btn-primary btn-sm mb-3"> My Account</a>
-
-    <br></br>
-
 
     <div class="dropdown">
         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
@@ -150,63 +144,29 @@ background-position: right top;
 </div>
 <!---------     BUTTONS ENDING -----------------------  -->
 
-
-<!--
-        <a th:href="@{/logout}" class="btn btn-primary btn-sm mb-3"> Log out </a>   // blue button
-                       <a class="navbar-brand" th:href="@{/logout}" > Log out </a>   // makes it bigger and bold
-
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="nav-link" th:href="@{/adminButtonHandler}"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
-                </li>
-                <li>
-                    <a class="nav-link" th:href="@{/adminButtonHandler}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
-                </li>
-
-                <a class="nav-link" th:href="@{/logout}" > Log out </a>
-            </ul>
-
-
-
-            <div class="navbar-header">
-                <p class="navbar-brand">BTB Properties, Inc.</p>
-
-            </div>
-
-                   <p  height="50">Click below to hear our theme song</p>
-
-
-       <source src="cutting_drywall.mp4" type="video/mp4" poster="image.jpg">
-       document.getElementById('themeSong').innerHTML = Date();
-
--->
 <footer class="footer d-flex justify-content-center align-items-center">
 
     <div class="container text-left">
+      <p class="mb-3">God Bless! </p>
 
-    <p class="mb-3">God Bless! </p>
-    <br></br>
-
-    <p id="themeSong"> </p>
-    <button type="button" onclick="themeSongFunction()">
-        Hear Our Theme Song
-    </button>
-
+<!--       <p id="dateDisplay"> </p>-->
+<!--       <button type="button" onclick="dateDisplayFunction()">-->
+<!--        Date & Time-->
+<!--       </button>-->
     </div>
 
+    <button type="button" onclick="themeSongFunction()"> Theme Song
+        <video id="blessedVideo" width="150" height="100" controls>
+         <source src="blessSomeone.mp4" type="video/mp4">
+             Your browser does not support HTML video.
+       </video>
 
-    <button type="button" onclick="themeSongFunction()">
-    <video id="blessedVideo" width="200" height="100" controls>
-        <source src="cutting_drywall.mp4" type="video/mp4">
-        Your browser does not support HTML video.
-    </video>
     </button>
 
 </footer>
 
-
-
-    </body>
+</body>
 
 </html>
+
+

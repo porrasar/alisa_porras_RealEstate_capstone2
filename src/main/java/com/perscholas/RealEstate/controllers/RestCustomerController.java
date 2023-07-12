@@ -88,14 +88,6 @@ public class RestCustomerController
         return customerService.getCustomerById(id);
     }
 
-
-//    @GetMapping("/customers/lastName")
-//    //http://localhost:8081/rest/customers/lastName?lastName=jones
-//    public ResponseEntity<List<Customer>> getCustomerByLastName(@RequestParam String lastName)
-//    {
-//        return new ResponseEntity<List<Customer>>(repository.findByLastName(lastName),HttpStatus.OK);
-//    }
-
     @GetMapping("/customers/lastName")
     //http://localhost:8081/rest/customers/lastName?lastName=jones
     public List <Customer> getCustomerByLastName(@RequestParam String lastName)

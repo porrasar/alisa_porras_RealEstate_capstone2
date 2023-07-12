@@ -146,7 +146,13 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - Created Schema.mwb file from SQL Server database.
   - Made Order -> OrderItem relationship uni-directional instead of bi-directional.
 
-- Mon., July 10 (??  done) 
+
+- Tues., July 11 (77% done)
+  - added nav bars on html pages 
+  - worked on some javascript 
+
+
+- Mon., July 10 (75% done) 
   - added unit testing for each query in customer repository
   - added a parameterized test for maintenance serviceImpl  
     
