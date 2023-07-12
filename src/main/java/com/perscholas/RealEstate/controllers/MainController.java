@@ -20,6 +20,7 @@ public class MainController
         return "html/home_page_general";
     }
 
+    // logout
 //    @RequestMapping("/")
 //    public String rootHomePage(HttpServletRequest request)
 //    {
