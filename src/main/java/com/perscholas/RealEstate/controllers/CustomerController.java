@@ -255,8 +255,8 @@ public class CustomerController
         user.setUsername(newUserName);
         logger.info("/////// SAVE - USER RECORD - get USER name,should be new name   //////// :" + user.getUsername());
 
-//       userRepository.save(user);
-        userService.updateUser(user);
+       userRepository.save(user);
+//        userService.updateUser(user);
         logger.info("/////// SAVE - USER RECORD - after update  //////// :" + user);
 
 
