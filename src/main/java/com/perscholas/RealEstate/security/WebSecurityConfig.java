@@ -64,6 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                         .mvcMatchers("/**").hasAnyRole("USER", "ADMIN", "SUPERADMIN")
                         .anyRequest().authenticated())
 
+
                 .formLogin(login -> login
                         .loginPage("/login")        //this starts the login process
                         .defaultSuccessUrl("/")     // this statement controls what is the next page after the login
@@ -72,6 +73,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
                         .permitAll())
                 .logout(logout -> logout
                         .logoutSuccessUrl("/login"));
+
+
+
 
     }
 

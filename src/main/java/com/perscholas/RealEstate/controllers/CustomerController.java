@@ -6,6 +6,9 @@ import com.perscholas.RealEstate.entities.Payment;
 import com.perscholas.RealEstate.entities.Payment;
 import com.perscholas.RealEstate.repositories.CustomerRepository;
 import com.perscholas.RealEstate.services.CustomerService;
+import com.perscholas.RealEstate.user.User;
+import com.perscholas.RealEstate.user.UserRepository;
+import com.perscholas.RealEstate.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,7 @@ import org.springframework.web.server.ResponseStatusException;
 import javax.validation.Valid;
 
 import java.io.FileNotFoundException;
+import java.security.Principal;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,13 +34,19 @@ public class CustomerController
 
     //-----------------VARIABLES ---------------------------------
     private CustomerService customerService;
+    private String holdUserName;
     @Autowired
     private CustomerRepository repository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private UserService userService;
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
     private final String customersHtml = "html/customer_for_admin";
     private final String addCustomerHtml = "html/addCustomerPage";
     private final String updateCustomerHtml = "html/updateCustomerPage";
+    private final String updateCustomerByCustomerHtml = "html/updateCustomerPageByTheCustomer";
 
     private final String individualCustomerHtml = "html/individualCustomerPage";
 
@@ -123,6 +133,8 @@ public class CustomerController
 
     }//ending
 
+
+
     //---------------------SAVE DATA TO DATABASE -----------
     //Save user data to database
     @PostMapping("/saveCustomer")
@@ -136,11 +148,12 @@ public class CustomerController
         // save customer to database
 
         customerService.saveCustomer(customer);
-        logger.info("/////// Failed to save request //////// ");
+        logger.info("/////// WHICH CUSTOMER - REG SAVE//////// " + customer);
 
         return "redirect:/customersListHandler";
 
     }//ending
+
 
 
     //-----------------ADD A PAYMENT TO A CUSTOMER PROCESS------------------
@@ -194,6 +207,64 @@ public class CustomerController
 
         return individualCustomerHtml;
     }
+
+    //---------------------------------------------------------------------
+    //---------------------UPDATE  PROCESS FOR USERNAME BY THE CUSTOMER -----------
+    @GetMapping("/updateCustomerPageByTheCustomer/{id}")
+    public String updateCustomerPageByTheCustomer(@PathVariable(value = "id") int id, Model model)
+    {//beginning
+        // get customer from the service
+        Customer customer = customerService.getCustomerById(id);
+
+        // set customer as a model attribute to pre-populate the form
+        model.addAttribute("customer", customer);
+        logger.info("/////// UPDATE - UPDATE CUSTOMER - @GETMAPPING  //////// :" + id);
+
+        return updateCustomerByCustomerHtml;
+
+    }//ending
+
+    //---------------------SAVE DATA TO DATABASE -----------
+    //Save user data to database
+    @PostMapping("/saveCustomerByCustomer")
+    public String saveCustomerByCustomer(@ModelAttribute("customer") @Valid Customer customer,
+                                         BindingResult bindingResult, Principal principal)
+    {//beginning
+
+        logger.info("/////// SAVE - WHICH CUSTOMER - before save: //////// " + customer);
+
+        if (bindingResult.hasErrors())
+        {
+            return updateCustomerByCustomerHtml;
+        }
+
+        // save customer to database
+        customerService.saveCustomer(customer);
+        logger.info("/////// SAVE - WHICH CUSTOMER: //////// " + customer);
+
+
+              //getting user record and updating the username
+        String oldUserName = principal.getName();
+        String newUserName = customer.getUserName();
+        logger.info("/////// SAVE -  SECURITY NAME - old user name from user record: //////// " + oldUserName);
+        logger.info("/////// SAVE -  SECURITY NAME - new user name from saved customer record: //////// " + newUserName);
+
+        User user = userRepository.findByUsername(oldUserName);
+        logger.info("/////// SAVE - USER RECORD - GET USER RECORD with old username  //////// :" + oldUserName + " " + user);
+
+        user.setUsername(newUserName);
+        logger.info("/////// SAVE - USER RECORD - get USER name,should be new name   //////// :" + user.getUsername());
+
+//       userRepository.save(user);
+        userService.updateUser(user);
+        logger.info("/////// SAVE - USER RECORD - after update  //////// :" + user);
+
+
+        return "redirect:/customersListHandler";
+
+    }//ending
+
+//---------------------------------------------------------------------
 
 
 

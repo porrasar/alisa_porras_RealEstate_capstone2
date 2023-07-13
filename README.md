@@ -232,6 +232,8 @@ Potential Customer (someone visiting the web page or interested in our propertie
 
 
 - Project management and setting priorities and daily goals using a tool like Jira was very helpful.
+- Principal principal - 
+- 
 
 ## ------------------------- FUTURE IMPROVEMENTS ---------------------------------
 - Add functionality for:
@@ -241,6 +243,7 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - customer (current):
     - make appointments (talk to owners, to repair an issue, inspections, etc.) 
     - make payments to their account 
+    - change password
 
   - customer (potential):
     - make appointments (talk to owners, tour of houses, etc)

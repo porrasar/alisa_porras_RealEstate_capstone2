@@ -1,7 +1,9 @@
 package com.perscholas.RealEstate.user;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,6 +11,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController
 {
+
+
 //    @GetMapping("/loginHomePageGeneralHandler")
 //    public String loginHomeGeneral()
 //    {
@@ -20,6 +24,8 @@ public class LoginController
 ////        return "html/login";
 //        return "html/home_page_customer";
 //    }
+
+
     @GetMapping("/login")
     public String loginPage()
     {
@@ -34,4 +40,11 @@ public class LoginController
         httpSession.invalidate();
         return "redirect:/";
     }
+
+
+
+
+
+
 }
+
