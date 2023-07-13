@@ -127,7 +127,7 @@ public class CustomerController
 
         // set employee as a model attribute to pre-populate the form
         model.addAttribute("customer", customer);
-        logger.info("/////// UPDATE CUSTOMER - @GETMAPPING  //////// :" + id);
+        logger.info("/////// UPDATE CUSTOMER - @GETMAPPING   - DID I COME THROUHGH HERE//////// :" + customer);
 
         return updateCustomerHtml;
 
@@ -141,6 +141,8 @@ public class CustomerController
     public String saveCustomer(@ModelAttribute("customer") @Valid Customer customer,
                                BindingResult bindingResult)
     {//beginning
+
+        logger.info("/////// WHICH CUSTOMER - REG SAVE//////// " + customer);
         if (bindingResult.hasErrors())
         {
             return addCustomerHtml;
