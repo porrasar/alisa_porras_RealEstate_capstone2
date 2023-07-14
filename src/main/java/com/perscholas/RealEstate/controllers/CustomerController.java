@@ -141,23 +141,32 @@ public class CustomerController
     @PostMapping("/saveCustomer")
     public String saveCustomer(@ModelAttribute("customer") @Valid Customer customer,
                                BindingResult bindingResult)
-    {//beginning
-
-        logger.info("/////// WHICH CUSTOMER - REG SAVE//////// " + customer);
+    {
         if (bindingResult.hasErrors())
         {
             return addCustomerHtml;
         }
-        // save customer to database
 
-        customerService.saveCustomer(customer);
-        logger.info("/////// WHICH CUSTOMER - REG SAVE//////// " + customer);
+        // save customer to database. Had to pull the customer record from the repository, in order to keep the
+        // payment information on my html page. Then updating the customer record from the repository, with
+        // the changes from the model customer record
+
+        Customer customerById =  repository.getById(customer.getcId());
+
+        customerById.setFirstName(customer.getFirstName());
+        customerById.setLastName(customer.getLastName());
+        customerById.setAddress(customer.getAddress());
+        customerById.setCity(customer.getCity());
+        customerById.setState(customer.getState());
+        customerById.setZip(customer.getZip());
+        customerById.setSecurityName(customer.getSecurityName());
+        customerById.setUserName(customer.getUserName());
+
+        customerService.saveCustomer(customerById);
 
         return "redirect:/customersListHandler";
 
-    }//ending
-
-
+    }
 
     //-----------------ADD A PAYMENT TO A CUSTOMER PROCESS------------------
     @GetMapping("/addPaymentToCustomerPageHandler/{cId}")
@@ -167,7 +176,7 @@ public class CustomerController
         Payment payment = new Payment();
         model.addAttribute("payment", payment);
         model.addAttribute("cId", cId);
-        logger.info("/////// ADD PAYMENT TO CUSTOMER - @GETMAPPING  //////// :" + cId );
+
         return "html/payment/addPaymentToCustomerPage";
     }
 
