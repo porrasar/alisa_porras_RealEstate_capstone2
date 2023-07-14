@@ -10,6 +10,9 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 
+/*
+Purpose: This starts the application and contains the main method
+*/
 @SpringBootApplication
 public class AlisaPorrasRealEstateCapstone2Application
 {

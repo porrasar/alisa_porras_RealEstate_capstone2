@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/*
+Purpose: This class is to communicate with the database in order to access and persist the data.
+*/
 @Repository
 public interface MaintenanceRepository extends JpaRepository<Maintenance, Integer>
 {

@@ -11,6 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/*
+Purpose: This class implements the business logic methods that perform CRUD and other custom operations.
+ */
+
 @Service
 public class PaymentServiceImpl implements PaymentService
 {

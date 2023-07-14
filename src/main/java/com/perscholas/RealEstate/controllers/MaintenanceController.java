@@ -20,6 +20,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 import java.util.List;
 
+
+/*
+Purpose: This class is to receive the request and data from the html page and send back the requested information to the html page.
+         It performs the CRUD (Create, Read, Update, and Delete) functions for the Maintenance table.
+*/
 @Controller
 public class MaintenanceController
 {

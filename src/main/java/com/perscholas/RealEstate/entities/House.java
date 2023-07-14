@@ -9,6 +9,11 @@ import javax.persistence.Id;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
+
+/*
+Purpose: This class is to define the House entity -  with variables, constructors and getter/setters and using Springboot.
+         This creates the table in the database.
+*/
 @Entity
 public class House implements Serializable
 {

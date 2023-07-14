@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
+
+/*
+Purpose: This class is to receive the request and data from the html page and send back the requested information to the html page.
+*/
+
 @Controller
 public class MainController
 {

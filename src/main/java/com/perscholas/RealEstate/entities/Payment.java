@@ -13,6 +13,11 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+
+/*
+Purpose: This class is to define the Payment entity -  with variables, constructors and getter/setters and using Springboot.
+         This creates the table in the database.
+*/
 @Entity
 public class Payment implements Serializable
 {

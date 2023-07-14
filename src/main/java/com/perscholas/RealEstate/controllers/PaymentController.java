@@ -22,6 +22,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 import java.util.List;
 
+/*
+Purpose: This class is to receive the request and data from the html page and send back the requested information to the html page.
+         It performs the CRUD (Create, Read, Update, and Delete) functions for the Customer table.
+         It has a 1:m (customer:payments) relationship, defined in Customer.java
+*/
 @Controller
 public class PaymentController
 {

@@ -16,6 +16,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+
+/*
+Purpose: This class is to receive the request and data from web services and send back the requested information.
+         It performs the CRUD (Create, Read, Update, and Delete) functions for the Customer table.
+         It also has the methods that performs the custom finder queries
+*/
 @RestController
 @RequestMapping("/rest")
 public class RestCustomerController

@@ -28,6 +28,12 @@ import java.security.Principal;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+Purpose: This class is to receive the request and data from the html page and send back the requested information to the html page.
+         It performs the CRUD (Create, Read, Update, and Delete) functions for the Customer table.
+         It also performs adding a payment to a customer, which has a 1:m (customer:payments) relationship
+*/
+
 @Controller
 public class CustomerController
 {
@@ -59,6 +65,7 @@ public class CustomerController
     }
 
     //-------------------METHODS -----------------------------------
+
     //---------------------LIST ALL CUSTOMERS -----------
     //display initial view/html page, list of all customers
     @GetMapping("/customersListHandler")
@@ -258,7 +265,6 @@ public class CustomerController
         logger.info("/////// SAVE - USER RECORD - get USER name,should be new name   //////// :" + user.getUsername());
 
        userRepository.save(user);
-//        userService.updateUser(user);
         logger.info("/////// SAVE - USER RECORD - after update  //////// :" + user);
 
 

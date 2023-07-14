@@ -4,6 +4,10 @@ import com.perscholas.RealEstate.entities.Department;
 
 import java.util.List;
 
+/*
+Purpose: This class defines the business logic methods that perform CRUD and other custom operations.
+ */
+
 public interface DepartmentService
 {
 

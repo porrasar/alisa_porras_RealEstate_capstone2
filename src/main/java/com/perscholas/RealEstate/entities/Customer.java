@@ -7,6 +7,11 @@ import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.List;
 
+
+/*
+Purpose: This class is to define the Customer entity -  with variables, constructors and getter/setters and using Springboot.
+         This creates the table in the database.
+*/
 @Entity
 @Table
 public class Customer implements Serializable
