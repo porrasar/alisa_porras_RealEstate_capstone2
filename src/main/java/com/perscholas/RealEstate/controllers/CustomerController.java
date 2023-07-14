@@ -69,6 +69,7 @@ public class CustomerController
         model.addAttribute("customers", customers);  // i'm passing the 'customers' object into
         logger.info("/////// LIST CUSTOMERS //////// " );
         return customersHtml;
+
     }
 
 // ---------------------- practing lastname access
@@ -140,6 +141,25 @@ public class CustomerController
     //Save user data to database
     @PostMapping("/saveCustomer")
     public String saveCustomer(@ModelAttribute("customer") @Valid Customer customer,
+                               BindingResult bindingResult)
+    {
+        if (bindingResult.hasErrors())
+        {
+            return addCustomerHtml;
+        }
+
+        // save customer to database.
+
+        customerService.saveCustomer(customer);
+
+        return "redirect:/customersListHandler";
+
+    }
+
+    //---------------------SAVE UPDATED CUSTOMER DATA TO DATABASE -----------
+    //Save user data to database
+    @PostMapping("/saveUpdatedCustomer")
+    public String saveCustomerUpdated(@ModelAttribute("customer") @Valid Customer customer,
                                BindingResult bindingResult)
     {
         if (bindingResult.hasErrors())

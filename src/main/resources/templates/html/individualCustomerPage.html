@@ -24,18 +24,22 @@
             <ul class="nav navbar-nav ">
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/contactButtonHandler}" target="_blank" data-bs-toggle="tooltip" title="Contact Us" >Contact Us</a>
+                    <a class="nav-link" th:href="@{/contactButtonHandler}"  data-bs-toggle="tooltip" title="Contact Us" >Contact Us</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/aboutButtonHandler}"  target="_blank" data-bs-toggle="tooltip" title="About Info">About</a>
+                    <a class="nav-link" th:href="@{/aboutButtonHandler}"   data-bs-toggle="tooltip" title="About Info">About</a>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="active" >
-                    <a class="nav-link" th:href="@{/}" target="_blank" data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
+                <li class="nav-item" >
+                    <a class="nav-link" th:href="@{/custButtonHandler}" data-bs-toggle="tooltip" title="Go Back to Customer Page"> Back to Customer page</a>
+                </li>
+
+                <li class="nav-item" >
+                    <a class="nav-link" th:href="@{/}" data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
                 </li>
 
                 <li class="nav-item">
@@ -112,101 +116,9 @@
 
     <br></br>
 
-    <a th:href="@{/custButtonHandler}"> Back to Customer page</a>
-
 </div>
-
-<!--
-
-<p id="demo">A general function</p>
-
-<button type="button" onclick="myGeneralWriteFunction()">General function</button>
-
-<script type="text/javascript" src="btb_external_javascript.js"></script>
-
-
-<br></br>
-<a href="home_page_general.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
-
-
--->
 
 
 
 </body>
 </html>
-
-
-
-
-
-<!--
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-
-     <meta charset="UTF-8">
-    <title>Customer page - BTB (Blessed To Bless) Properties, Inc.</title>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-    <link href="../static/pages.css" th:href="@{pages.css}" type="text/css" rel="stylesheet"/>
-
-</head>
-
-<body>
-<h1>Individual Customer Info</h1>
-
-<div>
-
-<p>  still trying to get thymleaf in</p>
-
-
-
-    <article>
-
-        <p>  in article tag  again again</p>
-
-        <div th:text="${customer.name}" class="col mb-3">
-
-
-        <div>
-         <p>  before article</p>
-
-            <a th:href="@{/customersListHandler}">Create List</a>
-        </div>
-
-
-
-        <div th:each="payment : ${customer.paymentList}" class="col mb-3">
-             <p th:text = "${payment.paymentType}}"></p>
-        </div>
-
-
-
-        <p>  in article-dont ignore me</p>
-
-        <div th:if="${error}" class="alert alert-danger">
-            <p th:text="${error}"></p>
-        </div>
-
-
-
-
-    </article>
-
-
-
-<a th:href="@{/}"> Back to Customer List</a>
-
-</div>
-</body>
-</html>
-
--->
