@@ -133,19 +133,23 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - Added test code MenuItemServiceImplTest
   - Removed cart reference from CartItem class
   - Fixed update user functionality bug
+- 
+- Fri., July 14 (??% done)
+  - fixed sign-up issue (u_id not found), needed to clean out and create new database
+  - fixed issue of payments being removed when performing an update on customer 
+  - worked on all naming conventions
 
 
-- April 19th (90% done)
-  - Added Logger and log messages to controller classes.
-  - Added JavaDoc folder and JavaDoc files.
-  
+- Thurs., July 13 (82% done)
+  - worked on formatting navbar on html pages
+  - worked on all naming conventions
+  - added comments 
+  - worked on fixing GIT issues 
 
-- April 18th (87% done)
-  - Added OrderRestController to provide web services.
-  - Updated README.md file to have links and Contents section.
-  - Created Schema.mwb file from SQL Server database.
-  - Made Order -> OrderItem relationship uni-directional instead of bi-directional.
-
+- Wed., July 12 (80% done)
+  - worked on navbar for all html pages
+  - worked on javascript
+   
 
 - Tues., July 11 (77% done)
   - added nav bars on html pages 
