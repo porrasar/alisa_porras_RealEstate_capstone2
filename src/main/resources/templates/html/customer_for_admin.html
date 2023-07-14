@@ -34,8 +34,11 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/adminButtonHandler}" target="_blank" data-bs-toggle="tooltip" title="Admin Page" >Admin</a>
+                </li>
 
-                <li class="active" >
+                <li class="nav-item" >
                     <a class="nav-link" th:href="@{/}" target="_blank" data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
                 </li>
 
@@ -92,8 +95,6 @@
     </table>
 
     <br></br>
-
-    <a th:href="@{/adminButtonHandler}"> Back to Administration page</a>
 
 
 </div>

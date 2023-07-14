@@ -1,8 +1,6 @@
 package com.perscholas.RealEstate.controllers;
 
 import com.perscholas.RealEstate.entities.Customer;
-import com.perscholas.RealEstate.entities.Department;
-import com.perscholas.RealEstate.entities.Payment;
 import com.perscholas.RealEstate.entities.Payment;
 import com.perscholas.RealEstate.repositories.CustomerRepository;
 import com.perscholas.RealEstate.services.CustomerService;
@@ -12,21 +10,17 @@ import com.perscholas.RealEstate.user.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 
-import java.io.FileNotFoundException;
 import java.security.Principal;
 import java.util.List;
-import java.util.Scanner;
 
 /*
 Purpose: This class is to receive the request and data from the html page and send back the requested information to the html page.
@@ -101,7 +95,7 @@ public class CustomerController
         return "html/customersByLastName";
     }
 
-// ---------------------- practing
+// ---------------------- practing  -------------------------
 
     //---------------------ADD NEW CUSTOMER -----------
     @GetMapping("/addNewCustomerForm")

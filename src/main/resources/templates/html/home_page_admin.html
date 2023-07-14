@@ -36,6 +36,7 @@ h1
   color: white;
   text-align: center;
   background-color: tan;
+  font-family: "Lucida Handwriting", "Lucida Console"
 }
 
 img 
@@ -73,7 +74,7 @@ background-position: right top;
 
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="active" >
+                <li class="nav-item" >
                     <a class="nav-link" th:href="@{/}" target="_blank" data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
                 </li>
 
@@ -94,12 +95,10 @@ background-position: right top;
 <!--     BUTTONS BEGINNING -----------------------  -->
 <div class="containHOME PAGEer-fluid mt-3 text-center">
 
-<a th:href="@{/departmentsListHandler}" class="btn btn-primary btn-sm mb-3"> Department Info</a>
-
 
 <a th:href="@{/customersListHandler}" class="btn btn-primary btn-sm mb-3"> Customer List</a>
 
-<a th:href="@{/customersByLastNameDisplayPageHandler}" class="btn btn-primary btn-sm mb-3"> Customer By Last Name</a>
+<!--<a th:href="@{/customersByLastNameDisplayPageHandler}" class="btn btn-primary btn-sm mb-3"> Customer By Last Name</a>-->
 
 
 <a th:href="@{/housesListHandlerAdmin}" class="btn btn-primary btn-sm mb-3"> House Info</a>

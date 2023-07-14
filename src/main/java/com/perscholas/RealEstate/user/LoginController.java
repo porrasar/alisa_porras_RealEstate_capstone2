@@ -1,5 +1,7 @@
 package com.perscholas.RealEstate.user;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,8 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController
 {
+
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
 
 //    @GetMapping("/loginHomePageGeneralHandler")
@@ -29,6 +33,8 @@ public class LoginController
     @GetMapping("/login")
     public String loginPage()
     {
+        logger.info("/////// - LOGIN CONTROLLER - IN LOGIN  //////// " );
+
         return "html/login";
     }
 

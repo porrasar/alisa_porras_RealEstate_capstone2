@@ -17,7 +17,7 @@
     <script src= "btb_external_javascript.js"></script>
 </head>
 <header>
-    <nav id="navBarRow" class="navbar navbar-expand-lg navbar-inverse  navbar-fixed-top">
+     <nav id="navBarRow" class="navbar navbar-expand-lg navbar-inverse  navbar-fixed-top">
         <div class="container-fluid">
             <ul class="nav navbar-nav ">
 
@@ -30,9 +30,18 @@
                 </li>
             </ul>
 
+
             <ul class="nav navbar-nav navbar-right">
 
-                <li class="active" >
+                <li class="nav-item">
+                     <a class="nav-link" th:href="@{/customersListHandler}" target="_blank" data-bs-toggle="tooltip" title="Customer List" >Customer List</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/adminButtonHandler}" target="_blank" data-bs-toggle="tooltip" title="Admin Page" >Admin</a>
+                </li>
+
+                <li class="nav-item" >
                     <a class="nav-link" th:href="@{/}" target="_blank" data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
                 </li>
 
@@ -64,11 +73,13 @@
         <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-4">
         <input type="text" th:field="*{city}"  placeholder="City" class="form-control mb-4 col-4">
         <input type="text" th:field="*{state}"  placeholder="State" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{zip}"  placeholder="Zip" class="form-control mb-4 col-4">
+        <input type="number" th:field="*{zip}"  placeholder="Zip" class="form-control mb-4 col-4">
         <input type="text" th:field="*{userName}" placeholder="User Name" class="form-control mb-4 col-4">
         <input type="text" th:field="*{securityName}" placeholder="Security Name" class="form-control mb-4 col-4">
 
         <br></br>
+
+
 
         <button type="submit" class="btn btn-info col-2"> Update Customer</button>
 
@@ -77,9 +88,10 @@
 
 
     <hr>
-    <a th:href="@{/custButtonHandler}"> Back to Customer page</a>
-    <br></br>
-    <a th:href="@{/}"> Back to Customer List</a>
-</div>
-</body>
+
+
+
+
+
+</div></body>
 </html>

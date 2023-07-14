@@ -22,7 +22,33 @@ public class MainController
    @GetMapping("/")
    public String rootHomePage()
     {
+        logger.info("/////// - MAIN CONTROLLER - IN '/' - GOES TO GENERAL HOME PAGE  //////// " );
         return "html/home_page_general";
+    }
+
+
+    @GetMapping("/custButtonHandler")
+    public String rootCustomerHomePage()
+    {
+        return "html/home_page_customer";
+    }
+
+    @GetMapping("/adminButtonHandler")  //this is coming from 'home_page_admin.html'
+    public String rootAdminHomePage()
+    {
+        return "html/home_page_admin";
+    }
+
+    @GetMapping("/contactButtonHandler")
+    public String contactPage()
+    {
+        return "html/contact_us";
+    }
+
+    @GetMapping("/aboutButtonHandler")
+    public String aboutPage()
+    {
+        return "html/about";
     }
 
     // logout
@@ -66,27 +92,4 @@ public class MainController
     // ----------------
 
 
-    @GetMapping("/custButtonHandler")
-    public String rootCustomerHomePage()
-    {
-        return "html/home_page_customer";
-    }
-
-    @GetMapping("/adminButtonHandler")  //this is coming from 'home_page_admin.html'
-    public String rootAdminHomePage()
-    {
-        return "html/home_page_admin";
-    }
-
-    @GetMapping("/contactButtonHandler")
-    public String contactPage()
-    {
-        return "html/contact_us";
-    }
-
-    @GetMapping("/aboutButtonHandler")
-    public String aboutPage()
-    {
-        return "html/about";
-    }
 }

@@ -14,8 +14,7 @@ import java.util.Collections;
 
 @Entity
 @Table(name = "users")
-public class User implements UserDetails
-{
+public class User implements UserDetails {
 
     @Id
     private String username;
@@ -26,10 +25,8 @@ public class User implements UserDetails
 
     // For the simplicity of the app, we give ADMIN role to all
     // newly signed-up users.
-    public Collection<? extends GrantedAuthority> getAuthorities()
-    {
+    public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN"));
-//        return Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
     @Override
@@ -68,13 +65,5 @@ public class User implements UserDetails
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                '}';
     }
 }

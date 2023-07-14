@@ -33,6 +33,15 @@
 
             <ul class="nav navbar-nav navbar-right">
 
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/customersListHandler}" target="_blank" data-bs-toggle="tooltip" title="Customer List" >Customer List</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/adminButtonHandler}" target="_blank" data-bs-toggle="tooltip" title="Admin Page" >Admin</a>
+                </li>
+
+
                 <li class="active" >
                     <a class="nav-link" th:href="@{/}" target="_blank" data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
                 </li>
@@ -59,7 +68,7 @@
 
         <input type="text" th:field="*{paymentType}" placeholder="Payment Type" class="form-control mb-4 col-4">
 
-        <input type="text" th:field="*{paymentAmount}"  placeholder="Payment Amount" class="form-control mb-4 col-4">
+        <input type="number" th:field="*{paymentAmount}"  placeholder="Payment Amount" class="form-control mb-4 col-4">
 
         <input type="text" th:field="*{paymentTransactionDate}"  placeholder="Payment Date" class="form-control mb-4 col-4">
 
@@ -68,7 +77,6 @@
 
     <hr>
 
-    <a th:href="@{/}"> Back to Payment List</a>
 </div>
 </body>
 </html>

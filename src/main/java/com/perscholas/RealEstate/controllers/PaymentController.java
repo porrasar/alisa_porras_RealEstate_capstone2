@@ -1,12 +1,8 @@
 package com.perscholas.RealEstate.controllers;
 
 
-import com.perscholas.RealEstate.entities.Customer;
-import com.perscholas.RealEstate.entities.Department;
 import com.perscholas.RealEstate.entities.Payment;
-import com.perscholas.RealEstate.repositories.DepartmentRepository;
 import com.perscholas.RealEstate.repositories.PaymentRepository;
-import com.perscholas.RealEstate.services.DepartmentService;
 import com.perscholas.RealEstate.services.PaymentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
