@@ -71,6 +71,7 @@
     <div th:if="${#fields.hasErrors('paymentType')}" th:errors="*{paymentType}"> Payment Type Error</div>
 -->
       <label for="paymentType">Payment Type  </label>
+      <br></br>
       <select name="paymentType" id="paymentType">
          <option value="Rent">Rent</option>
          <option value="Fees">Fees</option>
@@ -82,11 +83,17 @@
 
     <div th:if="${#fields.hasErrors('paymentAmount')}" th:errors="*{paymentAmount}"> Payment Amount Format Wrong</div>
 
-    <input type="text" th:field="*{paymentAmount}" placeholder="Payment Amount" class="form-control mb-4 col-4">
+<!--    <input type="text" th:field="*{paymentAmount}" placeholder="Payment Amount" class="form-control mb-4 col-4">-->
+<!--      <input type="text" th:field="*{paymentTransactionDate}" placeholder="Payment Date" class="form-control mb-4 col-4">-->
 
+      <label for="paymentAmount">Payment Amount:</label>
+      <input type="number" th:field="*{paymentAmount}" id="paymentAmount" name="paymentAmount" class="form-control mb-4 col-4">
 
-      <input type="text" th:field="*{paymentTransactionDate}" placeholder="Payment Date" class="form-control mb-4 col-4">
+      <label for="paymentTransactionDate">Payment Transaction Date:</label>
+      <input type="text" th:field="*{paymentTransactionDate}" id="paymentTransactionDate" name="paymentTransactionDate" class="form-control mb-4 col-4">
 
+      <label for="paymentNotes">Payment Notes:</label>
+      <input type="text" th:field="*{paymentNotes}" id="paymentNotes" name="paymentNotes" class="form-control mb-4 col-4">
 
     <button type="submit" class="btn btn-info col-2"> Save Payment to a customer</button>
   </form>
