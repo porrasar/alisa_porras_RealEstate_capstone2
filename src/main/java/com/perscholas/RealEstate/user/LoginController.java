@@ -20,13 +20,13 @@ public class LoginController
 //    @GetMapping("/loginHomePageGeneralHandler")
 //    public String loginHomeGeneral()
 //    {
-//        return "html/home_page_general";
+//        return "html/homePageGeneral";
 //    }
 
 //    @GetMapping("/login")
 //    public String login() {
 ////        return "html/login";
-//        return "html/home_page_customer";
+//        return "html/homePageCustomer";
 //    }
 
 

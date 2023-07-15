@@ -43,7 +43,7 @@ public class CustomerController
     private UserService userService;
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
-    private final String customersHtml = "html/customer_for_admin";
+    private final String customersHtml = "html/customerForAdmin";
     private final String addCustomerHtml = "html/addCustomerPage";
     private final String updateCustomerHtml = "html/updateCustomerPage";
     private final String updateCustomerByCustomerHtml = "html/updateCustomerPageByTheCustomer";
@@ -226,7 +226,7 @@ public class CustomerController
 
     //---------ACCESSING INDIVIDUAL CUSTOMER INFO WITH SECURITY BY USERNAME ---THEY ALREADY HAVE AN ACCOUNT---------------
 
-    @GetMapping("/myIndividualCustomerHandler")      // this is coming from home_page_customer.html
+    @GetMapping("/myIndividualCustomerHandler")      // this is coming from homePageCustomer.html
     public String showIndividualCustomerInfo(Model model)
     {
         UserDetails userPrincipal = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();

@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      security="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
->
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
     <meta charset="UTF-8">
-    <title>House page   - BTB (Blessed To Bless) Properties, Inc.</title>
+    <title>Customer page - BTB (Blessed To Bless) Properties, Inc.</title>
     <meta charset="utf-8"></title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +18,7 @@
 
 
 </head>
+
 <header>
     <nav id="navBarRow" class="navbar navbar-expand-lg navbar-inverse  navbar-fixed-top">
         <div class="container-fluid">
@@ -38,7 +34,6 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/adminButtonHandler}"  data-bs-toggle="tooltip" title="Admin Page" >Admin</a>
                 </li>
@@ -55,43 +50,46 @@
         </div>
     </nav>
 </header>
+
 <body>
 
 <div class="container my-2">
-    <h1>House List</h1>
+    <h1>Customer List</h1>
 
-    <a th:href="@{/addNewHouseForm}" class="btn btn-primary btn-sm mb-3"> Add House </a>
+    <a th:href="@{/addNewCustomerForm}" class="btn btn-primary btn-sm mb-3"> Add Customer </a>
 
     <table class="table table-striped table-responsive-md">
         <thead>
         <tr>
-            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Address</th>
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
+            <th>User Name</th>
+            <th>Security Name</th>
 
         </tr>
         </thead>
         <tbody>
-        <tr th:each="house : ${houses}">   <!-- 'house' is my object variable from house class.
-                                                       'houses' is a made up name, for the key, of the key, valued pair of the Model class   -->
-            <td th:text="${house.hId}"></td>
-            <td th:text="${house.houseAddress}"></td>
-            <td th:text="${house.houseCity}"></td>
-            <td th:text="${house.houseState}"></td>
-            <td th:text="${house.houseZip}"></td>
+        <tr th:each="customer : ${customers}">   <!-- 'customer' is my object variable from customer class.
+                                                       'customers' is a made up name, for the key, of the key, valued pair of the Model class
+                                                        used in handler "customersListHandler" in customer controller -->
+            <td th:text="${customer.firstName}"></td>   <!--  these are fields from my customer class-->
+            <td th:text="${customer.lastName}"></td>
+            <td th:text="${customer.address}"></td>
+            <td th:text="${customer.city}"></td>
+            <td th:text="${customer.state}"></td>
+            <td th:text="${customer.zip}"></td>
+            <td th:text="${customer.userName}"></td>
+            <td th:text="${customer.securityName}"></td>
             <td>
-                <a th:href="@{/updateHousePage/{hId}(hId=${house.hId})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/updateCustomerPage/{id}(id=${customer.cId})}" class="btn btn-primary">Customer Details</a>
 
-                <a th:href="@{/deleteHousePage/{hId}(hId=${house.hId})}" class="btn btn-danger">Delete</a>
+               <a th:href="@{/deleteCustomerPage/{id}(id=${customer.cId})}" class="btn btn-danger">Delete</a>
 
-                <!--
-                <a href="confirmDeletePage">Delete, confirm </a>
-                -->
-            </td>
-
-
+             </td>
         </tr>
         </tbody>
     </table>
@@ -111,7 +109,7 @@
 
 
 <br></br>
-<a href="home_page_general.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
+<a href="homePageGeneral.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
 
 
 -->

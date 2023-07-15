@@ -50,7 +50,8 @@ public class MaintenanceController
     {
         List<Maintenance> maintenances = repository.findAll();
         model.addAttribute("maintenances", maintenances);
-        return "html/maintenance_for_admin";
+        logger.info("///////LIST MAINTENANCE COMPANY - before html  /////// " );
+        return "html/maintenanceForAdmin";
     }
 
     // ------------Page for list of maintenance companies for customer -----------
@@ -59,7 +60,7 @@ public class MaintenanceController
     {
         List<Maintenance> maintenances = repository.findAll();
         model.addAttribute("maintenances", maintenances);
-        return "html/maintenance_for_cust";
+        return "html/maintenanceForCust";
     }
 
 //---------------------ADD NEW MAINTENANCE COMPANY -----------------------------
@@ -81,7 +82,7 @@ public class MaintenanceController
     {
         // call delete Maintenance method
         this.maintenanceService.deleteMaintenanceById(id);
-        return "redirect:/maintenanceListHandler";
+        return "redirect:/maintenanceListHandlerAdmin";
 
     }
 
@@ -90,6 +91,7 @@ public class MaintenanceController
     @GetMapping("/updateMaintenancePage/{id}")
     public String updateMaintenancePage(@PathVariable(value = "id") int id, Model model)
     {
+
         // get Maintenance from the service
         Maintenance maintenance = maintenanceService.getMaintenanceById(id);
 
@@ -104,6 +106,8 @@ public class MaintenanceController
     public String saveMaintenance(@ModelAttribute("maintenance") @Valid Maintenance maintenance,
                                BindingResult bindingResult)
     {
+        logger.info("///////save MAINTENANCE COMPANY -  /////// " );
+
         if (bindingResult.hasErrors())
         {
             return "html/addMaintenancePage";
@@ -112,17 +116,11 @@ public class MaintenanceController
 //        maintenanceService.saveMaintenance(maintenance);
 //        return "redirect:/MaintenanceListHandler";
 
-
-        try
-        {
             maintenanceService.saveMaintenance(maintenance);
-        }
-        catch(Exception e)
-        {
-            logger.info("/////// Failed to save request //////// ");
-        }
 
-        return "redirect:/MaintenanceListHandler";
+            logger.info("///////SAVED THE REQUEST//////// ");
+
+        return "redirect:/maintenanceListHandlerAdmin";
 
     }
 

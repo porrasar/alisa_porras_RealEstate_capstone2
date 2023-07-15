@@ -23,26 +23,26 @@ public class MainController
    public String rootHomePage()
     {
         logger.info("/////// - MAIN CONTROLLER - IN '/' - GOES TO GENERAL HOME PAGE  //////// " );
-        return "html/home_page_general";
+        return "html/homePageGeneral";
     }
 
 
     @GetMapping("/custButtonHandler")
     public String rootCustomerHomePage()
     {
-        return "html/home_page_customer";
+        return "html/homePageCustomer";
     }
 
-    @GetMapping("/adminButtonHandler")  //this is coming from 'home_page_admin.html'
+    @GetMapping("/adminButtonHandler")  //this is coming from 'homePageAdmin.html'
     public String rootAdminHomePage()
     {
-        return "html/home_page_admin";
+        return "html/homePageAdmin";
     }
 
     @GetMapping("/contactButtonHandler")
     public String contactPage()
     {
-        return "html/contact_us";
+        return "html/contactUs";
     }
 
     @GetMapping("/aboutButtonHandler")
@@ -60,11 +60,11 @@ public class MainController
 //        if(request.isUserInRole("ROLE_ADMIN"))    //this is determined in the user.java class
 //        {
 ////            logger.info("/////// IN REQUEST MAPPING - ROLE ADMIN  //////// :" );
-//            return "redirect:/html/home_page_admin/";
+//            return "redirect:/html/homePageAdmin/";
 //        }
 //
 ////        logger.info("/////// IN REQUEST MAPPING - ROLE customer  //////// :" );
-//        return "redirect:/html/home_page_customer/";
+//        return "redirect:/html/homePageCustomer/";
 //    }
 
 //    @RequestMapping("/home_general")
@@ -72,9 +72,9 @@ public class MainController
 //    {
 //        if(request.isUserInRole("ROLE_ADMIN"))    //this is determined in the user.java class
 //        {
-//            return "redirect:/html/home_page_customer/";
+//            return "redirect:/html/homePageCustomer/";
 //        }
-//        return "redirect:/html/home_page_admin/";
+//        return "redirect:/html/homePageAdmin/";
 //    }
 
 

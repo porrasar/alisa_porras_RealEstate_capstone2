@@ -50,7 +50,7 @@ public class HouseController
     {
         List<House> houses = repository.findAll();
         model.addAttribute("houses", houses);
-        return "html/house_for_Admin";
+        return "html/houseForAdmin";
     }
 
     @GetMapping("/housesListHandlerCustomer")
@@ -58,7 +58,7 @@ public class HouseController
     {
         List<House> houses = repository.findAll();
         model.addAttribute("houses", houses);
-        return "html/house_for_Customer";
+        return "html/houseForCustomer";
     }
 
 

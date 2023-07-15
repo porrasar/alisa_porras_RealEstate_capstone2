@@ -6,8 +6,9 @@
 
 
 <head>
+
     <meta charset="UTF-8">
-    <title>Maintenance for Admin - BTB (Blessed To Bless) Properties, Inc.</title>
+    <title>House page   - BTB (Blessed To Bless) Properties, Inc.</title>
     <meta charset="utf-8"></title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="btb_external_css.css">
     <script src= "btb_external_javascript.js"></script>
 
+
 </head>
 <header>
     <nav id="navBarRow" class="navbar navbar-expand-lg navbar-inverse  navbar-fixed-top">
@@ -31,11 +33,15 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/aboutButtonHandler}"  data-bs-toggle="tooltip" title="About Info">About</a>
+                    <a class="nav-link" th:href="@{/aboutButtonHandler}"   data-bs-toggle="tooltip" title="About Info">About</a>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+
+                <li class="nav-item" >
+                    <a class="nav-link" th:href="@{/custButtonHandler}"  data-bs-toggle="tooltip" title="Go Back to Home Page" >Customer Page</a>
+                </li>
 
                 <li class="nav-item" >
                     <a class="nav-link" th:href="@{/}"  data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
@@ -52,32 +58,34 @@
 <body>
 
 <div class="container my-2">
-    <h1>Maintenance Companies List </h1>
-
+    <h1>House List - Customer</h1>
 
     <table class="table table-striped table-responsive-md">
         <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+
         </tr>
         </thead>
         <tbody>
-        <tr th:each="maintenance : ${maintenances}">   <!-- 'maintenance' is my object variable from house class.
-                                                       'maintenances' is a made up name, for the key, of the key, valued pair of the Model class   -->
-            <td th:text="${maintenance.mId}"></td>
-            <td th:text="${maintenance.maintenanceName}"></td>
+        <tr th:each="house : ${houses}">   <!-- 'house' is my object variable from house class.
+                                                       'houses' is a made up name, for the key, of the key, valued pair of the Model class   -->
+            <td th:text="${house.hId}"></td>
+            <td th:text="${house.houseAddress}"></td>
+            <td th:text="${house.houseCity}"></td>
+            <td th:text="${house.houseState}"></td>
+            <td th:text="${house.houseZip}"></td>
+            <td>
 
         </tr>
         </tbody>
     </table>
 
     <br></br>
-<!--
-    <a th:href="@{/}"> Back to Home Page</a>
--->
-    <a th:href="@{/custButtonHandler}"> Back to Customer page</a>
-
 
 </div>
 
@@ -91,7 +99,7 @@
 
 
 <br></br>
-<a href="home_page_general.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
+<a href="homePageGeneral.html"  class="btn btn-success"  data-bs-toggle="tooltip" title="return to home">Return to home page </a>
 
 
 -->
