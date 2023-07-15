@@ -34,6 +34,15 @@
 
       <ul class="nav navbar-nav navbar-right">
 
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/housesListHandlerAdmin}"  data-bs-toggle="tooltip" title="Customer List" >House List</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/adminButtonHandler}" data-bs-toggle="tooltip" title="Admin Page" >Admin</a>
+        </li>
+
         <li class="nav-item" >
           <a class="nav-link" th:href="@{/}"  data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
         </li>
@@ -58,22 +67,24 @@
             <div th:if="${#fields.hasErrors('hId')}" th:errors="*{name}"> Name Error</div>
             -->
 
+    <label for="houseAddress">Address:</label>
+    <input type="text" th:field="*{houseAddress}" id="houseAddress" name="houseAddress" class="form-control mb-4 col-4">
 
-    <input type="text" th:field="*{houseAddress}" placeholder="House Address" class="form-control mb-4 col-4">
+    <label for="houseCity">City:</label>
+    <input type="text" th:field="*{houseCity}" id="houseCity" name="houseCity" class="form-control mb-4 col-4">
 
-    <input type="text" th:field="*{houseCity}" placeholder="House City" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{houseState}" placeholder="House State" class="form-control mb-4 col-4">
-    <input type="text" th:field="*{houseZip}" placeholder="Zip" class="form-control mb-4 col-4">
+    <label for="houseState">State:</label>
+    <input type="text" th:field="*{houseState}" id="houseState" name="houseState" class="form-control mb-4 col-4">
+
+    <label for="houseZip">Zip:</label>
+    <input type="number" th:field="*{houseZip}" id="houseZip" name="houseZip" class="form-control mb-4 col-4">
 
     <button type="submit" class="btn btn-info col-2"> Save House</button>
   </form>
 
   <hr>
-  <a th:href="@{/}"> Back to House List</a>
+
 </div>
-
-
-
 
 </body>
 

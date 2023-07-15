@@ -179,7 +179,7 @@ public class CustomerController
         customerById.setCity(customer.getCity());
         customerById.setState(customer.getState());
         customerById.setZip(customer.getZip());
-        customerById.setSecurityName(customer.getSecurityName());
+        customerById.setPhoneNumber(customer.getPhoneNumber());
         customerById.setUserName(customer.getUserName());
 
         customerService.saveCustomer(customerById);

@@ -61,12 +61,17 @@
   <hr>
 
   <form action="#" th:action="@{/savePayment}" th:object="${payment}" method="POST">
-    <input type="text" th:field="*{paymentId}" placeholder="Payment Id" class="form-control mb-4 col-4" >
-    <div th:if="${#fields.hasErrors('paymentId')}" th:errors="*{paymentId}"> Name Error</div>
 
-    <input type="number" th:field="*{paymentAmount}" placeholder="Payment Amount" class="form-control mb-4 col-4">
+    <div th:if="${#fields.hasErrors('paymentId')}" th:errors="*{paymentId}"> Payment Id Error</div>
+    <label for="paymentId">Payment Id:</label>
+    <input type="text" th:field="*{paymentId}" id="paymentId" name="paymentId" class="form-control mb-4 col-4" >
 
-    <input type="text" th:field="*{paymentTransactionDate}" placeholder="Payment Date" class="form-control mb-4 col-4">
+
+    <label for="paymentAmount">Payment Amount:</label>
+    <input type="number" th:field="*{paymentAmount}" id="paymentAmount" name="paymentAmount" class="form-control mb-4 col-4">
+
+    <label for="paymentTransactionDate">Payment Transaction Date:</label>
+    <input type="date" th:field="*{paymentTransactionDate}" id="paymentTransactionDate" name="paymentTransactionDate" class="form-control mb-4 col-4">
 
 
     <button type="submit" class="btn btn-info col-2"> Save Payment</button>
