@@ -40,7 +40,7 @@ public class Customer implements Serializable
 
     private Integer zip;
 
-    private String phoneNumber;
+    private String securityName;
 
     private String userName;
 
@@ -51,8 +51,8 @@ public class Customer implements Serializable
     //--------------------------CONSTRUCTOR--------------
 
 
-    public Customer(int cId, String firstName, String lastName, String address, String city,
-                    String state, Integer zip, String phoneNumber, String userName) {
+    public Customer(int cId, String firstName, String lastName, String address, String city, String state,
+                    Integer zip, String securityName, String userName) {
         this.cId = cId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -60,7 +60,7 @@ public class Customer implements Serializable
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.phoneNumber = phoneNumber;
+        this.securityName = securityName;
         this.userName = userName;
     }
 
@@ -125,7 +125,13 @@ public class Customer implements Serializable
         this.zip = zip;
     }
 
+    public String getSecurityName() {
+        return securityName;
+    }
 
+    public void setSecurityName(String securityName) {
+        this.securityName = securityName;
+    }
 
     public String getUserName() {
         return userName;
@@ -143,14 +149,6 @@ public class Customer implements Serializable
         this.paymentList = paymentList;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
@@ -161,9 +159,12 @@ public class Customer implements Serializable
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip=" + zip +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", securityName='" + securityName + '\'' +
                 ", userName='" + userName + '\'' +
                 ", paymentList=" + paymentList +
                 '}';
     }
+
+
+
 }

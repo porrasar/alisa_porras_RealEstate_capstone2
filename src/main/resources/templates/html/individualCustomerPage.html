@@ -35,7 +35,7 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="nav-item" >
-                    <a class="nav-link" th:href="@{/custButtonHandler}" data-bs-toggle="tooltip" title="Go Back to Customer Page"> Customer page</a>
+                    <a class="nav-link" th:href="@{/custButtonHandler}" data-bs-toggle="tooltip" title="Go Back to Customer Page"> Back to Customer page</a>
                 </li>
 
                 <li class="nav-item" >
@@ -60,30 +60,30 @@
     <table class="table table-striped table-responsive-md">
         <thead>
         <tr>
-
+            <th>Customer ID</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Address</th>
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
-            <th>Phone Number</th>
-
+            <th>User Name</th>
         </tr>
         </thead>
 
         <tbody>
         <tr>
-
+            <td th:text="${customer.cId}"></td>
             <td th:text="${customer.firstName}"></td>
             <td th:text="${customer.lastName}"></td>
             <td th:text="${customer.address}"></td>
             <td th:text="${customer.city}"></td>
             <td th:text="${customer.state}"></td>
             <td th:text="${customer.zip}"></td>
-            <td th:text="${customer.phoneNumber}"></td>
-
-
+            <td th:text="${customer.userName}"></td>
+            <td>
+                <a th:href="@{/updateCustomerPageByTheCustomer/{id}(id=${customer.cId})}" class="btn btn-primary">Update User Name </a>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -94,11 +94,10 @@
     <table class="table table-striped table-responsive-md">
         <thead>
         <tr>
-
+            <th>Payment ID</th>
             <th>Payment Type</th>
             <th>Payment Amount</th>
-            <th>Payment Date</th>
-            <th>Notes</th>
+            <th>Payment Transaction Date</th>
          </tr>
         </thead>
 
@@ -106,11 +105,10 @@
         <tbody>
         <tr th:each="payment : ${customer.paymentList}" class="col mb-3">   <!-- 'payment' is my object variable from payment class.
                                                                                  'customer' is the customer object   -->
-
+            <td th:text="${payment.paymentId}"></td>
             <td th:text="${payment.paymentType}"></td>
             <td th:text="${payment.paymentAmount}"></td>
             <td th:text="${payment.paymentTransactionDate}"></td>
-            <td th:text="${payment.notes}"></td>
 
         </tr>
         </tbody>

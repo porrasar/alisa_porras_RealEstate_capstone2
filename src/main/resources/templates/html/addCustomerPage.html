@@ -36,7 +36,8 @@
           <a class="nav-link" th:href="@{/adminButtonHandler}"  data-bs-toggle="tooltip" title="Admin Page" >Admin</a>
         </li>
 
-        <li class="nav-item" >
+
+        <li class="nav-link" >
           <a class="nav-link" th:href="@{/}"  data-bs-toggle="tooltip" title="Go Back to Home Page" >Back to Home Page</a>
         </li>
 
@@ -55,31 +56,19 @@
 
   <form action="#" th:action="@{/saveCustomer}" th:object="${customer}" method="POST">
     <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> First Name Error</div>
-    <label for="firstName">First Name: </label>
-    <input type="text" th:field="*{firstName}" id="firstName" name="firstName" class="form-control mb-4 col-4" >
+    <input type="text" th:field="*{firstName}" placeholder="Customer First Name" class="form-control mb-4 col-4" >
 
     <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> Last Name Error</div>
-    <label for="lastName">Last Name: </label>
-    <input type="text" th:field="*{lastName}" id="lastName" name="lastName" class="form-control mb-4 col-4" >
+    <input type="text" th:field="*{lastName}" placeholder="Customer Last Name" class="form-control mb-4 col-4" >
 
 
-    <label for="address">Address:</label>
-    <input type="text" th:field="*{address}" id="address" name="address" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{address}" placeholder="Customer Address" class="form-control mb-4 col-4">
 
-    <label for="city">City: </label>
-    <input type="text" th:field="*{city}" id="city" name="city" class="form-control mb-4 col-4">
-
-    <label for="state">State:</label>
-    <input type="text" th:field="*{state}" id="state" name="state" class="form-control mb-4 col-4">
-
-    <label for="zip">Zip:</label>
-    <input type="number" th:field="*{zip}" id="zip" name="zip" class="form-control mb-4 col-4">
-
-    <label for="phone">Phone: (Format: 999-999-9999)</label>
-    <input type="tel" th:field="*{phoneNumber}" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control mb-4 col-4">
-
-    <label for="userName">User Name:</label>
-    <input type="text" th:field="*{userName}" id="userName" name="userName" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{city}" placeholder="City" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{state}" placeholder="State" class="form-control mb-4 col-4">
+    <input type="number" th:field="*{zip}" placeholder="zip" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{userName}" placeholder="User Name" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{securityName}" placeholder="Security Name" class="form-control mb-4 col-4">
 
     <button type="submit" class="btn btn-info col-2"> Save Customer</button>
   </form>

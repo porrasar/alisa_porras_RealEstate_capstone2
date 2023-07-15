@@ -33,10 +33,6 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/maintenanceListHandlerAdmin}"  data-bs-toggle="tooltip" title="Customer List" >Maintenance List</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" th:href="@{/adminButtonHandler}"  data-bs-toggle="tooltip" title="Admin Page" >Admin</a>
                 </li>
 
@@ -56,17 +52,23 @@
 <body>
 <div class="container">
     <h2>Update Maintenance Companies</h2>
-    <br></br>
+    <!--
+
+    <a th:href="@{/addPaymentToCustomerPageHandler/{cId}(cId=${customer.id})}" class="btn btn-primary btn-sm mb-3"> Add Payment To Customer</a>
+    -->
 
     <form action="#" th:action="@{/saveMaintenance}" th:object="${maintenance}" method="POST">
+        <!-- Add hidden form field to handle update -->
 
+        <!--
+       <input type="hidden" th:field="*{id}" />
+      -->
         <input type="hidden" th:field="*{mId}" />
 
-        <label for="maintenanceName">Maintenance Company Name:</label>
-        <input type="text" th:field="*{maintenanceName}" id="maintenanceName" name="maintenanceName" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{maintenanceName}" placeholder="Maintenance Name" class="form-control mb-4 col-4">
 
 
-        <button type="submit" class="btn btn-info col-2">Update Maintenance Co.</button>
+        <button type="submit" class="btn btn-info col-2"> Update Maintenance Company</button>
     </form>
     <hr>
 
