@@ -68,18 +68,35 @@
       -->
         <input type="hidden" th:field="*{cId}" />
 
-        <input type="text" th:field="*{firstName}" placeholder="Name" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{lastName}" placeholder="Name" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{address}" placeholder="Address" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{city}"  placeholder="City" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{state}"  placeholder="State" class="form-control mb-4 col-4">
-        <input type="number" th:field="*{zip}"  placeholder="Zip" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{userName}" placeholder="User Name" class="form-control mb-4 col-4">
-        <input type="text" th:field="*{securityName}" placeholder="Security Name" class="form-control mb-4 col-4">
+
+        <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> First Name Error</div>
+        <label for="firstName">First Name:</label>
+        <input type="text" th:field="*{firstName}" id="firstName" name="firstName" class="form-control mb-4 col-4">
+
+
+        <div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> Last Name Error</div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" th:field="*{lastName}" id="lastName" name="lastName" class="form-control mb-4 col-4">
+
+        <label for="address">Address:</label>
+        <input type="text" th:field="*{address}" id="address" name="address" class="form-control mb-4 col-4">
+
+        <label for="city">City:</label>
+        <input type="text" th:field="*{city}" id="city" name="city" class="form-control mb-4 col-4">
+
+        <label for="state">State:</label>
+        <input type="text" th:field="*{state}" id="state" name="state" class="form-control mb-4 col-4">
+
+        <label for="zip">Zip:</label>
+        <input type="text" th:field="*{zip}" id="zip" name="zip" class="form-control mb-4 col-4">
+
+        <label for="userName">User Name:</label>
+        <input type="text" th:field="*{userName}" id="userName" name="userName" class="form-control mb-4 col-4">
+
+        <label for="securityName">Security Name:</label>
+        <input type="text" th:field="*{securityName}" id="securityName" name="securityName" class="form-control mb-4 col-4">
 
         <br></br>
-
-
 
         <button type="submit" class="btn btn-info col-2"> Update Customer</button>
 
@@ -94,6 +111,7 @@
             <th>Payment Type</th>
             <th>Payment Amount</th>
             <th>Payment Transaction Date</th>
+            <th>Payment Notes</th>
         </tr>
         </thead>
 
@@ -105,6 +123,8 @@
             <td th:text="${payment.paymentType}"></td>
             <td th:text="${payment.paymentAmount}"></td>
             <td th:text="${payment.paymentTransactionDate}"></td>
+            <td th:text="${payment.paymentNotes}"></td>
+
 
         </tr>
         </tbody>
