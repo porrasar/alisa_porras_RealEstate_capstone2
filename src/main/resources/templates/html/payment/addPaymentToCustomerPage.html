@@ -81,13 +81,16 @@
 
       <br></br>
 
-      <div th:if="${#fields.hasErrors('paymentAmount')}" th:errors="*{paymentAmount}"> Payment Amount Format Wrong</div>
+<!--      <div th:if="${#fields.hasErrors('paymentAmount')}" th:errors="*{paymentAmount}"> Payment Amount Format Wrong</div>-->
       <label for="paymentAmount">Payment Amount:</label>
       <input type="number" th:field="*{paymentAmount}" id="paymentAmount" name="paymentAmount" class="form-control mb-4 col-4">
 
       <label for="paymentTransactionDate">Payment Date:</label>
-      <div th:if="${#fields.hasErrors('paymentTransactionDate')}" th:errors="*{paymentTransactionDate}"> Payment Date Format Wrong</div>
+<!--      <div th:if="${#fields.hasErrors('paymentTransactionDate')}" th:errors="*{paymentTransactionDate}"> Payment Date Format Wrong</div>-->
       <input type="date" th:field="*{paymentTransactionDate}" id="paymentTransactionDate" name="paymentTransactionDate" class="form-control mb-4 col-4">
+
+      <label for="paymentNotes">Payment Notes:</label>
+       <input type="text" th:field="*{paymentNotes}" id="paymentNotes" name="paymentNotes" class="form-control mb-4 col-4">
 
     <button type="submit" class="btn btn-info col-2">Save Payment To Customer</button>
   </form>

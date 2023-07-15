@@ -32,17 +32,18 @@ public class Payment implements Serializable
     @Digits(integer = 4, fraction = 2, message = "whole and cents")
     private double paymentAmount;
     private Date paymentTransactionDate;
-    @CreationTimestamp
-    private LocalDateTime createdDateTime;
 
+    private String paymentNotes;
 
     //----------------------------------CONSTRUCTORS-------------------------
-    public Payment(int paymentId, String paymentType, double paymentAmount, Date paymentTransactionDate, LocalDateTime createdDateTime) {
+
+
+    public Payment(int paymentId, String paymentType, double paymentAmount, Date paymentTransactionDate, String paymentNotes) {
         this.paymentId = paymentId;
         this.paymentType = paymentType;
         this.paymentAmount = paymentAmount;
         this.paymentTransactionDate = paymentTransactionDate;
-        this.createdDateTime = createdDateTime;
+        this.paymentNotes = paymentNotes;
     }
 
     public Payment()
@@ -83,12 +84,12 @@ public class Payment implements Serializable
         this.paymentTransactionDate = paymentTransactionDate;
     }
 
-    public LocalDateTime getCreatedDateTime() {
-        return createdDateTime;
+    public String getPaymentNotes() {
+        return paymentNotes;
     }
 
-    public void setCreatedDateTime(LocalDateTime createdDateTime) {
-        this.createdDateTime = createdDateTime;
+    public void setPaymentNotes(String paymentNotes) {
+        this.paymentNotes = paymentNotes;
     }
 
     @Override
@@ -98,7 +99,7 @@ public class Payment implements Serializable
                 ", paymentType='" + paymentType + '\'' +
                 ", paymentAmount=" + paymentAmount +
                 ", paymentTransactionDate=" + paymentTransactionDate +
-                ", createdDateTime=" + createdDateTime +
+                ", paymentNotes='" + paymentNotes + '\'' +
                 '}';
     }
 }

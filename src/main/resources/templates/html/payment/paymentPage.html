@@ -82,6 +82,8 @@
 
             <td th:text="${payment.paymentTransactionDate}"></td>
 
+            <td th:text="${payment.paymentNotes}"></td>
+
             <td>
                 <a th:href="@{/updatePaymentPageHandler/{id}(id=${payment.paymentId})}" class="btn btn-primary">Payment Details</a>
                 <a th:href="@{/deletePaymentPageHandler/{id}(id=${payment.paymentId})}" class="btn btn-danger">Delete Payment</a>

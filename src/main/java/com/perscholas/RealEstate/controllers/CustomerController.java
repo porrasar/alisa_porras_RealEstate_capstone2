@@ -162,6 +162,8 @@ public class CustomerController
     public String saveCustomerUpdated(@ModelAttribute("customer") @Valid Customer customer,
                                BindingResult bindingResult)
     {
+
+        logger.info("/////// UPDATE CUSTOMER - @POSTMAPPING   - IN CUSTOMER UPDATED//////// :" + customer);
         if (bindingResult.hasErrors())
         {
             return addCustomerHtml;
@@ -171,6 +173,7 @@ public class CustomerController
         // payment information on my html page. Then updating the customer record from the repository, with
         // the changes from the model customer record
 
+        logger.info("/////// UPDATE CUSTOMER - @POSTMAPPING   - BEFORE SETTER CUSTOMER UPDATED/////// :" + customer);
         Customer customerById =  repository.getById(customer.getcId());
 
         customerById.setFirstName(customer.getFirstName());
