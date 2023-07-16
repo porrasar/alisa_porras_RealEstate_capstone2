@@ -61,12 +61,12 @@
   <hr>
 
   <form action="#" th:action="@{/saveMaintenance}" th:object="${maintenance}" method="POST">
-    <input type="text" th:field="*{maintenanceName}" placeholder="Maintenance Name " class="form-control mb-4 col-4" >
+
     <div th:if="${#fields.hasErrors('maintenanceName')}" th:errors="*{maintenanceName}"> Name Error</div>
+    <label for="maintenanceName">Maintenance Name:</label>
+    <input type="text" th:field="*{maintenanceName}"  id="maintenanceName" name="maintenanceName" class="form-control mb-4 col-4">
 
-
-
-    <button type="submit" class="btn btn-info col-2"> Save Maintenance Company</button>
+    <button type="submit" class="btn btn-info col-2">Save Maintenance Co.</button>
   </form>
 
   <hr>
