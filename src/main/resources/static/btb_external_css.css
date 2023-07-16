@@ -26,6 +26,20 @@ h3
 	text-align:center;
 }
 
+h4
+{
+	color:purple;
+	text-align:center;
+    font-family: "Lucida Handwriting", "Lucida Console" ;
+}
+
+h6
+{
+	color:maroon;
+	font-family: "Lucida Handwriting", "Lucida Console" ;
+
+}
+
 p
 {
   color: blue;
