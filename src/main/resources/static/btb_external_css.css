@@ -3,7 +3,7 @@
  
 body 
 {
-  background-color: linen;
+   background-color: linen;
 }
 
 h1
@@ -17,6 +17,7 @@ h2
 	color:purple;
 	text-align:center;
 	font-family: "Lucida Handwriting", "Lucida Console" ;
+
 }
 
 h3
