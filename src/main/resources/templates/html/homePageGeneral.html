@@ -47,7 +47,8 @@ h2
 {
 	font-family: "Lucida Handwriting", "Lucida Console";
 }
-<!--img -->
+
+<!--img-->
 <!--{-->
 <!--border-radius: 50px;-->
 <!--background: url(cross_in_sky.jpg);-->
@@ -55,13 +56,13 @@ h2
 <!--height: 120px;-->
 <!--padding: 20px;-->
 <!--background-position: right top;-->
-<!--   -->
+
 <!--}-->
 </style>
 
 <!--     HEADER BEGINNING -----------------------  -->
 <div class="container p-1 bg-primary text-white text-center">
-    <img src="cross_in_sky.jpg" alt="" width="2" height="2">
+    <img id="imgCross" src="cross_in_sky.jpg" alt="" width="2" height="2">
     <h1>BTB (Blessed To Bless) Properties, Inc.</h1>
 </div>
 <header>
@@ -126,47 +127,46 @@ h2
 
 <!-- -------------------------------------------------------------------------------------- -->
 <!-- Slideshow container -->
-<div class="slideshow-container" data-interval="9000">
+<div class="slideshow-container" data-interval="9000" >
 
     <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-        <div class="numbertext">1 / 7</div>
-        <img src="house1.jpg" style="width:100%">
+
+    <div class="mySlides fade" >
+        <img src="kurt_carr_pic.jpg" style="width:100%">
+        <div class="text">Researching Houses</div>
+    </div>
+
+    <div class="mySlides fade" >
+         <img src="house1.jpg" style="width:100%">
         <div class="text">Researching Houses</div>
     </div>
 
     <div class="mySlides fade">
-        <div class="numbertext">2 / 7</div>
         <img src="house2.jpg" style="width:100%">
         <div class="text">Starting on the remodeling</div>
     </div>
 
     <div class="mySlides fade">
-        <div class="numbertext">3 / 7</div>
         <img src="house3.jpg" style="width:100%">
         <div class="text">Remodeling always takes longer than you think...  </div>
     </div>
 
     <div class="mySlides fade">
-        <div class="numbertext">4 / 7</div>
-        <img src="house4.jpg" style="width:100%">
+         <img src="house4.jpg" style="width:100%">
         <div class="text">All done!! </div>
     </div>
 
     <div class="mySlides fade">
-        <div class="numbertext">5 / 7</div>
         <img src="house5.jpg" style="width:100%">
         <div class="text">Persistence pays off!</div>
     </div>
 
     <div class="mySlides fade">
-        <div class="numbertext">6 / 7</div>
         <img src="house6.jpg" style="width:100%">
         <div class="text">Chillin!</div>
     </div>
 
     <div class="mySlides fade">
-        <div class="numbertext">7 / 7</div>
         <img src="house2.jpg" style="width:100%">
         <div class="text">Blessed!</div>
     </div>
@@ -197,19 +197,19 @@ h2
 
     <a th:href="@{/custButtonHandler}" class="btn btn-primary btn-sm mb-3"> My Account</a>
 
-    <div class="dropdown">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-            Houses Available
-        </button>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="houses_available_rent.html" target="_blank" data-bs-toggle="tooltip"
-                   title="Houses Rent">Houses for rent</a></li>
-            <li><a class="dropdown-item" href="houses_available_purchase.html" target="_blank" data-bs-toggle="tooltip"
-                   title="Houses Purchase">Houses for purchase</a></li>
-            <li><a class="dropdown-item" href="remodeled_houses.html" target="_blank" data-bs-toggle="tooltip"
-                   title="Houses Remodeled">Remodeled Houses</a></li>
-        </ul>
-    </div>
+<!--    <div class="dropdown">-->
+<!--        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">-->
+<!--            Houses Available-->
+<!--        </button>-->
+<!--        <ul class="dropdown-menu">-->
+<!--            <li><a class="dropdown-item" href="houses_available_rent.html" target="_blank" data-bs-toggle="tooltip"-->
+<!--                   title="Houses Rent">Houses for rent</a></li>-->
+<!--            <li><a class="dropdown-item" href="houses_available_purchase.html" target="_blank" data-bs-toggle="tooltip"-->
+<!--                   title="Houses Purchase">Houses for purchase</a></li>-->
+<!--            <li><a class="dropdown-item" href="remodeled_houses.html" target="_blank" data-bs-toggle="tooltip"-->
+<!--                   title="Houses Remodeled">Remodeled Houses</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
 
 </div>
 <!---------     BUTTONS ENDING -----------------------  -->
@@ -228,12 +228,15 @@ h2
 
     </div>
 
-    <button type="button" onclick="themeSongFunction()"> Theme Song
+    <button type="button" onclick="themeSongFunction()" style="width:20%">
+        Theme Song
+        <img src="kurt_carr_pic.jpg" alt="kurt carr helping" style="width:60%" >
         <video id="blessedVideo" width="130" height="100" controls>
-         <source src="west.mp4" type="video/mp4">
+           <source src="west.mp4" type="video/mp4">
              Your browser does not support HTML video.
-       </video>
+        </video>
     </button>
+
 
 </footer>
 

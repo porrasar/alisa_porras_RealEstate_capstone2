@@ -7,6 +7,8 @@ customers (current tenants and potential tenants).
 We do our own rehabbing.
 A business, but a business with a purpose.
 battered women, vets, homeless, elderly
+Christmas cards with gifts
+Praying for our tenants
 
 Currently, 
 - the owner keeps records of notes and customer transactions in a spreadsheet
@@ -200,6 +202,7 @@ Potential Customer (someone visiting the web page or interested in our propertie
 - Project management and setting priorities and daily goals using a tool like Jira was very helpful.
 - Principal principal - 
 - CSS: how to move thing on the screen
+- the ability to use one javascript function in varies places
 
 ## ------------------------- FUTURE IMPROVEMENTS ---------------------------------
 - Add functionality for:
@@ -215,6 +218,7 @@ Potential Customer (someone visiting the web page or interested in our propertie
     - add error messages in varies places (i.e. login)  
     - allow guest into home page
     - add message for success sign-in
+    - how to play soft music in background
 
 
 
