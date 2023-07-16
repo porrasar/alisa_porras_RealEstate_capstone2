@@ -33,7 +33,7 @@ public class LoginController
     @GetMapping("/login")
     public String loginPage()
     {
-        logger.info("/////// - LOGIN CONTROLLER - IN LOGIN  //////// " );
+        logger.info("/////// - LOGIN CONTROLLER - Please re-enter  //////// " );
 
         return "html/login";
     }

@@ -18,16 +18,13 @@ The application will be used for the:
     - to add, update, delete customer information
     - list properties available for rent and sale
     - 
-- customer (current): 
+- customer: 
     - to have the ability to access general information about the company
     - view a list of properties available for rent or sale
     - access our approved maintenance companies for repairs 
     - view their account information
     - update certain information in their account (i.e. phone number, etc.)        
 
-- customer (potential): 
-   - to have the ability to access general information about the company
-   - view a list of properties available for rent or sale 
 
 
 ## ------------------------------------------------------------------------------------------
@@ -92,49 +89,12 @@ Potential Customer (someone visiting the web page or interested in our propertie
 
 
 ## --------------------------------DAILY PROGRESS  ---------------------------------------------
-- April 26th (100% done)
-  - Added presentation
-  - Added wire frame
-  - Minor style edits
-  - Added Logger to CartServiceImpl
 
-- April 24th (97% done)
-  - Removed KITCHEN from navbar.
-  - Fixed test issues with isTrue().
-  - Rearranged files into packages according to models.
-  - Added JavaDoc to CartItemServiceImpl.getNewCartItemFromMenuItem() method.
-  - Added tests for custom queries at repository level.
-  
 
-- April 23rd (96% done)
-  - Added more lessons learned related to Thymeleaf.
-  - Fixed a bug in order_submitted.html that didn't show the image.
-  - Removed save cart in the controller method for "/order" so that a new cart is saved to the database only
-    after an item has been added to the cart.
-  
-
-- April 22nd (95% done)
-  - Added Description, Technical Architecture, Technical Challenges, Lessons Learned, Future Improvements
-  - Cleaned up CSS
-  - Added lambda expressions in the main CaterMateApplication class.
-  
-
-- April 21st (92% done)
-  - Updated README.md to link to Schema.pdf.
-  - Created schema for the project in Schema.png file.
-  
-
-- April 20th (92% done)
-  - Added parameterized test for CartServiceImplTest
-  - Added OrderServiceImplTest
-  - Fixed bug where updating order is not saving orderItemList correctly
-  - Added data.sql for populating the database by SQL statements, both in main and in test
-  - Added application.properties in test/resources folder
-  - Added test code MenuItemServiceImplTest
-  - Removed cart reference from CartItem class
-  - Fixed update user functionality bug
+- Sat. July 15 (90%)
 - 
-- Fri., July 14 (??% done)
+- 
+- Fri., July 14 (85% done)
   - fixed sign-up issue (u_id not found), needed to clean out and create new database
   - fixed issue of payments being removed when performing an update on customer 
   - worked on all naming conventions
@@ -237,7 +197,7 @@ Potential Customer (someone visiting the web page or interested in our propertie
 
 - Project management and setting priorities and daily goals using a tool like Jira was very helpful.
 - Principal principal - 
-- 
+- CSS: how to move thing on the screen
 
 ## ------------------------- FUTURE IMPROVEMENTS ---------------------------------
 - Add functionality for:
@@ -247,10 +207,12 @@ Potential Customer (someone visiting the web page or interested in our propertie
   - customer (current):
     - make appointments (talk to owners, to repair an issue, inspections, etc.) 
     - make payments to their account 
-    - change password
+    - change username & password
 
-  - customer (potential):
-    - make appointments (talk to owners, tour of houses, etc)
-    - make payments for application fees
+  - General
+    - add error messages in varies places (i.e. login)  
+    - allow guest into home page
+    - add message for success sign-in
+
 
 
