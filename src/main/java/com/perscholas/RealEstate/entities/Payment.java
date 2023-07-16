@@ -5,6 +5,8 @@ import com.sun.istack.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -29,8 +31,8 @@ public class Payment implements Serializable
     private int paymentId;
 
     private String paymentType;
-    @Digits(integer = 4, fraction = 2, message = "whole and cents")
-    private double paymentAmount;
+
+     private double paymentAmount;
     private Date paymentTransactionDate;
 
     private String paymentNotes;

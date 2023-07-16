@@ -155,7 +155,7 @@
     <table class="table table-striped table-responsive-md">
         <thead>
         <tr>
-            <th>Payment ID</th>
+
             <th>Payment Type</th>
             <th>Payment Amount</th>
             <th>Payment Transaction Date</th>
@@ -167,7 +167,7 @@
         <tbody>
         <tr th:each="payment : ${customer.paymentList}" class="col mb-3">   <!-- 'payment' is my object variable from payment class.
                                                                                  'customer' is the customer object   -->
-            <td th:text="${payment.paymentId}"></td>
+
             <td th:text="${payment.paymentType}"></td>
             <td th:text="${payment.paymentAmount}"></td>
             <td th:text="${payment.paymentTransactionDate}"></td>

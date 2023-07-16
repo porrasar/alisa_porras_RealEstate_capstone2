@@ -109,9 +109,9 @@
 <!--      <input type="text" th:field="*{paymentTransactionDate}" placeholder="Payment Date" class="form-control mb-4 col-4">-->
 
       <label for="paymentAmount">Payment Amount:</label>
-      <input type="number" th:field="*{paymentAmount}" id="paymentAmount" name="paymentAmount" class="form-control mb-4 col-4">
+      <input type="number" inputmode="decimal" th:field="*{paymentAmount}" id="paymentAmount" name="paymentAmount" class="form-control mb-4 col-4">
 
-      <label for="paymentTransactionDate">Payment Transaction Date:</label>
+      <label for="paymentTransactionDate">Payment Date:</label>
       <input type="text" th:field="*{paymentTransactionDate}" id="paymentTransactionDate" name="paymentTransactionDate" class="form-control mb-4 col-4">
 
       <label for="paymentNotes">Payment Notes:</label>
