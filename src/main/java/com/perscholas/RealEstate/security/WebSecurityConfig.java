@@ -35,6 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 
 
 
+
                         .mvcMatchers("/addNewDepartmentPage").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/deleteDepartmentPageHandler/**").hasAnyRole("SUPERADMIN")
                         .mvcMatchers("/updateDepartmentPageHandler/**").hasAnyRole("ADMIN", "SUPERADMIN")

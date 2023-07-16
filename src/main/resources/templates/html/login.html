@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="www.thymeleaf.org">
 
 <head>
+  <title>Login - BTB (Blessed To Blessed) Properties, Inc.</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,21 +14,61 @@
           integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
           crossorigin="anonymous"></script>
   <link href="../static/pages.css" th:href="@{pages.css}" type="text/css" rel="stylesheet"/>
-  <title>Login In Page</title>
 
+<!--  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
+<!--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"-->
+<!--        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
+  <link rel="stylesheet" type="text/css" href="btb_external_css.css">
+<!--  <script src="btb_external_javascript.js"></script>-->
+
+  <style>
+body
+{
+   background-color: linen;
+}
+
+h1
+{
+  color: white;
+  text-align: center;
+  background-color: tan;
+  font-family: "Lucida Handwriting", "Lucida Console"
+}
+
+h2
+{
+	font-family: "Lucida Handwriting", "Lucida Console";
+}
+
+img
+{
+border-radius: 50px;
+background: url(cross_in_sky.jpg);
+width: 200px;
+height: 120px;
+padding: 20px;
+background-position: right top;
+
+}
+</style>
 </head>
 
+<div class="container p-1 bg-primary text-white text-center">
+<!--  <img src="cross_in_sky.jpg" alt="" width="2" height="2">-->
+  <h1>BTB (Blessed To Bless) Properties, Inc.</h1>
+</div>
+
+
 <body>
-<header>
-  <nav class="navbar navbar-expand-lg">
-    <i class="bi bi-file-post"></i>
-    <h1>BTB Properties Log in page</h1>
-  </nav>
-</header>
+<!--<header>-->
+<!--  <nav class="navbar navbar-expand-lg">-->
+<!--    <h1>BTB Properties Log in page</h1>-->
+<!--  </nav>-->
+<!--</header>-->
 
 <main>
   <div class="container loginContainer">
-    <h1>Login</h1>
+    <h2>Login</h2>
 
 
       <form th:action="@{/login}" method="post">  <!--this 'action' /login is a spring thing, it has to stay -->
