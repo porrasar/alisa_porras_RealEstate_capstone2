@@ -67,8 +67,9 @@
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
+            <th>Phone Number </th>
+            <th>Email </th>
             <th>User Name</th>
-            <th>Security Name</th>
 
         </tr>
         </thead>
@@ -82,8 +83,9 @@
             <td th:text="${customer.city}"></td>
             <td th:text="${customer.state}"></td>
             <td th:text="${customer.zip}"></td>
+            <td th:text="${customer.phoneNumber}"></td>
+            <td th:text="${customer.email}"></td>
             <td th:text="${customer.userName}"></td>
-            <td th:text="${customer.securityName}"></td>
             <td>
                 <a th:href="@{/updateCustomerPage/{id}(id=${customer.cId})}" class="btn btn-primary">Customer Details</a>
 

@@ -77,11 +77,14 @@
     <label for="zip">Zip:</label>
     <input type="text" th:field="*{zip}" id="zip" name="zip" class="form-control mb-4 col-4">
 
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="tel" th:field="*{phoneNumber}" id="phoneNumber" name="phoneNumber" class="form-control mb-4 col-4">
+
+    <label for="email">Email:</label>
+    <input type="text" th:field="*{email}" id="email" name="email" class="form-control mb-4 col-4">
+
     <label for="userName">User Name:</label>
     <input type="text" th:field="*{userName}" id="userName" name="userName" class="form-control mb-4 col-4">
-
-    <label for="securityName">Security Name:</label>
-    <input type="text" th:field="*{securityName}" id="securityName" name="securityName" class="form-control mb-4 col-4">
 
     <button type="submit" class="btn btn-info col-2"> Save Customer</button>
   </form>

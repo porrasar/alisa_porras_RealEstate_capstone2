@@ -67,6 +67,8 @@
             <th>City</th>
             <th>State</th>
             <th>Zip</th>
+            <th>Phone Number</th>
+            <th>Email</th>
 
         </tr>
         </thead>
@@ -80,6 +82,9 @@
             <td th:text="${customer.city}"></td>
             <td th:text="${customer.state}"></td>
             <td th:text="${customer.zip}"></td>
+            <td th:text="${customer.phoneNumber}"></td>
+            <td th:text="${customer.email}"></td>
+
 
         </tr>
         </tbody>
@@ -94,7 +99,7 @@
 
             <th>Payment Type</th>
             <th>Payment Amount</th>
-            <th>Payment Transaction Date</th>
+            <th>Payment Date</th>
             <th>Payment Notes</th>
          </tr>
         </thead>
