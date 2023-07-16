@@ -5,6 +5,8 @@ BTB (Blessed To Bless) Properties, Inc. RealEstate is a web-based application
 intended to be used in house by a real estate investment business owner and 
 customers (current tenants and potential tenants).
 We do our own rehabbing.
+A business, but a business with a purpose.
+battered women, vets, homeless, elderly
 
 Currently, 
 - the owner keeps records of notes and customer transactions in a spreadsheet

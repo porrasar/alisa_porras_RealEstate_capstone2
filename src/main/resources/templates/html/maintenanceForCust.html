@@ -62,15 +62,13 @@
     <table class="table table-striped table-responsive-md">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
+              <th>Name</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="maintenance : ${maintenances}">   <!-- 'maintenance' is my object variable from house class.
                                                        'maintenances' is a made up name, for the key, of the key, valued pair of the Model class   -->
-            <td th:text="${maintenance.mId}"></td>
-            <td th:text="${maintenance.maintenanceName}"></td>
+             <td th:text="${maintenance.maintenanceName}"></td>
 
         </tr>
         </tbody>
@@ -79,6 +77,13 @@
     <br></br>
 
 </div>
+
+<button type="button" onclick="themeSongFunction()"> Theme Song
+    <video id="blessedVideo" width="130" height="100" controls>
+        <source src="yalonda.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
+</button>
 
 
 <footer>
