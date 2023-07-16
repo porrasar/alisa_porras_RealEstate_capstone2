@@ -52,6 +52,18 @@ p
   color: red;
 }
 
+.centerMessage
+{
+  text-align: center;
+  color: blue;
+}
+
+#centerMessage
+{
+  text-align: center;
+  color: blue;
+}
+
 #navBarRow
 {
   background-color:SkyBlue;
