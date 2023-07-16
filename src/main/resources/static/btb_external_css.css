@@ -42,6 +42,11 @@ p
   background-color:SkyBlue;
 }
 
+#navBarRowFooter
+{
+  background-color:SkyBlue;
+}
+
 // ----------------------------- Carousel -----------------------------
 * {box-sizing:border-box}
 
